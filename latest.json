@@ -4,7 +4,7 @@
   "pub_date": "2026-02-13T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/romby1/Warden/releases/download/v0.1.1/warden_0.1.2_x64-setup.exe",
+      "url": "https://github.com/romby1/Warden/releases/download/v0.1.2/warden_0.1.2_x64-setup.exe",
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWDNvNW84TFNOZTg3SklhRCtESkIxKyswenVrczExQTVUaUhZc2dTQ1R5djNwWi9iYTRNN0IvakdLK1krMisvUXRKdEhJV2JmL3FiQmJQK2xmdElBZWsrYVRUUkJFMGd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcwOTg5MjcwCWZpbGU6V2FyZGVuXzAuMS4yX3g2NC1zZXR1cC5leGUKaU9qUEE4Q0xEZ3hzV2VOaEE3ZUlYbTN5bTZmU2NIQ2VibFNuTXVzY0tHcERST3V1cytJTFR6NDhyZldIcVdWbFVxSmhrRUhRSm1RZ1pleUxJaEJJQ1E9PQo="
     }
   }
