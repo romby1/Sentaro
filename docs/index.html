@@ -171,6 +171,56 @@
     .footer-links a:hover { color: var(--text); }
     .footer-copy { font-size: 12px; color: var(--dim); }
 
+    .faq-section { max-width: 800px; margin: 0 auto; padding: 100px 40px; }
+    .faq-callout {
+      background: var(--amber-dim); border: 1px solid var(--amber-border);
+      border-radius: 4px; padding: 32px; margin-bottom: 48px;
+    }
+    .faq-callout-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .faq-callout-icon {
+      width: 44px; height: 44px; border-radius: 4px;
+      background: rgba(237,177,89,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .faq-callout-icon svg { width: 22px; height: 22px; color: var(--amber); }
+    .faq-callout-title { font-size: 18px; font-weight: 700; color: var(--amber); }
+    .faq-callout-body { font-size: 14px; color: var(--muted); line-height: 1.8; }
+    .faq-callout-body strong { color: var(--text); font-weight: 500; }
+    .faq-callout-steps {
+      margin-top: 20px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .faq-callout-step {
+      display: flex; align-items: flex-start; gap: 12px; padding: 10px 14px;
+      background: rgba(237,177,89,0.08); border-radius: 2px;
+    }
+    .faq-callout-step-num {
+      font-family: "Ubuntu Mono", monospace; font-size: 12px; font-weight: 700;
+      color: var(--amber); background: rgba(237,177,89,0.2);
+      padding: 2px 8px; border-radius: 2px; flex-shrink: 0;
+    }
+    .faq-callout-step-text { font-size: 13px; color: var(--text); line-height: 1.6; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 2px; }
+    .faq-item { border: 1px solid var(--border); background: var(--bg2); }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px; background: none; border: none; cursor: pointer;
+      font-family: "Ubuntu", sans-serif; font-size: 14px; font-weight: 500;
+      color: var(--text); text-align: left; transition: background 0.15s;
+    }
+    .faq-question:hover { background: var(--bg3); }
+    .faq-question svg {
+      width: 16px; height: 16px; color: var(--dim); flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+    .faq-item.open .faq-question svg { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 20px 18px; font-size: 13px; color: var(--muted); line-height: 1.8;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -188,6 +238,8 @@
       .btn-download, .btn-docs { width: 100%; justify-content: center; }
       .tools-section { padding: 60px 20px; }
       .tool-screenshots-pair { grid-template-columns: 1fr; }
+      .faq-section { padding: 60px 20px; }
+      .faq-callout { padding: 20px; }
       .divider { margin: 0 20px; }
       footer { flex-direction: column; gap: 20px; text-align: center; }
       .footer-links { flex-wrap: wrap; justify-content: center; }
@@ -200,6 +252,7 @@
     <a href="#" class="nav-logo">WARDEN</a>
     <ul class="nav-links">
       <li><a href="#tools">Tools</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="https://t.me/+9d_deXPfxM81MGJi" target="_blank">Telegram</a></li>
     </ul>
     <button onclick="downloadLatest(this)" class="btn-download" style="padding:8px 20px;font-size:12px;">
@@ -498,6 +551,90 @@
 
   </div>
 
+  <hr class="divider" />
+
+  <div class="faq-section fade-in" id="faq">
+    <div class="tools-header">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">Common questions</h2>
+    </div>
+
+    <div class="faq-callout">
+      <div class="faq-callout-header">
+        <div class="faq-callout-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="faq-callout-title">Windows Defender / SmartScreen warning</div>
+      </div>
+      <div class="faq-callout-body">
+        <p>When you first download and run Warden, <strong>Windows Defender SmartScreen may show a warning</strong> saying the app is unrecognized. This is completely normal and expected — here's why:</p>
+        <p style="margin-top:12px;">Windows SmartScreen flags <strong>any new application that hasn't yet built up a reputation</strong> with Microsoft. It is not a virus detection — it simply means not enough people have downloaded the file yet for Microsoft to automatically trust it. Every new indie app goes through this. As Warden gains more downloads, this warning will disappear on its own.</p>
+        <div class="faq-callout-steps">
+          <div class="faq-callout-step">
+            <span class="faq-callout-step-num">1</span>
+            <span class="faq-callout-step-text">Click <strong>"More info"</strong> on the SmartScreen popup</span>
+          </div>
+          <div class="faq-callout-step">
+            <span class="faq-callout-step-num">2</span>
+            <span class="faq-callout-step-text">Click <strong>"Run anyway"</strong> to launch the application</span>
+          </div>
+          <div class="faq-callout-step">
+            <span class="faq-callout-step-num">3</span>
+            <span class="faq-callout-step-text">This only happens once — subsequent launches won't show the warning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Is Warden free?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Yes. Warden is completely free during the beta period. There are no hidden fees, no premium tiers, and no paywalls. All tools and features are available to everyone.
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Which exchanges are supported?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Warden currently supports Bybit, Binance, Gate.io and OKX. All exchanges are monitored simultaneously across every tool. More exchanges may be added based on community feedback.
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Does Warden access my exchange account or API keys?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          No. Warden only reads publicly available market data. It never asks for API keys, never connects to your exchange account, and never executes trades. It is a monitoring tool only.
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          Does it work on macOS or Linux?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Warden is currently Windows-only. macOS and Linux support may be considered in the future depending on demand.
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+          How do I report bugs or request features?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          Join the Telegram group — it's the fastest way to report issues, suggest features, and get direct responses.
+        </div></div>
+      </div>
+    </div>
+  </div>
+
   <section style="text-align:center; padding:80px 40px;">
     <p style="font-size:15px; color:var(--muted); margin-bottom:24px;">Ready to try it?</p>
     <button onclick="downloadLatest(this)" class="btn-download">
@@ -520,8 +657,6 @@
       Telegram
     </a>
   </section>
-
-  <hr class="divider" />
 
   <footer>
     <span class="footer-logo">WARDEN</span>
@@ -569,4 +704,3 @@
 </body>
 
 </html>
-
