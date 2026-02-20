@@ -150,6 +150,7 @@
       text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
     }
     .tool-screenshots-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .tool-screenshots-trio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
     .screenshot-wrap { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--bg2); }
     .screenshot-wrap img { width: 100%; height: auto; display: block; }
     .screenshot-wrap-ph {
@@ -228,7 +229,7 @@
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 900px) { .tool-body.side { grid-template-columns: 1fr; } .tool-screenshots-pair { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .tool-body.side { grid-template-columns: 1fr; } .tool-screenshots-pair { grid-template-columns: 1fr; } .tool-screenshots-trio { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
@@ -252,6 +253,7 @@
     <a href="#" class="nav-logo">WARDEN</a>
     <ul class="nav-links">
       <li><a href="#tools">Tools</a></li>
+      <li><a href="#customize">Customize</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="https://t.me/+9d_deXPfxM81MGJi" target="_blank">Telegram</a></li>
     </ul>
@@ -618,6 +620,13 @@
               <div class="feature-row-desc">Set independent thresholds for NATR and % change. Values highlights when exceeded and an optional sound fires on each new alert.</div>
             </div>
           </div>
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="0.5" fill="currentColor"/><circle cx="17.5" cy="10.5" r="0.5" fill="currentColor"/><circle cx="8.5" cy="7.5" r="0.5" fill="currentColor"/><circle cx="6.5" cy="12.5" r="0.5" fill="currentColor"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke-width="1.5"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">Per-metric color settings</div>
+              <div class="feature-row-desc">Each metric gets its own color rules. NATR and % change shifts from a custom level-1 to level-2 color as volatility rises. Outline and background fill can be toggled independently per level — fully customizable colors for all three.</div>
+            </div>
+          </div>
         </div>
 
         <div class="tool-screenshots-side">
@@ -642,11 +651,132 @@
               </div>
             </div>
           </div>
+          <p class="screenshot-label" style="margin-top:16px;">Metric colors</p>
+          <div>
+            <img src="screenshots/monitor-settings-3.png" alt="Monitor metric colors"
+              style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="screenshot-wrap-ph" style="display:none;">
+              <div class="ph-icon">📷</div>
+              <span>monitor-settings-3.png</span>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
     <!-- end monitor -->
+
+  </div>
+
+  <hr class="divider" />
+
+  <div class="tools-section" id="customize">
+
+    <div class="tools-header fade-in">
+      <p class="section-label" style="color:rgb(180,120,240);">Customization</p>
+      <h2 class="section-title">Built to be yours</h2>
+      <p class="section-sub">Deep control over every visual detail — define how each metric is colored, how badges display, and what your workspace looks like at a glance.</p>
+    </div>
+
+    <!-- METRIC COLORS -->
+    <div class="tool-entry fade-in">
+      <div class="tool-title-row">
+        <span class="tool-name" style="font-size:22px; letter-spacing:1.5px;">CHARTS COLORS</span>
+      </div>
+      <p class="tool-tagline">
+        Define exactly how candles would look like.<br/>
+        This setting changes candle's color for all charts in every tool.
+      </p>
+
+      <div class="tool-body">
+        <div class="tool-screenshots-side">
+          <p class="screenshot-label">Color settings</p>
+          <div>
+            <img src="screenshots/colors-main.png" alt="Colors settings"
+              style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="screenshot-wrap-ph" style="display:none;">
+              <div class="ph-icon">📷</div>
+              <span>colors-main.png</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end metric colors -->
+
+    <!-- EXCHANGE BADGES -->
+    <div class="tool-entry fade-in">
+      <div class="tool-title-row">
+        <span class="tool-name" style="font-size:22px; letter-spacing:1.5px;">EXCHANGE BADGES</span>
+      </div>
+      <p class="tool-tagline">
+        Control how exchange badges appear on every ticker card.<br/>
+        Adjust opacity, outlines and sizing — or collapse them to minimal bars to declutter the view.
+      </p>
+
+      <div class="tool-body">
+
+        <div class="tool-features">
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">Show or hide all badges</div>
+              <div class="feature-row-desc">Toggle exchange badges on or off across all ticker cards with a single switch. Clean up the display when you don't need the exchange context.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">Primary vs regular badge opacity</div>
+              <div class="feature-row-desc">The primary exchange badge can be shown at a different opacity from the rest. Dim secondary badges to draw focus to the exchange that actually provided the data.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">Primary badge outline</div>
+              <div class="feature-row-desc">Add a subtle border to the primary exchange badge to make it stand out from secondary ones without changing size or color.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="21"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="16" y1="3" x2="16" y2="21"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">Minimized bar mode</div>
+              <div class="feature-row-desc">Collapse badges to thin vertical bars — still color-coded per exchange, but taking a fraction of the space. Useful when maximizing card density matters more than label clarity.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-screenshots-side">
+          <p class="screenshot-label">Badge appearance options</p>
+          <div class="tool-screenshots-pair">
+            <div>
+              <img src="screenshots/badges-1.png" alt="Exchange badges default"
+                style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="screenshot-wrap-ph" style="display:none;">
+                <div class="ph-icon">📷</div>
+                <span>badges-1.png</span>
+              </div>
+            </div>
+            <div>
+              <img src="screenshots/badges-2.png" alt="Exchange badges minimized"
+                style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="screenshot-wrap-ph" style="display:none;">
+                <div class="ph-icon">📷</div>
+                <span>badges-2.png</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end exchange badges -->
 
   </div>
 
