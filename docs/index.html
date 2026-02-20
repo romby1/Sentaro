@@ -306,6 +306,7 @@
       <p class="tool-tagline">
         Signals about every ticker on the market that you should know about.<br/>
         Real-time price movement scanner across all major exchanges — the moment something moves, you know.
+        All data is based on 5m timeframe.
       </p>
 
       <div class="tool-screenshot-main">
@@ -402,6 +403,7 @@
       <p class="tool-tagline">
         Cross-exchange price deviation scanner.<br/>
         Detects when the same asset is priced differently across exchanges — and tells you the deviation, instantly.
+        All data is based on 5m timeframe.
       </p>
 
       <div class="tool-screenshot-main">
@@ -548,6 +550,103 @@
       </div>
     </div>
     <!-- end analyzer -->
+
+    <!-- MONITOR -->
+    <div class="tool-entry fade-in">
+
+      <div class="tool-title-row">
+        <span class="tool-index" style="color:rgb(180,120,240);background:rgba(180,120,240,0.12);border-color:rgba(180,120,240,0.3);">04</span>
+        <span class="tool-name">MONITOR</span>
+      </div>
+      <p class="tool-tagline">
+        Live market scanner sorted by volatility metrics.<br/>
+        Rank every ticker by NATR, volume or % change — aggregated across all exchanges in real time. <br>
+        All data is based on 5m timeframe.
+      </p>
+
+      <div class="tool-screenshot-main">
+        <img src="screenshots/monitor-main.png" alt="Monitor window"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="screenshot-placeholder" style="display:none; margin:0; border:none; border-radius:0;">
+          <div class="ph-icon">📷</div>
+          <span>screenshots/monitor-main.png</span>
+        </div>
+      </div>
+
+      <div class="tool-body">
+
+        <div class="tool-features">
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">Sort by 3 volatility metrics</div>
+              <div class="feature-row-desc">Rank tickers by Normalised ATR, volume or % change. NATR smoothing via RMA (Wilder's moving average — smoother, slower to react) or SMA (simple average — more responsive to recent candles).</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">Three NATR aggregation modes</div>
+              <div class="feature-row-desc">Weighted average across exchanges, highest NATR across all exchanges, or priority — uses the first exchange in your order.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">Volume source control</div>
+              <div class="feature-row-desc">Choose between total turnover summed across all exchanges or turnover from your top-priority exchange only.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">Configurable card limit</div>
+              <div class="feature-row-desc">Display between 3 and 30 ticker cards. Adjust up or down without restarting — the list reorders live.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="19" y2="12"/><line x1="12" y1="19" x2="19" y2="12"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">Drag-to-reorder exchange priority</div>
+              <div class="feature-row-desc">Set which exchange comes first when aggregating data. Drag exchanges into order, or drag below the divider to disable them entirely.</div>
+            </div>
+          </div>
+          <div class="feature-row">
+            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></span>
+            <div class="feature-row-content">
+              <div class="feature-row-title">NATR and % change alert thresholds</div>
+              <div class="feature-row-desc">Set independent thresholds for NATR and % change. Values highlights when exceeded and an optional sound fires on each new alert.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-screenshots-side">
+          <p class="screenshot-label">Settings panels</p>
+          <div class="tool-screenshots-pair">
+            <div>
+              <img src="screenshots/monitor-settings-1.png" alt="Monitor settings 1"
+                style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="screenshot-wrap-ph" style="display:none;">
+                <div class="ph-icon">📷</div>
+                <span>monitor-settings-1.png</span>
+              </div>
+            </div>
+            <div>
+              <img src="screenshots/monitor-settings-2.png" alt="Monitor settings 2"
+                style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="screenshot-wrap-ph" style="display:none;">
+                <div class="ph-icon">📷</div>
+                <span>monitor-settings-2.png</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end monitor -->
 
   </div>
 
