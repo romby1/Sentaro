@@ -32,9 +32,20 @@
       padding: 0 40px; z-index: 100;
     }
     .nav-logo { font-size: 16px; font-weight: 700; letter-spacing: 4px; color: var(--text); text-decoration: none; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
     .nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
+    .lang-switcher {
+      display: flex; align-items: center; gap: 4px; padding: 6px 10px;
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 4px;
+    }
+    .lang-btn {
+      background: none; border: none; color: var(--dim); font-size: 12px;
+      font-weight: 500; cursor: pointer; padding: 4px 8px; border-radius: 3px;
+      transition: all 0.2s; font-family: "Ubuntu", sans-serif;
+    }
+    .lang-btn:hover { color: var(--text); background: var(--bg3); }
+    .lang-btn.active { color: var(--text); background: var(--text); color: var(--bg); }
 
     .btn-download {
       display: inline-flex; align-items: center; gap: 10px;
@@ -252,22 +263,28 @@
   <nav>
     <a href="#" class="nav-logo">WARDEN</a>
     <ul class="nav-links">
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#customize">Customize</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#tools" data-i18n="nav.tools">Tools</a></li>
+      <li><a href="#customize" data-i18n="nav.customize">Customize</a></li>
+      <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
       <li><a href="https://t.me/+9d_deXPfxM81MGJi" target="_blank">Telegram</a></li>
+      <li>
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="uk">UA</button>
+        </div>
+      </li>
     </ul>
-    <button onclick="downloadLatest(this)" class="btn-download" style="padding:8px 20px;font-size:12px;">
+    <button onclick="downloadLatest(this)" class="btn-download" style="padding:8px 20px;font-size:12px;" data-i18n="nav.download">
       Download
     </button>
   </nav>
 
   <section class="hero">
-    <div class="hero-badge">Beta — Free Access</div>
+    <div class="hero-badge" data-i18n="hero.badge">Beta — Free Access</div>
     <h1 class="hero-title">WARDEN</h1>
-    <p class="hero-sub">Fully custom crypto monitoring workspace for Windows. Track price movements across Bybit, Binance, Gate.io and OKX simultaneously.</p>
+    <p class="hero-sub" data-i18n="hero.sub">Fully custom crypto monitoring workspace for Windows. Track price movements across Bybit, Binance, Gate.io and OKX simultaneously.</p>
     <div class="hero-actions">
-      <button onclick="downloadLatest(this)" class="btn-download">
+      <button onclick="downloadLatest(this)" class="btn-download" data-i18n="hero.download">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
           <polyline points="7 10 12 15 17 10"/>
@@ -275,7 +292,7 @@
         </svg>
         Download for Windows
       </button>
-      <a href="#tools" class="btn-docs">Explore Tools →</a>
+      <a href="#tools" class="btn-docs" data-i18n="hero.explore">Explore Tools →</a>
     </div>
   </section>
 
@@ -284,9 +301,9 @@
   <div class="tools-section" id="tools">
 
     <div class="tools-header fade-in">
-      <p class="section-label">Tools</p>
-      <h2 class="section-title">Everything in one workspace</h2>
-      <p class="section-sub">Each tool is purpose-built and fully configurable. No bloat, no noise — just the data you need. Change, resize, build your own monitoring workspace</p>
+      <p class="section-label" data-i18n="tools.label">Tools</p>
+      <h2 class="section-title" data-i18n="tools.title">Everything in one workspace</h2>
+      <p class="section-sub" data-i18n="tools.sub">Each tool is purpose-built and fully configurable. No bloat, no noise — just the data you need. Change, resize, build your own monitoring workspace</p>
     </div>
 
     <div class="tool-screenshot-main fade-in" style="margin-bottom:120px;">
@@ -305,7 +322,7 @@
         <span class="tool-index">01</span>
         <span class="tool-name">KNIVES</span>
       </div>
-      <p class="tool-tagline">
+      <p class="tool-tagline" data-i18n="knives.tagline">
         Signals about every ticker on the market that you should know about.<br/>
         Real-time price movement scanner across all major exchanges — the moment something moves, you know.
         All data is based on 5m timeframe.
@@ -326,49 +343,49 @@
           <div class="feature-row">
             <span class="feature-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">4 Exchanges simultaneously</div>
-              <div class="feature-row-desc">Bybit, Binance, Gate.io and OKX all monitored at once. Enable or disable each exchange individually.</div>
+              <div class="feature-row-title" data-i18n="knives.f1.title">4 Exchanges simultaneously</div>
+              <div class="feature-row-desc" data-i18n="knives.f1.desc">Bybit, Binance, Gate.io and OKX all monitored at once. Enable or disable each exchange individually.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Two-tier alert thresholds</div>
-              <div class="feature-row-desc">Set a base % and a high % threshold independently. Separate sound notifications for each level.</div>
+              <div class="feature-row-title" data-i18n="knives.f2.title">Two-tier alert thresholds</div>
+              <div class="feature-row-desc" data-i18n="knives.f2.desc">Set a base % and a high % threshold independently. Separate sound notifications for each level.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Volume filtering</div>
-              <div class="feature-row-desc">Filter tickers by volume to cut out low-liquidity noise. Only see moves that actually matter. Volume calculated for 5m timeframe</div>
+              <div class="feature-row-title" data-i18n="knives.f3.title">Volume filtering</div>
+              <div class="feature-row-desc" data-i18n="knives.f3.desc">Filter tickers by volume to cut out low-liquidity noise. Only see moves that actually matter. Volume calculated for 5m timeframe</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Exchange badges per ticker</div>
-              <div class="feature-row-desc">Each ticker card shows exactly which exchanges it's listed on. Custom badge design per exchange.</div>
+              <div class="feature-row-title" data-i18n="knives.f4.title">Exchange badges per ticker</div>
+              <div class="feature-row-desc" data-i18n="knives.f4.desc">Each ticker card shows exactly which exchanges it's listed on. Custom badge design per exchange.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Sound control</div>
-              <div class="feature-row-desc">Enable or disable sound notifications per threshold level, independently.</div>
+              <div class="feature-row-title" data-i18n="knives.f5.title">Sound control</div>
+              <div class="feature-row-desc" data-i18n="knives.f5.desc">Enable or disable sound notifications per threshold level, independently.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Fully custom per-exchange settings</div>
-              <div class="feature-row-desc">Each exchange has its own settings panel — thresholds, volume filters, sounds and display options all configured separately.</div>
+              <div class="feature-row-title" data-i18n="knives.f6.title">Fully custom per-exchange settings</div>
+              <div class="feature-row-desc" data-i18n="knives.f6.desc">Each exchange has its own settings panel — thresholds, volume filters, sounds and display options all configured separately.</div>
             </div>
           </div>
         </div>
 
         <div class="tool-screenshots-side">
-          <p class="screenshot-label">Settings panels</p>
+          <p class="screenshot-label" data-i18n="knives.screenshots">Settings panels</p>
           <div class="tool-screenshots-pair">
             <div>
               <img src="screenshots/knives-settings-1.png" alt="Knives settings 1"
@@ -402,7 +419,7 @@
         <span class="tool-index" style="color:var(--amber);background:var(--amber-dim);border-color:var(--amber-border);">02</span>
         <span class="tool-name">ALERTS</span>
       </div>
-      <p class="tool-tagline">
+      <p class="tool-tagline" data-i18n="alerts.tagline">
         Cross-exchange price deviation scanner.<br/>
         Detects when the same asset is priced differently across exchanges — and tells you the deviation, instantly.
         All data is based on 5m timeframe.
@@ -423,49 +440,49 @@
           <div class="feature-row">
             <span class="feature-row-icon" style="color:var(--amber);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Cross-exchange deviation detection</div>
-              <div class="feature-row-desc">Continuously compares prices for the same ticker across all monitored exchanges and flags deviations above your threshold.</div>
+              <div class="feature-row-title" data-i18n="alerts.f1.title">Cross-exchange deviation detection</div>
+              <div class="feature-row-desc" data-i18n="alerts.f1.desc">Continuously compares prices for the same ticker across all monitored exchanges and flags deviations above your threshold.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:var(--amber);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Live listing alerts</div>
-              <div class="feature-row-desc">Get notified when newly listed tokens start trading on monitored exchanges. Never miss fresh opportunities.</div>
+              <div class="feature-row-title" data-i18n="alerts.f2.title">Live listing alerts</div>
+              <div class="feature-row-desc" data-i18n="alerts.f2.desc">Get notified when newly listed tokens start trading on monitored exchanges. Never miss fresh opportunities.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:var(--amber);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Minimum deviation threshold</div>
-              <div class="feature-row-desc">Only see alerts above a % deviation you define. Adjustable from 1% to 10% in 0.5% increments.</div>
+              <div class="feature-row-title" data-i18n="alerts.f3.title">Minimum deviation threshold</div>
+              <div class="feature-row-desc" data-i18n="alerts.f3.desc">Only see alerts above a % deviation you define. Adjustable from 1% to 10% in 0.5% increments.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:var(--amber);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Volume filtering</div>
-              <div class="feature-row-desc">Filter out low-liquidity alerts by setting a minimum trading volume per exchange. Toggle on or off without losing your setting. Volume calculated for 5m timeframe</div>
+              <div class="feature-row-title" data-i18n="alerts.f4.title">Volume filtering</div>
+              <div class="feature-row-desc" data-i18n="alerts.f4.desc">Filter out low-liquidity alerts by setting a minimum trading volume per exchange. Toggle on or off without losing your setting. Volume calculated for 5m timeframe</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:var(--amber);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Sound notifications</div>
-              <div class="feature-row-desc">Optional audio alert fires when a new deviation appears. Toggle independently from other tools.</div>
+              <div class="feature-row-title" data-i18n="alerts.f5.title">Sound notifications</div>
+              <div class="feature-row-desc" data-i18n="alerts.f5.desc">Optional audio alert fires when a new deviation appears. Toggle independently from other tools.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:var(--amber);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Configurable card limit</div>
-              <div class="feature-row-desc">Set how many alert cards to display at once — from 3 up to 50. Keeps the window clean and focused.</div>
+              <div class="feature-row-title" data-i18n="alerts.f6.title">Configurable card limit</div>
+              <div class="feature-row-desc" data-i18n="alerts.f6.desc">Set how many alert cards to display at once — from 3 up to 50. Keeps the window clean and focused.</div>
             </div>
           </div>
         </div>
 
         <div class="tool-screenshots-side">
-          <p class="screenshot-label">Settings panel</p>
+          <p class="screenshot-label" data-i18n="alerts.screenshots">Settings panel</p>
           <div>
             <img src="screenshots/alerts-settings.png" alt="Alerts settings"
               style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
@@ -488,7 +505,7 @@
         <span class="tool-index" style="color:rgb(100,160,240);background:rgba(100,160,240,0.12);border-color:rgba(100,160,240,0.3);">03</span>
         <span class="tool-name">ANALYZER</span>
       </div>
-      <p class="tool-tagline">
+      <p class="tool-tagline" data-i18n="analyzer.tagline">
         Four timeframes. One ticker. Full picture.<br/>
         5m, 15m, 1h and 4h charts rendered simultaneously.
       </p>
@@ -508,43 +525,43 @@
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(100,160,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">4 charts simultaneously</div>
-              <div class="feature-row-desc">5m, 15m, 1h and 4h candlestick charts render side by side for the selected ticker. No tab switching, no context loss.</div>
+              <div class="feature-row-title" data-i18n="analyzer.f1.title">4 charts simultaneously</div>
+              <div class="feature-row-desc" data-i18n="analyzer.f1.desc">5m, 15m, 1h and 4h candlestick charts render side by side for the selected ticker. No tab switching, no context loss.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(100,160,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">4 exchanges, one interface</div>
-              <div class="feature-row-desc">Switch between Bybit, Binance, Gate.io and OKX instantly. All charts and ticker data update to the selected exchange with no reload.</div>
+              <div class="feature-row-title" data-i18n="analyzer.f2.title">4 exchanges, one interface</div>
+              <div class="feature-row-desc" data-i18n="analyzer.f2.desc">Switch between Bybit, Binance, Gate.io and OKX instantly. All charts and ticker data update to the selected exchange with no reload.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(100,160,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 21 23 3 23 3 1 17 1"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="13" x2="17" y2="13"/><line x1="7" y1="17" x2="13" y2="17"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Infinite scroll history</div>
-              <div class="feature-row-desc">Scroll left on any chart to automatically load more historical candles. Data loads in batches of 500 as you explore further back.</div>
+              <div class="feature-row-title" data-i18n="analyzer.f3.title">Infinite scroll history</div>
+              <div class="feature-row-desc" data-i18n="analyzer.f3.desc">Scroll left on any chart to automatically load more historical candles. Data loads in batches of 500 as you explore further back.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(100,160,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Full ticker list with sorting</div>
-              <div class="feature-row-desc">Search and sort all available tickers by 24h change, volume, open interest or funding rate. One click to load any ticker into all four charts.</div>
+              <div class="feature-row-title" data-i18n="analyzer.f4.title">Full ticker list with sorting</div>
+              <div class="feature-row-desc" data-i18n="analyzer.f4.desc">Search and sort all available tickers by 24h change, volume, open interest or funding rate. One click to load any ticker into all four charts.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(100,160,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Watchlist with exchange badges</div>
-              <div class="feature-row-desc">Save tickers to a persistent watchlist. Each entry shows which exchanges list it — so you always know where to trade.</div>
+              <div class="feature-row-title" data-i18n="analyzer.f5.title">Watchlist with exchange badges</div>
+              <div class="feature-row-desc" data-i18n="analyzer.f5.desc">Save tickers to a persistent watchlist. Each entry shows which exchanges list it — so you always know where to trade.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(100,160,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Live stats in titlebar</div>
-              <div class="feature-row-desc">24h change, volume, open interest and funding countdown update live for the active ticker — always visible without leaving the chart view.</div>
+              <div class="feature-row-title" data-i18n="analyzer.f6.title">Live stats in titlebar</div>
+              <div class="feature-row-desc" data-i18n="analyzer.f6.desc">24h change, volume, open interest and funding countdown update live for the active ticker — always visible without leaving the chart view.</div>
             </div>
           </div>
         </div>
@@ -560,7 +577,7 @@
         <span class="tool-index" style="color:rgb(180,120,240);background:rgba(180,120,240,0.12);border-color:rgba(180,120,240,0.3);">04</span>
         <span class="tool-name">MONITOR</span>
       </div>
-      <p class="tool-tagline">
+      <p class="tool-tagline" data-i18n="monitor.tagline">
         Live market scanner sorted by volatility metrics.<br/>
         Rank every ticker by NATR, volume or % change — aggregated across all exchanges in real time. <br>
         All data is based on 5m timeframe.
@@ -581,56 +598,56 @@
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Sort by 3 volatility metrics</div>
-              <div class="feature-row-desc">Rank tickers by Normalised ATR, volume or % change. NATR smoothing via RMA (Wilder's moving average — smoother, slower to react) or SMA (simple average — more responsive to recent candles).</div>
+              <div class="feature-row-title" data-i18n="monitor.f1.title">Sort by 3 volatility metrics</div>
+              <div class="feature-row-desc" data-i18n="monitor.f1.desc">Rank tickers by Normalised ATR, volume or % change. NATR smoothing via RMA (Wilder's moving average — smoother, slower to react) or SMA (simple average — more responsive to recent candles).</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Three NATR aggregation modes</div>
-              <div class="feature-row-desc">Weighted average across exchanges, highest NATR across all exchanges, or priority — uses the first exchange in your order.</div>
+              <div class="feature-row-title" data-i18n="monitor.f2.title">Three NATR aggregation modes</div>
+              <div class="feature-row-desc" data-i18n="monitor.f2.desc">Weighted average across exchanges, highest NATR across all exchanges, or priority — uses the first exchange in your order.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Volume source control</div>
-              <div class="feature-row-desc">Choose between total turnover summed across all exchanges or turnover from your top-priority exchange only.</div>
+              <div class="feature-row-title" data-i18n="monitor.f3.title">Volume source control</div>
+              <div class="feature-row-desc" data-i18n="monitor.f3.desc">Choose between total turnover summed across all exchanges or turnover from your top-priority exchange only.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Configurable card limit</div>
-              <div class="feature-row-desc">Display between 3 and 30 ticker cards. Adjust up or down without restarting — the list reorders live.</div>
+              <div class="feature-row-title" data-i18n="monitor.f4.title">Configurable card limit</div>
+              <div class="feature-row-desc" data-i18n="monitor.f4.desc">Display between 3 and 30 ticker cards. Adjust up or down without restarting — the list reorders live.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="19" y2="12"/><line x1="12" y1="19" x2="19" y2="12"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Drag-to-reorder exchange priority</div>
-              <div class="feature-row-desc">Set which exchange comes first when aggregating data. Drag exchanges into order, or drag below the divider to disable them entirely.</div>
+              <div class="feature-row-title" data-i18n="monitor.f5.title">Drag-to-reorder exchange priority</div>
+              <div class="feature-row-desc" data-i18n="monitor.f5.desc">Set which exchange comes first when aggregating data. Drag exchanges into order, or drag below the divider to disable them entirely.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">NATR and % change alert thresholds</div>
-              <div class="feature-row-desc">Set independent thresholds for NATR and % change. Values highlights when exceeded and an optional sound fires on each new alert.</div>
+              <div class="feature-row-title" data-i18n="monitor.f6.title">NATR and % change alert thresholds</div>
+              <div class="feature-row-desc" data-i18n="monitor.f6.desc">Set independent thresholds for NATR and % change. Values highlights when exceeded and an optional sound fires on each new alert.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="0.5" fill="currentColor"/><circle cx="17.5" cy="10.5" r="0.5" fill="currentColor"/><circle cx="8.5" cy="7.5" r="0.5" fill="currentColor"/><circle cx="6.5" cy="12.5" r="0.5" fill="currentColor"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke-width="1.5"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Per-metric color settings</div>
-              <div class="feature-row-desc">Each metric gets its own color rules. NATR and % change shifts from a custom level-1 to level-2 color as volatility rises. Outline and background fill can be toggled independently per level — fully customizable colors for all three.</div>
+              <div class="feature-row-title" data-i18n="monitor.f7.title">Per-metric color settings</div>
+              <div class="feature-row-desc" data-i18n="monitor.f7.desc">Each metric gets its own color rules. NATR and % change shifts from a custom level-1 to level-2 color as volatility rises. Outline and background fill can be toggled independently per level — fully customizable colors for all three.</div>
             </div>
           </div>
         </div>
 
         <div class="tool-screenshots-side">
-          <p class="screenshot-label">Settings panels</p>
+          <p class="screenshot-label" data-i18n="monitor.screenshots">Settings panels</p>
           <div class="tool-screenshots-pair">
             <div>
               <img src="screenshots/monitor-settings-1.png" alt="Monitor settings 1"
@@ -651,7 +668,7 @@
               </div>
             </div>
           </div>
-          <p class="screenshot-label" style="margin-top:16px;">Metric colors</p>
+          <p class="screenshot-label" style="margin-top:16px;" data-i18n="monitor.screenshots2">Metric colors</p>
           <div>
             <img src="screenshots/monitor-settings-3.png" alt="Monitor metric colors"
               style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
@@ -674,9 +691,9 @@
   <div class="tools-section" id="customize">
 
     <div class="tools-header fade-in">
-      <p class="section-label" style="color:rgb(180,120,240);">Customization</p>
-      <h2 class="section-title">Built to be yours</h2>
-      <p class="section-sub">Deep control over every visual detail — define how each metric is colored, how badges display, and what your workspace looks like at a glance.</p>
+      <p class="section-label" style="color:rgb(180,120,240);" data-i18n="customize.label">Customization</p>
+      <h2 class="section-title" data-i18n="customize.title">Built to be yours</h2>
+      <p class="section-sub" data-i18n="customize.sub">Deep control over every visual detail — define how each metric is colored, how badges display, and what your workspace looks like at a glance.</p>
     </div>
 
     <!-- METRIC COLORS -->
@@ -684,14 +701,14 @@
       <div class="tool-title-row">
         <span class="tool-name" style="font-size:22px; letter-spacing:1.5px;">CHARTS COLORS</span>
       </div>
-      <p class="tool-tagline">
+      <p class="tool-tagline" data-i18n="chartsColors.tagline">
         Define exactly how candles would look like.<br/>
         This setting changes candle's color for all charts in every tool.
       </p>
 
       <div class="tool-body">
         <div class="tool-screenshots-side">
-          <p class="screenshot-label">Color settings</p>
+          <p class="screenshot-label" data-i18n="chartsColors.screenshots">Color settings</p>
           <div>
             <img src="screenshots/colors-main.png" alt="Colors settings"
               style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
@@ -712,7 +729,7 @@
       <div class="tool-title-row">
         <span class="tool-name" style="font-size:22px; letter-spacing:1.5px;">EXCHANGE BADGES</span>
       </div>
-      <p class="tool-tagline">
+      <p class="tool-tagline" data-i18n="badges.tagline">
         Control how exchange badges appear on every ticker card.<br/>
         Adjust opacity, outlines and sizing — or collapse them to minimal bars to declutter the view.
       </p>
@@ -723,35 +740,35 @@
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Show or hide all badges</div>
-              <div class="feature-row-desc">Toggle exchange badges on or off across all ticker cards with a single switch. Clean up the display when you don't need the exchange context.</div>
+              <div class="feature-row-title" data-i18n="badges.f1.title">Show or hide all badges</div>
+              <div class="feature-row-desc" data-i18n="badges.f1.desc">Toggle exchange badges on or off across all ticker cards with a single switch. Clean up the display when you don't need the exchange context.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Primary vs regular badge opacity</div>
-              <div class="feature-row-desc">The primary exchange badge can be shown at a different opacity from the rest. Dim secondary badges to draw focus to the exchange that actually provided the data.</div>
+              <div class="feature-row-title" data-i18n="badges.f2.title">Primary vs regular badge opacity</div>
+              <div class="feature-row-desc" data-i18n="badges.f2.desc">The primary exchange badge can be shown at a different opacity from the rest. Dim secondary badges to draw focus to the exchange that actually provided the data.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Primary badge outline</div>
-              <div class="feature-row-desc">Add a subtle border to the primary exchange badge to make it stand out from secondary ones without changing size or color.</div>
+              <div class="feature-row-title" data-i18n="badges.f3.title">Primary badge outline</div>
+              <div class="feature-row-desc" data-i18n="badges.f3.desc">Add a subtle border to the primary exchange badge to make it stand out from secondary ones without changing size or color.</div>
             </div>
           </div>
           <div class="feature-row">
             <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="3" x2="8" y2="21"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="16" y1="3" x2="16" y2="21"/></svg></span>
             <div class="feature-row-content">
-              <div class="feature-row-title">Minimized bar mode</div>
-              <div class="feature-row-desc">Collapse badges to thin vertical bars — still color-coded per exchange, but taking a fraction of the space. Useful when maximizing card density matters more than label clarity.</div>
+              <div class="feature-row-title" data-i18n="badges.f4.title">Minimized bar mode</div>
+              <div class="feature-row-desc" data-i18n="badges.f4.desc">Collapse badges to thin vertical bars — still color-coded per exchange, but taking a fraction of the space. Useful when maximizing card density matters more than label clarity.</div>
             </div>
           </div>
         </div>
 
         <div class="tool-screenshots-side">
-          <p class="screenshot-label">Badge appearance options</p>
+          <p class="screenshot-label" data-i18n="badges.screenshots">Badge appearance options</p>
           <div class="tool-screenshots-pair">
             <div>
               <img src="screenshots/badges-1.png" alt="Exchange badges default"
@@ -784,8 +801,8 @@
 
   <div class="faq-section fade-in" id="faq">
     <div class="tools-header">
-      <p class="section-label">FAQ</p>
-      <h2 class="section-title">Common questions</h2>
+      <p class="section-label" data-i18n="faq.label">FAQ</p>
+      <h2 class="section-title" data-i18n="faq.title">Common questions</h2>
     </div>
 
     <div class="faq-callout">
@@ -793,23 +810,23 @@
         <div class="faq-callout-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
-        <div class="faq-callout-title">Windows Defender / SmartScreen warning</div>
+        <div class="faq-callout-title" data-i18n="faq.warning.title">Windows Defender / SmartScreen warning</div>
       </div>
       <div class="faq-callout-body">
-        <p>When you first download and run Warden, <strong>Windows Defender SmartScreen may show a warning</strong> saying the app is unrecognized. This is completely normal and expected — here's why:</p>
-        <p style="margin-top:12px;">Windows SmartScreen flags <strong>any new application that hasn't yet built up a reputation</strong> with Microsoft. It is not a virus detection — it simply means not enough people have downloaded the file yet for Microsoft to automatically trust it. Every new indie app goes through this. As Warden gains more downloads, this warning will disappear on its own.</p>
+        <p data-i18n="faq.warning.text1">When you first download and run Warden, <strong>Windows Defender SmartScreen may show a warning</strong> saying the app is unrecognized. This is completely normal and expected — here's why:</p>
+        <p style="margin-top:12px;" data-i18n="faq.warning.text2">Windows SmartScreen flags <strong>any new application that hasn't yet built up a reputation</strong> with Microsoft. It is not a virus detection — it simply means not enough people have downloaded the file yet for Microsoft to automatically trust it. Every new indie app goes through this. As Warden gains more downloads, this warning will disappear on its own.</p>
         <div class="faq-callout-steps">
           <div class="faq-callout-step">
             <span class="faq-callout-step-num">1</span>
-            <span class="faq-callout-step-text">Click <strong>"More info"</strong> on the SmartScreen popup</span>
+            <span class="faq-callout-step-text" data-i18n="faq.warning.step1">Click <strong>"More info"</strong> on the SmartScreen popup</span>
           </div>
           <div class="faq-callout-step">
             <span class="faq-callout-step-num">2</span>
-            <span class="faq-callout-step-text">Click <strong>"Run anyway"</strong> to launch the application</span>
+            <span class="faq-callout-step-text" data-i18n="faq.warning.step2">Click <strong>"Run anyway"</strong> to launch the application</span>
           </div>
           <div class="faq-callout-step">
             <span class="faq-callout-step-num">3</span>
-            <span class="faq-callout-step-text">This only happens once — subsequent launches won't show the warning</span>
+            <span class="faq-callout-step-text" data-i18n="faq.warning.step3">This only happens once — subsequent launches won't show the warning</span>
           </div>
         </div>
       </div>
@@ -817,47 +834,47 @@
 
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          Is Warden free?
+        <button class="faq-question">
+          <span data-i18n="faq.q1">Is Warden free?</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a1">
           Yes. Warden is completely free during the beta period. There are no hidden fees, no premium tiers, and no paywalls. All tools and features are available to everyone.
         </div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          Which exchanges are supported?
+        <button class="faq-question">
+          <span data-i18n="faq.q2">Which exchanges are supported?</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a2">
           Warden currently supports Bybit, Binance, Gate.io and OKX. All exchanges are monitored simultaneously across every tool. More exchanges may be added based on community feedback.
         </div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          Does Warden access my exchange account or API keys?
+        <button class="faq-question">
+          <span data-i18n="faq.q3">Does Warden access my exchange account or API keys?</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a3">
           No. Warden only reads publicly available market data. It never asks for API keys, never connects to your exchange account, and never executes trades. It is a monitoring tool only.
         </div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          Does it work on macOS or Linux?
+        <button class="faq-question">
+          <span data-i18n="faq.q4">Does it work on macOS or Linux?</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a4">
           Warden is currently Windows-only. macOS and Linux support may be considered in the future depending on demand.
         </div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-          How do I report bugs or request features?
+        <button class="faq-question">
+          <span data-i18n="faq.q5">How do I report bugs or request features?</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">
+        <div class="faq-answer"><div class="faq-answer-inner" data-i18n="faq.a5">
           Join the Telegram group — it's the fastest way to report issues, suggest features, and get direct responses.
         </div></div>
       </div>
@@ -865,8 +882,8 @@
   </div>
 
   <section style="text-align:center; padding:80px 40px;">
-    <p style="font-size:15px; color:var(--muted); margin-bottom:24px;">Ready to try it?</p>
-    <button onclick="downloadLatest(this)" class="btn-download">
+    <p style="font-size:15px; color:var(--muted); margin-bottom:24px;" data-i18n="cta.text">Ready to try it?</p>
+    <button onclick="downloadLatest(this)" class="btn-download" data-i18n="cta.download">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
         <polyline points="7 10 12 15 17 10"/>
@@ -879,23 +896,24 @@
   <hr class="divider" />
 
   <section style="text-align:center; padding:80px 40px;">
-    <p style="font-size:15px; color:var(--muted); margin-bottom:8px;">Join for news and to share your feedback</p>
-    <p style="font-size:12px; color:var(--dim); margin-bottom:24px;">Updates, feature requests and direct contact</p>
+    <p style="font-size:15px; color:var(--muted); margin-bottom:8px;" data-i18n="telegram.text1">Join for news and to share your feedback</p>
+    <p style="font-size:12px; color:var(--dim); margin-bottom:24px;" data-i18n="telegram.text2">Updates, feature requests and direct contact</p>
     <a href="https://t.me/+9d_deXPfxM81MGJi" target="_blank" class="btn-docs" style="display:inline-flex;">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-      Telegram
+      <span data-i18n="telegram.button">Telegram</span>
     </a>
   </section>
 
   <footer>
     <span class="footer-logo">WARDEN</span>
     <div class="footer-links">
-      <a href="#tools">Tools</a>
-      <a href="https://t.me/+9d_deXPfxM81MGJi" target="_blank">Telegram</a>
+      <a href="#tools" data-i18n="footer.tools">Tools</a>
+      <a href="https://t.me/+9d_deXPfxM81MGJi" target="_blank" data-i18n="footer.telegram">Telegram</a>
     </div>
-    <span class="footer-copy">© 2026 WARDEN</span>
+    <span class="footer-copy" data-i18n="footer.copyright">© 2026 WARDEN</span>
   </footer>
 
+  <script src="i18n.js"></script>
   <script>
     async function downloadLatest(btn) {
       const originalHTML = btn.innerHTML;
