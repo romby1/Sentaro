@@ -1,11 +1,11 @@
 {
-  "version": "2.0.3",
+  "version": "2.0.4",
   "notes": "Update",
   "pub_date": "2026-02-16T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/romby1/Warden/releases/download/v2.0.3/warden_2.0.3_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWDNvNW84TFNOZTlUa3N3VDMyZm9NU3lIeExFcXUraVdiNnhrWUFPVEhtR3p1TXNGR2VSZGpuSlpyK20wd21nUTMzSFN3Y3NDNXBoS08yRDRMVWxtM09UKytTR3YrV1FRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcyNzg2NzE2CWZpbGU6V2FyZGVuXzIuMC4zX3g2NC1zZXR1cC5leGUKT2RrS1NnODFFVnI4M1pVSEMvaTNkekRMVGg2dHFjbWFLSFN6Tno3d2dqVXBSdkpwSVlhWXRCNmEybFdOeFRReVRiZXNGNHZFZ3BSbmg4OXhkRzdvQmc9PQo="
+      "url": "https://github.com/romby1/Warden/releases/download/v2.0.4/warden_2.0.4_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWDNvNW84TFNOZTV2eVFxcGRYeDBpODArVi9ndVA0RlhuUWtMR3RjZ2RUZEQrOTlzMzAyajFCSHBaVWpvUURHWEx0NlVWZi8xMnFQdFl5WVZETXNDZWlSNTExYm5DSUFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzc4OTUyMzk1CWZpbGU6V2FyZGVuXzIuMC40X3g2NC1zZXR1cC5leGUKS3pBVHFaUG5aRjZyd3l4OVBpclIzcjBUbXlsaHdLb1dHcFBiV1MvQSsvNE8zWHEwODlvNWs2elpsZzVsN21qenpMMEo0OFpIK2JHWDVlQktHTjRxQWc9PQo="
     }
   }
 }
