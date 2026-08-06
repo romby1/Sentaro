@@ -1,0 +1,9 @@
+node_modules/
+
+# VitePress build intermediates. The built site itself (docs/manual) IS committed —
+# GitHub Pages serves docs/ directly and there is no CI to build it.
+docsrc/.vitepress/cache/
+docsrc/.vitepress/dist/
+
+.DS_Store
+*.log

@@ -4,6 +4,7 @@ const translations = {
     // Navigation
     "nav.tools": "Tools",
     "nav.customize": "Customize",
+    "nav.docs": "Docs",
     "nav.faq": "FAQ",
     "nav.download": "Download",
     
@@ -33,7 +34,8 @@ const translations = {
     "knives.f6.title": "Fully custom per-exchange settings",
     "knives.f6.desc": "Each exchange has its own settings panel — thresholds, volume filters, sounds and display options all configured separately.",
     "knives.screenshots": "Settings panels",
-    
+    "knives.docs": "Full documentation →",
+
     // Alerts
     "alerts.tagline": "Cross-exchange price deviation and listing scanner.<br/>Detects when the same asset is priced differently across exchanges or if new ticker is listed — and gives you alert instantly. All data is based on 5m timeframe.",
     "alerts.f1.title": "Cross-exchange deviation detection",
@@ -49,7 +51,8 @@ const translations = {
     "alerts.f6.title": "Configurable card limit",
     "alerts.f6.desc": "Set how many alert cards to display at once — from 3 up to 50. Keeps the window clean and focused.",
     "alerts.screenshots": "Settings panel",
-    
+    "alerts.docs": "Full documentation →",
+
     // Analyzer
     "analyzer.tagline": "Four timeframes. One ticker. Full picture.<br/>5m, 15m, 1h and 4h charts rendered simultaneously.",
     "analyzer.f1.title": "4 charts simultaneously",
@@ -64,7 +67,8 @@ const translations = {
     "analyzer.f5.desc": "Save tickers to a persistent watchlist. Each entry shows which exchanges list it — so you always know where to trade.",
     "analyzer.f6.title": "Live stats in titlebar",
     "analyzer.f6.desc": "24h change, volume, open interest and funding countdown update live for the active ticker — always visible without leaving the chart view.",
-    
+    "analyzer.docs": "Full documentation →",
+
     // Monitor
     "monitor.tagline": "Live market scanner sorted by volatility metrics.<br/>Rank every ticker by NATR, volume or % change — aggregated across all exchanges in real time. All data is based on 5m timeframe.",
     "monitor.f1.title": "Sort by 3 volatility metrics",
@@ -83,6 +87,7 @@ const translations = {
     "monitor.f7.desc": "Each metric gets its own color rules. NATR and % change shifts from a custom level-1 to level-2 color as volatility rises. Outline and background fill can be toggled independently per level — fully customizable colors for all three.",
     "monitor.screenshots": "Settings panels",
     "monitor.screenshots2": "Metric colors",
+    "monitor.docs": "Full documentation →",
     
     // Customize section
     "customize.label": "Customization",
@@ -92,6 +97,7 @@ const translations = {
     // Chart colors
     "chartsColors.tagline": "Define exactly how candles would look like.<br/>This setting changes candle's color for all charts in every tool.",
     "chartsColors.screenshots": "Color settings",
+    "chartsColors.docs": "Full documentation →",
     
     // Exchange badges
     "badges.tagline": "Control how exchange badges appear on every ticker card.<br/>Adjust opacity, outlines and sizing — or collapse them to minimal bars to declutter the view.",
@@ -144,6 +150,7 @@ const translations = {
     // Navigation
     "nav.tools": "Інструменти",
     "nav.customize": "Налаштування",
+    "nav.docs": "Документація",
     "nav.faq": "FAQ",
     "nav.download": "Завантажити",
     
@@ -173,6 +180,7 @@ const translations = {
     "knives.f6.title": "Повністю індивідуальні налаштування для кожної біржі",
     "knives.f6.desc": "Кожна біржа має власну панель налаштувань — руч у відсотках, фільтри об'єму, звуки та параметри відображення налаштовуються окремо.",
     "knives.screenshots": "Панелі налаштувань",
+    "knives.docs": "Повна документація →",
     
     // Alerts
     "alerts.tagline": "Сканер відхилень цін між біржами та нових лістингів.<br/>Виявляє, коли один і той самий актив має різну ціну на біржах або якщо відбувся новий лістинг — і миттєво дає сповіщення про це. Всі дані на основі 5хв таймфрейму.",
@@ -189,6 +197,7 @@ const translations = {
     "alerts.f6.title": "Налаштовуваний ліміт карток",
     "alerts.f6.desc": "Встановлюйте, скільки карток сповіщень відображати одночасно — від 3 до 50. Зберігає вікно чистим і зосередженим.",
     "alerts.screenshots": "Панель налаштувань",
+    "alerts.docs": "Повна документація →",
     
     // Analyzer
     "analyzer.tagline": "Чотири таймфрейми. Один тікер. Повна картина.<br/>5хв, 15хв, 1г та 4г графіки рендеряться одночасно.",
@@ -204,6 +213,7 @@ const translations = {
     "analyzer.f5.desc": "Зберігайте тікери в постійний список спостереження. Кожен запис показує, на яких біржах він доступний — тож ви завжди знаєте, де торгувати.",
     "analyzer.f6.title": "Жива статистика в заголовку",
     "analyzer.f6.desc": "Зміна за 24г, об'єм, відкритий інтерес та зворотний відлік фінансування оновлюються в реальному часі для активного тікера — завжди видно, не залишаючи вигляд графіка.",
+    "analyzer.docs": "Повна документація →",
     
     // Monitor
     "monitor.tagline": "Живий сканер ринку, відсортований за метриками волатильності.<br/>Ранжуйте кожен тікер за NATR, об'ємом або % зміною — агреговано на всіх біржах у режимі реального часу. Всі дані на основі 5хв таймфрейму.",
@@ -223,6 +233,7 @@ const translations = {
     "monitor.f7.desc": "Кожна метрика має власні правила кольорів. NATR та % зміна переходять від індивідуального кольору рівня 1 до кольору рівня 2 при зростанні волатильності. Контур та заповнення фону можна вмикати незалежно для кожного рівня — повністю налаштовувані кольори для всіх трьох.",
     "monitor.screenshots": "Панелі налаштувань",
     "monitor.screenshots2": "Кольори метрик",
+    "monitor.docs": "Повна документація →",
     
     // Customize section
     "customize.label": "Налаштування",
@@ -232,6 +243,7 @@ const translations = {
     // Chart colors
     "chartsColors.tagline": "Визначте точно, як будуть виглядати свічки.<br/>Це налаштування змінює колір свічок для всіх графіків у кожному інструменті.",
     "chartsColors.screenshots": "Налаштування кольорів",
+    "chartsColors.docs": "Повна документація →",
     
     // Exchange badges
     "badges.tagline": "Контролюйте, як бейджі бірж відображаються на кожній картці тікера.<br/>Регулюйте непрозорість, контури та розмір — або згорніть їх до мінімальних смужок, щоб розвантажити вигляд.",
@@ -294,6 +306,14 @@ function applyTranslations(lang) {
     }
   });
   
+  // Point manual links at the manual in the selected language.
+  // The manual is a separate VitePress site under /manual/ with its own
+  // en/ and uk/ trees, so only the locale segment of the path changes.
+  document.querySelectorAll('a[data-manual]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href) a.setAttribute('href', href.replace(/\/manual\/(?:en|uk)\//, '/manual/' + lang + '/'));
+  });
+
   // Update language buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);

@@ -1,0 +1,38 @@
+---
+layout: home
+
+hero:
+  name: WARDEN
+  text: Довідник
+  tagline: Як працює кожен інструмент, що означає кожне значення та що насправді робить кожне налаштування.
+  actions:
+    - theme: brand
+      text: Початок роботи
+      link: /uk/getting-started
+    - theme: alt
+      text: Knives
+      link: /uk/tools/knives
+    - theme: alt
+      text: сайт warden
+      link: https://cryptowarden.xyz/
+
+features:
+  - title: KNIVES
+    details: Сканер руху цін. Позначає будь-який тікер, поточна 5хв свічка якого вийшла за поріг, встановлений вами для кожної біржі.
+    link: /uk/tools/knives
+  - title: ALERTS
+    details: Сканер відхилень цін між біржами та нових лістингів. Показує, наскільки різняться ціни того самого активу просто зараз.
+    link: /uk/tools/alerts
+  - title: ANALYZER
+    details: Простір для графіків. До восьми панелей, будь-який таймфрейм, п'ять інструментів рисування, список спостереження.
+    link: /uk/tools/analyzer
+  - title: MONITOR
+    details: Живий сканер ринку за волатильністю. Сортування за NATR, обсягом або % зміною, агреговано по біржах.
+    link: /uk/tools/monitor
+  - title: TERMINAL
+    details: Експериментальний торговий термінал для Hyperliquid, Binance і Bybit. Proof of concept, який розміщує реальні ордери — спершу прочитайте попередження.
+    link: /uk/tools/terminal
+  - title: ГРАФІКИ ТА РИСУВАННЯ
+    details: Кольори свічок, колір рисунків, клавіші інструментів і магніт. Діє на графіки в усіх інструментах.
+    link: /uk/customize/chart-colors
+---

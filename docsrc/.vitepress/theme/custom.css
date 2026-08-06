@@ -1,0 +1,498 @@
+/* ===========================================================================
+   Warden manual theme.
+
+   Every value below is lifted from the :root block in docs/index.html so the
+   manual reads as the same site, not a bolted-on docs product:
+
+     --bg #131212  --bg2 #161615  --bg3 #1a1a19
+     --border rgba(241,240,240,0.35)
+     --text #bebdba  --muted #7a7a7a  --dim #5a5a59
+     --green rgb(94,175,130)  --amber rgb(237,177,89)  --red #d47c7c
+
+   The site is force-dark (see config.js), but VitePress still emits its own
+   `.dark` block, so the overrides are declared for both selectors.
+   =========================================================================== */
+
+:root,
+.dark {
+  /* ── landing tokens, verbatim ── */
+  --w-bg: #131212;
+  --w-bg2: #161615;
+  --w-bg3: #1a1a19;
+  --w-border: rgba(241, 240, 240, 0.35);
+  --w-text: #bebdba;
+  --w-muted: #7a7a7a;
+  --w-dim: #5a5a59;
+  --w-green: rgb(94, 175, 130);
+  --w-green-dim: rgba(94, 175, 130, 0.15);
+  --w-green-border: rgba(94, 175, 130, 0.3);
+  --w-red: #d47c7c;
+  --w-amber: rgb(237, 177, 89);
+  --w-amber-dim: rgba(237, 177, 89, 0.15);
+  --w-amber-border: rgba(237, 177, 89, 0.3);
+
+  /* ── typography ── */
+  --vp-font-family-base: 'Ubuntu', -apple-system, sans-serif;
+  --vp-font-family-mono: 'Ubuntu Mono', 'Courier New', monospace;
+
+  /* ── background layers ── */
+  --vp-c-bg: var(--w-bg);
+  --vp-c-bg-alt: var(--w-bg2);
+  --vp-c-bg-soft: var(--w-bg2);
+  --vp-c-bg-elv: var(--w-bg3);
+  --vp-c-bg-mute: var(--w-bg3);
+
+  /* ── text ── */
+  --vp-c-text-1: var(--w-text);
+  --vp-c-text-2: var(--w-muted);
+  --vp-c-text-3: var(--w-dim);
+
+  /* ── borders: the landing page uses one border colour everywhere ── */
+  --vp-c-divider: var(--w-border);
+  --vp-c-border: var(--w-border);
+  --vp-c-gutter: var(--w-border);
+
+  /* ── brand / accent (green) ── */
+  --vp-c-brand-1: var(--w-green);
+  --vp-c-brand-2: rgb(118, 194, 152);
+  --vp-c-brand-3: var(--w-green);
+  --vp-c-brand-soft: var(--w-green-dim);
+  --vp-c-brand: var(--w-green);
+
+  /* ── semantic colours ── */
+  --vp-c-tip-1: var(--w-green);
+  --vp-c-tip-2: var(--w-green);
+  --vp-c-tip-3: var(--w-green);
+  --vp-c-tip-soft: var(--w-green-dim);
+
+  --vp-c-note-1: var(--w-text);
+  --vp-c-note-soft: rgba(190, 189, 186, 0.12);
+
+  --vp-c-warning-1: var(--w-amber);
+  --vp-c-warning-2: var(--w-amber);
+  --vp-c-warning-3: var(--w-amber);
+  --vp-c-warning-soft: var(--w-amber-dim);
+
+  --vp-c-danger-1: var(--w-red);
+  --vp-c-danger-2: var(--w-red);
+  --vp-c-danger-3: var(--w-red);
+  --vp-c-danger-soft: rgba(212, 124, 124, 0.15);
+
+  /* ── custom blocks (:::tip / :::warning / :::danger) ── */
+  --vp-custom-block-tip-border: var(--w-green-border);
+  --vp-custom-block-tip-text: var(--w-text);
+  --vp-custom-block-tip-bg: var(--w-green-dim);
+  --vp-custom-block-tip-code-bg: var(--w-bg3);
+
+  --vp-custom-block-info-border: var(--w-border);
+  --vp-custom-block-info-text: var(--w-text);
+  --vp-custom-block-info-bg: var(--w-bg2);
+  --vp-custom-block-info-code-bg: var(--w-bg3);
+
+  --vp-custom-block-warning-border: var(--w-amber-border);
+  --vp-custom-block-warning-text: var(--w-text);
+  --vp-custom-block-warning-bg: var(--w-amber-dim);
+  --vp-custom-block-warning-code-bg: var(--w-bg3);
+
+  --vp-custom-block-danger-border: rgba(212, 124, 124, 0.35);
+  --vp-custom-block-danger-text: var(--w-text);
+  --vp-custom-block-danger-bg: rgba(212, 124, 124, 0.12);
+  --vp-custom-block-danger-code-bg: var(--w-bg3);
+
+  /* ── code ── */
+  --vp-code-block-bg: var(--w-bg2);
+  --vp-code-block-divider-color: var(--w-border);
+  --vp-c-bg-code: var(--w-bg3);
+
+  /* ── buttons: mirror .btn-download / .btn-docs from the landing page ── */
+  --vp-button-brand-bg: var(--w-text);
+  --vp-button-brand-text: var(--w-bg);
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-hover-bg: #d4d3d0;
+  --vp-button-brand-hover-text: var(--w-bg);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-active-bg: #d4d3d0;
+  --vp-button-brand-active-text: var(--w-bg);
+
+  --vp-button-alt-bg: transparent;
+  --vp-button-alt-text: var(--w-text);
+  --vp-button-alt-border: var(--w-border);
+  --vp-button-alt-hover-bg: rgba(190, 189, 186, 0.05);
+  --vp-button-alt-hover-text: var(--w-text);
+  --vp-button-alt-hover-border: var(--w-text);
+
+  /* ── layout metrics: 52px nav matches the landing page ── */
+  --vp-nav-height: 52px;
+  --vp-layout-top-height: 0px;
+  --vp-sidebar-width: 260px;
+}
+
+/* ── page chrome ─────────────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3a39;
+  border-radius: 3px;
+}
+
+/* Translucent blurred nav, exactly as on the landing page. */
+.VPNav,
+.VPNavBar {
+  background: transparent;
+}
+.VPNavBar:not(.has-sidebar):not(.top) .content-body,
+.VPNavBar .wrapper {
+  background: rgba(19, 18, 18, 0.85);
+  backdrop-filter: blur(12px);
+}
+.VPNavBar {
+  border-bottom: 1px solid var(--w-border);
+}
+.VPNavBar.has-sidebar .content-body,
+.VPNavBar.has-sidebar .curtain {
+  background: transparent;
+}
+.VPNavBar .divider {
+  display: none;
+}
+
+/* WARDEN wordmark: 16px / 700 / 4px tracking, same as .nav-logo. */
+.VPNavBarTitle .title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--w-text);
+  border-bottom: none;
+}
+
+.VPNavBarMenuLink,
+.VPNavBarMenuGroup .VPFlyout .text {
+  font-size: 13px;
+  color: var(--w-muted);
+}
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.active {
+  color: var(--w-text);
+}
+
+/* Nav Download button — the landing page's .btn-download at nav scale. */
+.warden-download {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 16px;
+  padding: 7px 18px;
+  border-radius: 2px;
+  background: var(--w-text);
+  color: var(--w-bg);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.warden-download:hover {
+  background: #d4d3d0;
+  transform: translateY(-1px);
+}
+@media (max-width: 768px) {
+  .warden-download {
+    display: none;
+  }
+}
+
+.VPSidebar {
+  background: var(--w-bg);
+  border-right: 1px solid var(--w-border);
+}
+.VPSidebarItem.level-0 > .item > .text {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--w-green);
+  font-weight: 400;
+}
+.VPSidebarItem.level-1 .link .text,
+.VPSidebarItem.level-2 .link .text {
+  font-size: 13px;
+  color: var(--w-muted);
+}
+.VPSidebarItem .link:hover .text {
+  color: var(--w-text);
+}
+.VPSidebarItem.is-active > .item .link .text {
+  color: var(--w-green);
+}
+
+/* ── document typography ─────────────────────────────────────────────────── */
+
+/* Letter-spaced uppercase headings, per .tool-name / .section-title. */
+.vp-doc h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--w-text);
+}
+
+.vp-doc h2 {
+  margin-top: 48px;
+  padding-top: 24px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-top: 1px solid var(--w-border);
+  color: var(--w-text);
+}
+
+.vp-doc h3 {
+  margin-top: 32px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--w-text);
+}
+
+.vp-doc h4 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--w-text);
+}
+
+.vp-doc p,
+.vp-doc li {
+  color: var(--w-muted);
+  line-height: 1.8;
+}
+
+.vp-doc strong {
+  color: var(--w-text);
+  font-weight: 500;
+}
+
+.vp-doc a {
+  color: var(--w-green);
+  font-weight: 400;
+  text-decoration-color: var(--w-green-border);
+}
+.vp-doc a:hover {
+  color: var(--w-green);
+  text-decoration-color: var(--w-green);
+}
+
+/* Screenshots get the .screenshot-wrap treatment from the landing page. */
+.vp-doc img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--w-border);
+  border-radius: 4px;
+  background: var(--w-bg2);
+}
+
+.vp-doc hr {
+  border-top: 1px solid var(--w-border);
+}
+
+/* <Screenshot> — caption mirrors .screenshot-label on the landing page. */
+.warden-shot {
+  margin: 24px 0;
+}
+.warden-shot figcaption {
+  margin-top: 8px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--w-dim);
+}
+
+/* Tables carry the settings-panel look: squared corners, one border colour. */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+.vp-doc th {
+  background: var(--w-bg3);
+  color: var(--w-text);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  border: 1px solid var(--w-border);
+}
+.vp-doc td {
+  background: var(--w-bg2);
+  color: var(--w-muted);
+  font-size: 13px;
+  border: 1px solid var(--w-border);
+}
+.vp-doc tr {
+  background: transparent;
+  border: none;
+}
+.vp-doc td code,
+.vp-doc th code {
+  font-size: 12px;
+}
+
+/* Wide content must scroll inside itself, never the page body. */
+.vp-doc div[class*='language-'],
+.vp-doc .table-wrapper {
+  overflow-x: auto;
+}
+
+.vp-doc div[class*='language-'] {
+  border: 1px solid var(--w-border);
+  border-radius: 4px;
+}
+
+.vp-doc :not(pre) > code {
+  background: var(--w-bg3);
+  color: var(--w-text);
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+.vp-doc blockquote {
+  border-left: 2px solid var(--w-border);
+  color: var(--w-dim);
+}
+
+.vp-doc .custom-block {
+  border-radius: 4px;
+  border-width: 1px;
+}
+.vp-doc .custom-block-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.vp-doc .custom-block p {
+  color: inherit;
+}
+
+/* ── home hero ───────────────────────────────────────────────────────────── */
+
+.VPHero .name {
+  font-size: clamp(48px, 8vw, 84px);
+  font-weight: 700;
+  letter-spacing: 10px;
+  line-height: 1;
+  /* Flat wordmark — the landing hero has no gradient. */
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: var(--w-text);
+  color: var(--w-text);
+}
+.VPHero .text {
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--w-text);
+}
+.VPHero .tagline {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--w-muted);
+}
+.VPHero .VPButton {
+  border-radius: 2px;
+  letter-spacing: 1px;
+}
+
+.VPFeature {
+  background: var(--w-bg2);
+  border: 1px solid var(--w-border);
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.VPFeature:hover {
+  background: var(--w-bg3);
+  border-color: var(--w-border);
+}
+.VPFeature .title {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--w-text);
+}
+.VPFeature .details {
+  font-size: 13px;
+  color: var(--w-muted);
+}
+
+/* ── search, footer, misc ────────────────────────────────────────────────── */
+
+.DocSearch-Button,
+.VPNavBarSearchButton {
+  background: var(--w-bg2);
+  border: 1px solid var(--w-border);
+  border-radius: 4px;
+}
+.VPLocalSearchBox .shell {
+  background: var(--w-bg2);
+  border: 1px solid var(--w-border);
+  border-radius: 4px;
+}
+
+.VPFooter {
+  background: transparent;
+  border-top: 1px solid var(--w-border);
+}
+.VPFooter .message,
+.VPFooter .copyright {
+  font-size: 12px;
+  color: var(--w-dim);
+}
+
+.VPDocFooter .pager-link {
+  background: var(--w-bg2);
+  border: 1px solid var(--w-border);
+  border-radius: 4px;
+}
+.VPDocFooter .pager-link:hover {
+  background: var(--w-bg3);
+  border-color: var(--w-border);
+}
+.VPDocFooter .pager-link .title {
+  color: var(--w-text);
+}
+
+.VPDocOutlineItem a {
+  font-size: 12px;
+  color: var(--w-muted);
+}
+.VPDocOutlineItem a:hover,
+.VPDocOutlineItem a.active {
+  color: var(--w-green);
+}
+.VPDocAsideOutline .outline-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--w-green);
+}
