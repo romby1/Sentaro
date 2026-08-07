@@ -10,17 +10,16 @@ const translations = {
     
     // Hero
     "hero.badge": "Beta — Free Access",
-    "hero.sub": "Warden scans every ticker on Bybit, Binance, Gate.io, OKX and Hyperliquid at once — and alerts you the moment one breaks past a threshold you set. One window. No tab switching.",
+    "hero.exchanges": "All five at once, in one window",
+    "hero.more": "+ more to come",
     "hero.tagline": "Know the second the market moves.",
-    "hero.note": "Free during beta · Email sign-in, no card · Never asks for exchange keys",
-    "hero.downloads": "{n} downloads",
     "hero.download": "Download for Windows",
     "hero.explore": "Explore Tools →",
     
     // Tools section
     "tools.label": "Tools",
     "tools.title": "Everything in one workspace",
-    "tools.sub": "Each tool is purpose-built and fully configurable. No bloat, no noise — just the data you need. Change, resize, build your own monitoring workspace",
+    "tools.sub": "Each tool opens in its own window and is configured on its own terms. No bloat, no noise — just the data you need, arranged the way you want it.",
     "knives.headline": "Never miss a move again.",
     
     // Knives
@@ -33,7 +32,6 @@ const translations = {
     "knives.f5.desc": "One sound for an ordinary move, another for a big one. Leave it running in the background and look when it calls you.",
     "knives.f6.title": "Tuned the way you trade",
     "knives.f6.desc": "Every exchange gets its own trigger percentage and volume filter. Run Binance tight and Gate.io loose if that's how you work.",
-    "knives.screenshots": "Settings panels",
     "knives.docs": "Full documentation →",
     "alerts.headline": "Spot the gap before it closes.",
 
@@ -47,7 +45,6 @@ const translations = {
     "alerts.f3.desc": "Only see gaps above a percentage you choose, from 1% up. Below that, silence.",
     "alerts.f4.title": "Ignore what you can't trade",
     "alerts.f4.desc": "A gap only counts when at least two exchanges have real volume behind it, so you're not chasing a number on an empty book.",
-    "alerts.screenshots": "Settings panel",
     "alerts.docs": "Full documentation →",
     "analyzer.headline": "Every timeframe at once.",
 
@@ -74,8 +71,6 @@ const translations = {
     "monitor.f5.desc": "Drag exchanges into priority order, and choose whether numbers are averaged across them, maxed, or taken from your first choice.",
     "monitor.f7.title": "Know at a glance, not at a squint",
     "monitor.f7.desc": "Values change colour as they climb past levels you set, with an optional sound when one crosses. Outline, fill and colour are all yours.",
-    "monitor.screenshots": "Settings panels",
-    "monitor.screenshots2": "Metric colors",
     "monitor.docs": "Full documentation →",
     "terminal.label": "Experimental",
     "terminal.headline": "Trade from the order book.",
@@ -139,17 +134,16 @@ const translations = {
     
     // Hero
     "hero.badge": "Бета — Безкоштовний доступ",
-    "hero.sub": "Warden сканує кожен тікер на Bybit, Binance, Gate.io, OKX та Hyperliquid одночасно — і сповіщає вас, щойно котрийсь перетне встановлений вами поріг. Одне вікно. Без перемикання вкладок.",
+    "hero.exchanges": "Усі п’ять одночасно, в одному вікні",
+    "hero.more": "+ далі більше",
     "hero.tagline": "Дізнавайтесь про рух ринку в ту саму секунду.",
-    "hero.note": "Безкоштовно під час бети · Вхід за email, без картки · Ніколи не запитує ключі бірж",
-    "hero.downloads": "{n} завантажень",
     "hero.download": "Завантажити для Windows",
     "hero.explore": "Переглянути інструменти →",
     
     // Tools section
     "tools.label": "Інструменти",
     "tools.title": "Все в одному робочому просторі",
-    "tools.sub": "Кожен інструмент створений для конкретної задачі та має повну кастомізацію. Без зайвого — тільки дані, які вам потрібні. Змінюйте, налаштовуйте, створюйте власний робочий простір",
+    "tools.sub": "Кожен інструмент відкривається у власному вікні й налаштовується окремо. Без зайвого — лише потрібні дані, розставлені так, як зручно вам.",
     "knives.headline": "Більше не проґавите жоден рух.",
     
     // Knives
@@ -162,7 +156,6 @@ const translations = {
     "knives.f5.desc": "Один звук для звичайного руху, інший — для великого. Хай працює у фоні, а ви подивитесь, коли він покличе.",
     "knives.f6.title": "Налаштовано під вашу торгівлю",
     "knives.f6.desc": "Кожна біржа має власний відсоток спрацювання та фільтр обсягу. Тримайте Binance вузько, а Gate.io вільно — якщо саме так ви працюєте.",
-    "knives.screenshots": "Панелі налаштувань",
     "knives.docs": "Повна документація →",
     "alerts.headline": "Побачте розрив, доки він не зник.",
     
@@ -176,7 +169,6 @@ const translations = {
     "alerts.f3.desc": "Бачте лише розриви вище обраного вами відсотка, від 1%. Нижче — тиша.",
     "alerts.f4.title": "Ігноруйте те, чим не поторгуєш",
     "alerts.f4.desc": "Розрив зараховується лише тоді, коли принаймні дві біржі мають за ним реальний обсяг — щоб ви не гналися за цифрою на порожньому стакані.",
-    "alerts.screenshots": "Панель налаштувань",
     "alerts.docs": "Повна документація →",
     "analyzer.headline": "Усі таймфрейми одночасно.",
     
@@ -203,8 +195,6 @@ const translations = {
     "monitor.f5.desc": "Перетягніть біржі у порядок пріоритету й оберіть, чи усереднювати числа, брати максимум, чи використовувати першу з них.",
     "monitor.f7.title": "Зрозуміло з першого погляду",
     "monitor.f7.desc": "Значення змінюють колір, коли перетинають задані вами рівні, з опціональним звуком. Контур, заливка й колір — усе ваше.",
-    "monitor.screenshots": "Панелі налаштувань",
-    "monitor.screenshots2": "Кольори метрик",
     "monitor.docs": "Повна документація →",
     "terminal.label": "Експериментально",
     "terminal.headline": "Торгуйте прямо зі стакана.",
@@ -291,14 +281,6 @@ function applyTranslations(lang) {
   // Save to localStorage
   localStorage.setItem('warden-lang', lang);
   currentLang = lang;
-
-  // `translations` / `currentLang` are declared with const/let, so they are not
-  // automatically window properties. Expose them for the hero's download-count
-  // label, which is rendered in JS and has to be re-rendered on a language
-  // switch (its number comes from the GitHub API, not from a data-i18n key).
-  window.translations = translations;
-  window.currentLang = currentLang;
-  if (typeof window.onLanguageApplied === 'function') window.onLanguageApplied(lang);
 }
 
 // Initialize language switcher

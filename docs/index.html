@@ -80,13 +80,18 @@
       opacity: 0.55;
       filter: saturate(0.9);
     }
-    /* Darkens the backdrop toward the edges so hero text stays readable over it.
-       The first stop is the area behind the headline — raise it if text ever
-       fights the image after swapping in a brighter backdrop or a video. */
+    /* Two scrims rather than one: a soft radial that keeps the screenshot
+       visible at the edges, plus a tighter vertical band behind the text block
+       itself. Darkening the whole image to fix legibility would have undone the
+       backdrop; this only darkens where words actually sit. */
     .hero-media::after {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 85% 65% at 50% 45%,
-        rgba(19,18,18,0.28) 0%, rgba(19,18,18,0.68) 55%, var(--bg) 100%);
+      background:
+        linear-gradient(to bottom,
+          transparent 0%, rgba(19,18,18,0.55) 22%,
+          rgba(19,18,18,0.72) 50%, rgba(19,18,18,0.55) 78%, transparent 100%),
+        radial-gradient(ellipse 85% 65% at 50% 45%,
+          rgba(19,18,18,0.30) 0%, rgba(19,18,18,0.70) 55%, var(--bg) 100%);
     }
     .hero > *:not(.hero-media) { position: relative; z-index: 1; }
     .hero-badge {
@@ -104,30 +109,47 @@
       0%,100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.5; transform: scale(0.8); }
     }
+    /* Brighter than body text and shadowed — the backdrop sits directly behind
+       these, so --text alone was reading as low contrast. */
     h1.hero-title {
       font-size: clamp(64px, 10vw, 120px); font-weight: 700;
-      letter-spacing: 12px; color: var(--text); line-height: 1;
+      letter-spacing: 12px; color: #edecea; line-height: 1;
       margin-bottom: 24px; animation: fadeUp 0.6s 0.1s ease both;
+      text-shadow: 0 2px 40px rgba(19,18,18,0.95), 0 1px 4px rgba(19,18,18,0.85);
     }
     .hero-tagline {
-      font-size: clamp(20px, 3vw, 30px); color: var(--text); font-weight: 400;
+      font-size: clamp(20px, 3vw, 30px); color: #e4e2df; font-weight: 400;
       letter-spacing: 0.5px; line-height: 1.3; max-width: 640px;
-      margin-bottom: 20px; animation: fadeUp 0.6s 0.15s ease both;
+      margin-bottom: 34px; animation: fadeUp 0.6s 0.15s ease both;
+      text-shadow: 0 2px 24px rgba(19,18,18,0.95), 0 1px 3px rgba(19,18,18,0.8);
     }
-    .hero-sub {
-      font-size: 16px; color: var(--muted); max-width: 560px;
-      margin-bottom: 40px; line-height: 1.8; animation: fadeUp 0.6s 0.2s ease both;
+
+    /* ── Exchange logos ── */
+    .hero-exchanges { margin-bottom: 40px; animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-logos {
+      display: flex; align-items: center; justify-content: center;
+      gap: 24px; flex-wrap: wrap; margin-bottom: 14px;
     }
+    .hero-logos img {
+      width: 22px; height: 22px; object-fit: contain;
+      opacity: 0.85; transition: opacity 0.2s, transform 0.2s;
+      filter: drop-shadow(0 2px 8px rgba(19,18,18,0.9));
+    }
+    .hero-logos-more {
+      font-family: "Ubuntu Mono", monospace; font-size: 11px; color: var(--dim);
+      letter-spacing: 0.5px; padding-left: 2px; white-space: nowrap;
+      text-shadow: 0 1px 12px rgba(19,18,18,0.9);
+    }
+    /* OKX ships as a black mark — the app inverts it on dark too. */
+    .hero-logos img.okx { filter: invert(1) drop-shadow(0 2px 8px rgba(19,18,18,0.9)); }
+    .hero-logos img:hover { opacity: 1; transform: translateY(-2px); }
+    .hero-exchanges-label {
+      font-size: 12px; color: var(--muted); letter-spacing: 1px;
+      text-shadow: 0 1px 12px rgba(19,18,18,0.9);
+    }
+
     .hero-actions { display: flex; gap: 12px; align-items: center; animation: fadeUp 0.6s 0.3s ease both; }
-    .hero-note {
-      font-size: 12px; color: var(--dim); margin-top: 22px;
-      animation: fadeUp 0.6s 0.4s ease both;
-    }
-    .hero-proof {
-      font-family: "Ubuntu Mono", monospace; font-size: 12px; color: var(--muted);
-      margin-top: 10px; letter-spacing: 0.5px;
-    }
-    .hero-proof[hidden] { display: none; }
+
     .btn-docs {
       display: inline-flex; align-items: center; gap: 8px;
       background: transparent; color: var(--text); padding: 14px 28px;
@@ -147,6 +169,82 @@
 
     .tool-entry { margin-bottom: 120px; }
     .tool-entry:last-child { margin-bottom: 0; }
+
+    /* NOTE ON WIDTH: nothing here uses 100vw. 100vw counts the scrollbar, so a
+       full-bleed block ends up ~15px wider than the visible page and pokes past
+       the right edge. Instead, blocks widen with a fixed negative margin that is
+       only switched on above a viewport where the gutter is provably bigger than
+       it — see the min-width query below. Overflow then cannot happen. */
+
+    /* Overview shot — the lead-in, slightly wider than the text column. */
+    .tools-overview { margin-bottom: 110px; }
+    .tools-overview img {
+      width: 100%; height: auto; display: block;
+      border: 1px solid var(--border); border-radius: 4px; background: var(--bg2);
+    }
+
+    /* ── Tools: alternating asymmetric split ──
+       A narrow text column beside a large screenshot; every second tool mirrors,
+       so the section reads horizontally rather than as a stack of identical
+       full-width blocks. */
+    .tool-sec {
+      display: grid; grid-template-columns: minmax(0, 36fr) minmax(0, 64fr);
+      align-items: center; column-gap: 48px;
+      margin-bottom: 130px;
+    }
+    .tool-sec:last-of-type { margin-bottom: 0; }
+    .tool-sec.alt .tool-sec-text { order: 2; }
+    .tool-sec.alt .tool-sec-media { order: 1; }
+
+    .tool-sec-text .tool-title-row { margin-bottom: 14px; }
+    .tool-sec-text .tool-headline { margin-bottom: 12px; font-size: clamp(18px, 1.7vw, 22px); }
+    .tool-sec-text .tool-tagline { margin-bottom: 28px; font-size: 13.5px; }
+
+    /* Numbered points — a spec list, not a card grid. */
+    .tool-points { list-style: none; margin: 0 0 30px; padding: 0; }
+    .tool-point {
+      display: flex; gap: 16px; padding: 15px 0;
+      border-top: 1px solid var(--border);
+    }
+    .tool-point:last-child { border-bottom: 1px solid var(--border); }
+    .tool-point-n {
+      font-family: "Ubuntu Mono", monospace; font-size: 11px; color: var(--dim);
+      padding-top: 2px; flex-shrink: 0; letter-spacing: 1px;
+    }
+    .tool-point-body { min-width: 0; }
+    .tool-point-t { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .tool-point-d { font-size: 12.5px; color: var(--muted); line-height: 1.65; }
+
+    .tool-sec-media { min-width: 0; }
+    .tool-media-main {
+      border: 1px solid var(--border); border-radius: 4px;
+      overflow: hidden; background: var(--bg2);
+    }
+    .tool-media-main img { width: 100%; height: auto; display: block; }
+    .tool-media-strip {
+      display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
+      gap: 10px; margin-top: 10px;
+    }
+    .tool-media-strip img {
+      width: 100%; height: auto; display: block;
+      border: 1px solid var(--border); border-radius: 4px; background: var(--bg2);
+    }
+
+    /* Screenshots reach outward past the text column, but only once the page
+       gutter is provably wider than the pull. The container is 1100px, so at
+       1360px each gutter is 130px — a 100px pull still leaves 30px of slack,
+       and the same holds for the 1600px step. Text stays put either way. */
+    @media (min-width: 1360px) {
+      .tools-overview { margin-left: -100px; margin-right: -100px; }
+      .tool-sec-media { margin-right: -100px; }
+      .tool-sec.alt .tool-sec-media { margin-right: 0; margin-left: -100px; }
+    }
+    @media (min-width: 1600px) {
+      .tools-overview { margin-left: -170px; margin-right: -170px; }
+      .tool-sec-media { margin-right: -170px; }
+      .tool-sec.alt .tool-sec-media { margin-right: 0; margin-left: -170px; }
+    }
+
 
     .tool-title-row { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
     .tool-index {
@@ -306,7 +404,19 @@
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 900px) { .tool-body.side { grid-template-columns: 1fr; } .tool-screenshots-pair { grid-template-columns: 1fr; } .tool-screenshots-trio { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) {
+      /* Split collapses: text first, screenshot below, both in the page column.
+         The outward pull is already absent here — it only exists above 1360px. */
+      .tool-sec { grid-template-columns: 1fr; row-gap: 30px; margin-bottom: 90px; }
+      .tool-sec-text, .tool-sec.alt .tool-sec-text { order: 1; }
+      .tool-sec-media, .tool-sec.alt .tool-sec-media { order: 2; }
+      .tool-body.side { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .tool-media-strip { grid-auto-flow: row; grid-auto-columns: auto; }
+      .tool-point { gap: 12px; }
+      .tool-sec-text .tool-docs-link { width: 100%; justify-content: center; }
+    }
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
@@ -362,7 +472,20 @@
     <div class="hero-badge" data-i18n="hero.badge">Beta — Free Access</div>
     <h1 class="hero-title">WARDEN</h1>
     <p class="hero-tagline" data-i18n="hero.tagline">Know the second the market moves.</p>
-    <p class="hero-sub" data-i18n="hero.sub">Warden scans every ticker on Bybit, Binance, Gate.io, OKX and Hyperliquid at once — and alerts you the moment one breaks past a threshold you set. One window. No tab switching.</p>
+
+    <!-- The exchanges carry the message the old paragraph used to; the label
+         keeps the "at once, one window" part that logos alone can't say. -->
+    <div class="hero-exchanges">
+      <div class="hero-logos">
+        <img src="logos/bybit.png" alt="Bybit" title="Bybit" loading="lazy" />
+        <img src="logos/binance.png" alt="Binance" title="Binance" loading="lazy" />
+        <img src="logos/gateio.png" alt="Gate.io" title="Gate.io" loading="lazy" />
+        <img src="logos/okx.png" alt="OKX" title="OKX" class="okx" loading="lazy" />
+        <img src="logos/hyperliquid.png" alt="Hyperliquid" title="Hyperliquid" loading="lazy" />
+        <span class="hero-logos-more" data-i18n="hero.more">+ more to come</span>
+      </div>
+      <p class="hero-exchanges-label" data-i18n="hero.exchanges">All five at once, in one window</p>
+    </div>
     <div class="hero-actions">
       <button onclick="downloadLatest(this)" class="btn-download" data-i18n="hero.download">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -374,8 +497,6 @@
       </button>
       <a href="#tools" class="btn-docs" data-i18n="hero.explore">Explore Tools →</a>
     </div>
-    <p class="hero-note" data-i18n="hero.note">Free during beta · Email sign-in, no card · Never asks for exchange keys</p>
-    <p class="hero-proof" id="hero-proof" hidden></p>
   </section>
 
   <hr class="divider" />
@@ -385,328 +506,237 @@
     <div class="tools-header fade-in">
       <p class="section-label" data-i18n="tools.label">Tools</p>
       <h2 class="section-title" data-i18n="tools.title">Everything in one workspace</h2>
-      <p class="section-sub" data-i18n="tools.sub">Each tool is purpose-built and fully configurable. No bloat, no noise — just the data you need. Change, resize, build your own monitoring workspace</p>
+      <p class="section-sub" data-i18n="tools.sub">Each tool opens in its own window and is configured on its own terms. No bloat, no noise — just the data you need, arranged the way you want it.</p>
     </div>
 
-    <div class="tool-screenshot-main fade-in" style="margin-bottom:120px;">
-      <img src="screenshots/workspace.png" alt="Full Warden workspace"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-      <div class="screenshot-placeholder" style="display:none; margin:0; border:none; border-radius:0;">
-        <div class="ph-icon">📷</div>
-        <span>screenshots/workspace.png</span>
-      </div>
+    <!-- Overview shot, then one section per tool: whole workspace first, detail after. -->
+    <div class="tools-overview fade-in">
+      <img src="screenshots/workspace.png" alt="A full Warden workspace" loading="lazy" />
     </div>
 
-    <!-- KNIVES -->
-    <div class="tool-entry fade-in">
+      <!-- KNIVES -->
+      <section class="tool-sec fade-in" id="tool-knives">
 
-      <div class="tool-title-row">
-        <span class="tool-index">01</span>
-        <span class="tool-name">KNIVES</span>
-      </div>
-      <p class="tool-headline" data-i18n="knives.headline">Never miss a move again.</p>
-      <p class="tool-tagline" data-i18n="knives.tagline">
-        Warden watches every ticker on five exchanges and surfaces the ones that just moved — on the 5-minute candle, as it happens.
-      </p>
-
-      <div class="tool-screenshot-main">
-        <img src="screenshots/knives-main.png" alt="Knives scanner"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="screenshot-placeholder" style="display:none; margin:0; border:none; border-radius:0;">
-          <div class="ph-icon">📷</div>
-          <span>Replace src with your screenshot: screenshots/knives-main.png</span>
-        </div>
-      </div>
-
-      <div class="tool-body">
-
-        <div class="tool-features">
-          <div class="feature-row">
-            <span class="feature-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="knives.f1.title">Catches what you'd miss by hand</div>
-              <div class="feature-row-desc" data-i18n="knives.f1.desc">500+ tickers across Bybit, Binance, Gate.io, OKX and Hyperliquid, all watched at once. One window instead of five browser tabs.</div>
-            </div>
+        <div class="tool-sec-text">
+          <div class="tool-title-row">
+            <span class="tool-index">01</span>
+            <span class="tool-name">KNIVES</span>
           </div>
-          <div class="feature-row">
-            <span class="feature-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="knives.f3.title">Only the moves that matter</div>
-              <div class="feature-row-desc" data-i18n="knives.f3.desc">Volume filters cut low-liquidity noise, so a 5% jump on a dead ticker never steals your attention.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="knives.f5.title">Hear it without watching it</div>
-              <div class="feature-row-desc" data-i18n="knives.f5.desc">One sound for an ordinary move, another for a big one. Leave it running in the background and look when it calls you.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="knives.f6.title">Tuned the way you trade</div>
-              <div class="feature-row-desc" data-i18n="knives.f6.desc">Every exchange gets its own trigger percentage and volume filter. Run Binance tight and Gate.io loose if that's how you work.</div>
-            </div>
-          </div>
-        </div>
+          <p class="tool-headline" data-i18n="knives.headline">Never miss a move again.</p>
+          <p class="tool-tagline" data-i18n="knives.tagline">Warden watches every ticker on five exchanges and surfaces the ones that just moved — on the 5-minute candle, as it happens.</p>
 
-        <div class="tool-screenshots-side">
-          <p class="screenshot-label" data-i18n="knives.screenshots">Settings panels</p>
-          <div class="tool-screenshots-pair">
-            <div>
-              <img src="screenshots/knives-settings-1.png" alt="Knives settings 1"
-                style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="screenshot-wrap-ph" style="display:none;">
-                <div class="ph-icon">📷</div>
-                <span>knives-settings-1.png</span>
+          <ol class="tool-points">
+            <li class="tool-point">
+              <span class="tool-point-n">01</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="knives.f1.title">Catches what you'd miss by hand</div>
+                <div class="tool-point-d" data-i18n="knives.f1.desc">500+ tickers across Bybit, Binance, Gate.io, OKX and Hyperliquid, all watched at once. One window instead of five browser tabs.</div>
               </div>
-            </div>
-            <div>
-              <img src="screenshots/knives-settings-2.png" alt="Knives settings 2"
-                style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="screenshot-wrap-ph" style="display:none;">
-                <div class="ph-icon">📷</div>
-                <span>knives-settings-2.png</span>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">02</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="knives.f3.title">Only the moves that matter</div>
+                <div class="tool-point-d" data-i18n="knives.f3.desc">Volume filters cut low-liquidity noise, so a 5% jump on a dead ticker never steals your attention.</div>
               </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <a href="/manual/en/tools/knives.html" data-manual class="tool-docs-link" data-i18n="knives.docs">Full documentation →</a>
-    </div>
-    <!-- end knives -->
-
-    <!-- ALERTS -->
-    <div class="tool-entry fade-in">
-
-      <div class="tool-title-row">
-        <span class="tool-index" style="color:var(--amber);background:var(--amber-dim);border-color:var(--amber-border);">02</span>
-        <span class="tool-name">ALERTS</span>
-      </div>
-      <p class="tool-headline" data-i18n="alerts.headline">Spot the gap before it closes.</p>
-      <p class="tool-tagline" data-i18n="alerts.tagline">
-        The same coin rarely costs the same everywhere. Alerts catches the split the moment it opens — and tells you when something new starts trading.
-      </p>
-
-      <div class="tool-screenshot-main">
-        <img src="screenshots/alerts-main.png" alt="Alerts window"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="screenshot-placeholder" style="display:none; margin:0; border:none; border-radius:0;">
-          <div class="ph-icon">📷</div>
-          <span>screenshots/alerts-main.png</span>
-        </div>
-      </div>
-
-      <div class="tool-body side">
-
-        <div class="tool-features">
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:var(--amber);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="alerts.f1.title">See the gap while it's open</div>
-              <div class="feature-row-desc" data-i18n="alerts.f1.desc">Prices for the same coin drift apart across exchanges constantly. Alerts shows you the spread live, updating as it moves — not as it was when the alert fired.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:var(--amber);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="alerts.f2.title">Be there when a token lists</div>
-              <div class="feature-row-desc" data-i18n="alerts.f2.desc">New listings are flagged the moment they start trading, with their own sound. That first hour only happens once.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:var(--amber);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="alerts.f3.title">Set your own floor</div>
-              <div class="feature-row-desc" data-i18n="alerts.f3.desc">Only see gaps above a percentage you choose, from 1% up. Below that, silence.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:var(--amber);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="alerts.f4.title">Ignore what you can't trade</div>
-              <div class="feature-row-desc" data-i18n="alerts.f4.desc">A gap only counts when at least two exchanges have real volume behind it, so you're not chasing a number on an empty book.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tool-screenshots-side">
-          <p class="screenshot-label" data-i18n="alerts.screenshots">Settings panel</p>
-          <div>
-            <img src="screenshots/alerts-settings.png" alt="Alerts settings"
-              style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="screenshot-wrap-ph" style="display:none;">
-              <div class="ph-icon">📷</div>
-              <span>alerts-settings.png</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <a href="/manual/en/tools/alerts.html" data-manual class="tool-docs-link" data-i18n="alerts.docs">Full documentation →</a>
-    </div>
-    <!-- end alerts -->
-
-    <!-- ANALYZER -->
-    <div class="tool-entry fade-in">
-
-      <div class="tool-title-row">
-        <span class="tool-index" style="color:rgb(100,160,240);background:rgba(100,160,240,0.12);border-color:rgba(100,160,240,0.3);">03</span>
-        <span class="tool-name">ANALYZER</span>
-      </div>
-      <p class="tool-headline" data-i18n="analyzer.headline">Every timeframe at once.</p>
-      <p class="tool-tagline" data-i18n="analyzer.tagline">
-        One ticker, up to eight charts, on whichever exchange you actually trade. No tab switching, no context lost.
-      </p>
-
-      <div class="tool-screenshot-main">
-        <img src="screenshots/analyzer-main.png" alt="Analyzer window"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="screenshot-placeholder" style="display:none; margin:0; border:none; border-radius:0;">
-          <div class="ph-icon">📷</div>
-          <span>screenshots/analyzer-main.png</span>
-        </div>
-      </div>
-
-      <div class="tool-body">
-
-        <div class="tool-features">
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:rgb(100,160,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="3" x2="12" y2="21"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="analyzer.f1.title">Build the layout you think in</div>
-              <div class="feature-row-desc" data-i18n="analyzer.f1.desc">Up to eight charts side by side, each on any timeframe from 1m to 1w. Opens on 5m, 15m, 1h and 4h — and remembers how you left it.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:rgb(100,160,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="analyzer.f2.title">Five exchanges, spot and futures</div>
-              <div class="feature-row-desc" data-i18n="analyzer.f2.desc">Switch venue or market type instantly. Every chart and every number follows, with no reload.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:rgb(100,160,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 21 23 3 23 3 1 17 1"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="13" x2="17" y2="13"/><line x1="7" y1="17" x2="13" y2="17"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="analyzer.f3.title">Draw straight on the chart</div>
-              <div class="feature-row-desc" data-i18n="analyzer.f3.desc">Rays, trend lines, boxes and freehand — each on a key you choose, snapping to candle highs and lows. Drawings are saved per ticker and per exchange.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:rgb(100,160,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="analyzer.f4.title">Sort the entire market</div>
-              <div class="feature-row-desc" data-i18n="analyzer.f4.desc">Rank every ticker by 24h change, volume, open interest or funding rate, then load any of them into every open chart with one click.</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <a href="/manual/en/tools/analyzer.html" data-manual class="tool-docs-link" data-i18n="analyzer.docs">Full documentation →</a>
-    </div>
-    <!-- end analyzer -->
-
-    <!-- MONITOR -->
-    <div class="tool-entry fade-in">
-
-      <div class="tool-title-row">
-        <span class="tool-index" style="color:rgb(180,120,240);background:rgba(180,120,240,0.12);border-color:rgba(180,120,240,0.3);">04</span>
-        <span class="tool-name">MONITOR</span>
-      </div>
-      <p class="tool-headline" data-i18n="monitor.headline">The whole market, ranked by what's moving.</p>
-      <p class="tool-tagline" data-i18n="monitor.tagline">
-        A live leaderboard of volatility. Rank every ticker by NATR, volume or percent change, aggregated across all five exchanges.
-      </p>
-
-      <div class="tool-screenshot-main">
-        <img src="screenshots/monitor-main.png" alt="Monitor window"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="screenshot-placeholder" style="display:none; margin:0; border:none; border-radius:0;">
-          <div class="ph-icon">📷</div>
-          <span>screenshots/monitor-main.png</span>
-        </div>
-      </div>
-
-      <div class="tool-body">
-
-        <div class="tool-features">
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="monitor.f1.title">See what's moving right now</div>
-              <div class="feature-row-desc" data-i18n="monitor.f1.desc">Every ticker ranked live by volatility, volume or price change. The board reorders itself as the market turns.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="monitor.f3.title">Keep the dead weight off</div>
-              <div class="feature-row-desc" data-i18n="monitor.f3.desc">Minimum volume filters drop illiquid tickers, so the top of the board is always something you could actually trade.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><line x1="12" y1="5" x2="19" y2="12"/><line x1="12" y1="19" x2="19" y2="12"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="monitor.f5.title">Decide which exchange to trust</div>
-              <div class="feature-row-desc" data-i18n="monitor.f5.desc">Drag exchanges into priority order, and choose whether numbers are averaged across them, maxed, or taken from your first choice.</div>
-            </div>
-          </div>
-          <div class="feature-row">
-            <span class="feature-row-icon" style="color:rgb(180,120,240);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="0.5" fill="currentColor"/><circle cx="17.5" cy="10.5" r="0.5" fill="currentColor"/><circle cx="8.5" cy="7.5" r="0.5" fill="currentColor"/><circle cx="6.5" cy="12.5" r="0.5" fill="currentColor"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke-width="1.5"/></svg></span>
-            <div class="feature-row-content">
-              <div class="feature-row-title" data-i18n="monitor.f7.title">Know at a glance, not at a squint</div>
-              <div class="feature-row-desc" data-i18n="monitor.f7.desc">Values change colour as they climb past levels you set, with an optional sound when one crosses. Outline, fill and colour are all yours.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tool-screenshots-side">
-          <p class="screenshot-label" data-i18n="monitor.screenshots">Settings panels</p>
-          <div class="tool-screenshots-pair">
-            <div>
-              <img src="screenshots/monitor-settings-1.png" alt="Monitor settings 1"
-                style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="screenshot-wrap-ph" style="display:none;">
-                <div class="ph-icon">📷</div>
-                <span>monitor-settings-1.png</span>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">03</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="knives.f5.title">Hear it without watching it</div>
+                <div class="tool-point-d" data-i18n="knives.f5.desc">One sound for an ordinary move, another for a big one. Leave it running in the background and look when it calls you.</div>
               </div>
-            </div>
-            <div>
-              <img src="screenshots/monitor-settings-2.png" alt="Monitor settings 2"
-                style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="screenshot-wrap-ph" style="display:none;">
-                <div class="ph-icon">📷</div>
-                <span>monitor-settings-2.png</span>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">04</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="knives.f6.title">Tuned the way you trade</div>
+                <div class="tool-point-d" data-i18n="knives.f6.desc">Every exchange gets its own trigger percentage and volume filter. Run Binance tight and Gate.io loose if that's how you work.</div>
               </div>
-            </div>
+            </li>
+          </ol>
+
+          <a href="/manual/en/tools/knives.html" data-manual class="tool-docs-link" data-i18n="knives.docs">Full documentation →</a>
+        </div>
+
+        <div class="tool-sec-media">
+          <div class="tool-media-main">
+            <img src="screenshots/knives-main.png" alt="KNIVES window" loading="lazy" />
           </div>
-          <p class="screenshot-label" style="margin-top:16px;" data-i18n="monitor.screenshots2">Metric colors</p>
-          <div>
-            <img src="screenshots/monitor-settings-3.png" alt="Monitor metric colors"
-              style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="screenshot-wrap-ph" style="display:none;">
-              <div class="ph-icon">📷</div>
-              <span>monitor-settings-3.png</span>
-            </div>
+          <div class="tool-media-strip">
+            <img src="screenshots/knives-settings-1.png" alt="" loading="lazy" />
+            <img src="screenshots/knives-settings-2.png" alt="" loading="lazy" />
           </div>
         </div>
 
-      </div>
+      </section>
 
-      <a href="/manual/en/tools/monitor.html" data-manual class="tool-docs-link" data-i18n="monitor.docs">Full documentation →</a>
-    </div>
-    <!-- end monitor -->
+      <!-- ALERTS -->
+      <section class="tool-sec alt fade-in" id="tool-alerts">
+
+        <div class="tool-sec-text">
+          <div class="tool-title-row">
+            <span class="tool-index" style="color:var(--amber);background:var(--amber-dim);border-color:var(--amber-border);">02</span>
+            <span class="tool-name">ALERTS</span>
+          </div>
+          <p class="tool-headline" data-i18n="alerts.headline">Spot the gap before it closes.</p>
+          <p class="tool-tagline" data-i18n="alerts.tagline">The same coin rarely costs the same everywhere. Alerts catches the split the moment it opens — and tells you when something new starts trading.</p>
+
+          <ol class="tool-points">
+            <li class="tool-point">
+              <span class="tool-point-n">01</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="alerts.f1.title">See the gap while it's open</div>
+                <div class="tool-point-d" data-i18n="alerts.f1.desc">Prices for the same coin drift apart across exchanges constantly. Alerts shows you the spread live, updating as it moves — not as it was when the alert fired.</div>
+              </div>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">02</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="alerts.f2.title">Be there when a token lists</div>
+                <div class="tool-point-d" data-i18n="alerts.f2.desc">New listings are flagged the moment they start trading, with their own sound. That first hour only happens once.</div>
+              </div>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">03</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="alerts.f3.title">Set your own floor</div>
+                <div class="tool-point-d" data-i18n="alerts.f3.desc">Only see gaps above a percentage you choose, from 1% up. Below that, silence.</div>
+              </div>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">04</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="alerts.f4.title">Ignore what you can't trade</div>
+                <div class="tool-point-d" data-i18n="alerts.f4.desc">A gap only counts when at least two exchanges have real volume behind it, so you're not chasing a number on an empty book.</div>
+              </div>
+            </li>
+          </ol>
+
+          <a href="/manual/en/tools/alerts.html" data-manual class="tool-docs-link" data-i18n="alerts.docs">Full documentation →</a>
+        </div>
+
+        <div class="tool-sec-media">
+          <div class="tool-media-main">
+            <img src="screenshots/alerts-main.png" alt="ALERTS window" loading="lazy" />
+          </div>
+          <div class="tool-media-strip">
+            <img src="screenshots/alerts-settings.png" alt="" loading="lazy" />
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ANALYZER -->
+      <section class="tool-sec fade-in" id="tool-analyzer">
+
+        <div class="tool-sec-text">
+          <div class="tool-title-row">
+            <span class="tool-index" style="color:rgb(100,160,240);background:rgba(100,160,240,0.12);border-color:rgba(100,160,240,0.3);">03</span>
+            <span class="tool-name">ANALYZER</span>
+          </div>
+          <p class="tool-headline" data-i18n="analyzer.headline">Every timeframe at once.</p>
+          <p class="tool-tagline" data-i18n="analyzer.tagline">One ticker, up to eight charts, on whichever exchange you actually trade. No tab switching, no context lost.</p>
+
+          <ol class="tool-points">
+            <li class="tool-point">
+              <span class="tool-point-n">01</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="analyzer.f1.title">Build the layout you think in</div>
+                <div class="tool-point-d" data-i18n="analyzer.f1.desc">Up to eight charts side by side, each on any timeframe from 1m to 1w. Opens on 5m, 15m, 1h and 4h — and remembers how you left it.</div>
+              </div>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">02</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="analyzer.f2.title">Five exchanges, spot and futures</div>
+                <div class="tool-point-d" data-i18n="analyzer.f2.desc">Switch venue or market type instantly. Every chart and every number follows, with no reload.</div>
+              </div>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">03</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="analyzer.f3.title">Draw straight on the chart</div>
+                <div class="tool-point-d" data-i18n="analyzer.f3.desc">Rays, trend lines, boxes and freehand — each on a key you choose, snapping to candle highs and lows. Drawings are saved per ticker and per exchange.</div>
+              </div>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">04</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="analyzer.f4.title">Sort the entire market</div>
+                <div class="tool-point-d" data-i18n="analyzer.f4.desc">Rank every ticker by 24h change, volume, open interest or funding rate, then load any of them into every open chart with one click.</div>
+              </div>
+            </li>
+          </ol>
+
+          <a href="/manual/en/tools/analyzer.html" data-manual class="tool-docs-link" data-i18n="analyzer.docs">Full documentation →</a>
+        </div>
+
+        <div class="tool-sec-media">
+          <div class="tool-media-main">
+            <img src="screenshots/analyzer-main.png" alt="ANALYZER window" loading="lazy" />
+          </div>
+        </div>
+
+      </section>
+
+      <!-- MONITOR -->
+      <section class="tool-sec alt fade-in" id="tool-monitor">
+
+        <div class="tool-sec-text">
+          <div class="tool-title-row">
+            <span class="tool-index" style="color:rgb(180,120,240);background:rgba(180,120,240,0.12);border-color:rgba(180,120,240,0.3);">04</span>
+            <span class="tool-name">MONITOR</span>
+          </div>
+          <p class="tool-headline" data-i18n="monitor.headline">The whole market, ranked by what's moving.</p>
+          <p class="tool-tagline" data-i18n="monitor.tagline">A live leaderboard of volatility. Rank every ticker by NATR, volume or percent change, aggregated across all five exchanges.</p>
+
+          <ol class="tool-points">
+            <li class="tool-point">
+              <span class="tool-point-n">01</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="monitor.f1.title">See what's moving right now</div>
+                <div class="tool-point-d" data-i18n="monitor.f1.desc">Every ticker ranked live by volatility, volume or price change. The board reorders itself as the market turns.</div>
+              </div>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">02</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="monitor.f3.title">Keep the dead weight off</div>
+                <div class="tool-point-d" data-i18n="monitor.f3.desc">Minimum volume filters drop illiquid tickers, so the top of the board is always something you could actually trade.</div>
+              </div>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">03</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="monitor.f5.title">Decide which exchange to trust</div>
+                <div class="tool-point-d" data-i18n="monitor.f5.desc">Drag exchanges into priority order, and choose whether numbers are averaged across them, maxed, or taken from your first choice.</div>
+              </div>
+            </li>
+            <li class="tool-point">
+              <span class="tool-point-n">04</span>
+              <div class="tool-point-body">
+                <div class="tool-point-t" data-i18n="monitor.f7.title">Know at a glance, not at a squint</div>
+                <div class="tool-point-d" data-i18n="monitor.f7.desc">Values change colour as they climb past levels you set, with an optional sound when one crosses. Outline, fill and colour are all yours.</div>
+              </div>
+            </li>
+          </ol>
+
+          <a href="/manual/en/tools/monitor.html" data-manual class="tool-docs-link" data-i18n="monitor.docs">Full documentation →</a>
+        </div>
+
+        <div class="tool-sec-media">
+          <div class="tool-media-main">
+            <img src="screenshots/monitor-main.png" alt="MONITOR window" loading="lazy" />
+          </div>
+          <div class="tool-media-strip">
+            <img src="screenshots/monitor-settings-1.png" alt="" loading="lazy" />
+            <img src="screenshots/monitor-settings-2.png" alt="" loading="lazy" />
+            <img src="screenshots/monitor-settings-3.png" alt="" loading="lazy" />
+          </div>
+        </div>
+
+      </section>
 
     <!-- TERMINAL — experimental, deliberately understated. No screenshot: this
          is a proof of concept and should not be sold as a finished tool. -->
@@ -914,41 +944,6 @@
         btn.classList.remove('loading');
       }
     }
-
-    // ── Download count ──────────────────────────────────────────────────────
-    // Real social proof from the GitHub releases API — no backend, no account.
-    // Summed across every release, since a per-release figure resets on each
-    // publish and understates the total.
-    //
-    // Deliberately hidden below MIN_DOWNLOADS_TO_SHOW: a small number is worse
-    // than no number. Lower or remove the threshold once the count grows.
-    const MIN_DOWNLOADS_TO_SHOW = 50;
-    let downloadTotal = null;
-
-    function renderProof() {
-      const el = document.getElementById('hero-proof');
-      if (!el || downloadTotal === null || downloadTotal < MIN_DOWNLOADS_TO_SHOW) return;
-      const template = (window.translations?.[window.currentLang]?.['hero.downloads']) || '{n} downloads';
-      el.textContent = template.replace('{n}', downloadTotal.toLocaleString());
-      el.hidden = false;
-    }
-
-    // Re-render after a language switch, since the label is translated.
-    window.onLanguageApplied = renderProof;
-
-    (async function loadDownloadCount() {
-      try {
-        const res = await fetch('https://api.github.com/repos/romby1/Warden/releases');
-        if (!res.ok) return;
-        const releases = await res.json();
-        if (!Array.isArray(releases)) return;
-        downloadTotal = releases.reduce((sum, r) =>
-          sum + (r.assets || []).reduce((s, a) => s + (a.download_count || 0), 0), 0);
-        renderProof();
-      } catch (err) {
-        // Never block or clutter the hero on a failed count — stay hidden.
-      }
-    })();
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
