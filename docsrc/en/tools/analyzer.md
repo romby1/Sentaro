@@ -3,7 +3,7 @@
 Analyzer is the chart workspace: one ticker, several timeframes side by side, on
 whichever exchange you choose. It is the only tool where you draw on charts.
 
-<Screenshot src="analyzer-main" alt="The Analyzer window with four charts, ticker list and watchlist" caption="The Analyzer window" />
+<Screenshot src="analyzer" alt="The Analyzer window with four charts, ticker list and watchlist" caption="The Analyzer window" />
 
 Unlike the other tools, Analyzer has almost nothing to configure in the main
 window — everything is controlled from the window itself, and your layout is

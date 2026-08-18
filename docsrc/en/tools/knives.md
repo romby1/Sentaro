@@ -7,7 +7,7 @@ threshold you set — up or down.
 All of its readings are based on the **current 5-minute candle**. A ticker
 appears because *this* candle has moved, not because of a 24-hour figure.
 
-<Screenshot src="knives-main" alt="The Knives window showing ticker cards with mini charts" caption="The Knives window" />
+<Screenshot src="knives" alt="The Knives window showing ticker cards with mini charts" caption="The Knives window" />
 
 ## Reading the window
 
@@ -75,7 +75,7 @@ views.
 
 Open the **Knives** tab in the main window.
 
-<Screenshot src="knives-settings-1" alt="Knives display, chart data priority and exchange icon settings" caption="Knives settings — display, priority, icons" />
+<Screenshot src="knives-settings" alt="Knives display, chart data priority and exchange icon settings" caption="Knives settings — display, priority, icons" />
 
 ### Display
 
@@ -116,8 +116,6 @@ plainer card; on tells you at a glance where a ticker trades.
 
 ### Per-exchange settings
 
-<Screenshot src="knives-settings-2" alt="Per-exchange threshold and volume settings for Knives" caption="Knives settings — per-exchange thresholds and volume filter" />
-
 Knives has an identical settings block for each of **Bybit**, **Binance**,
 **Gate.io**, **OKX** and **Hyperliquid**. Every exchange is configured
 independently — thresholds, volume filters and enablement are all per exchange.
@@ -139,30 +137,20 @@ green or red.
 
 #### High threshold
 
-Intended as the level that counts as a major move for this exchange. Range
-**2% to 10%** in 0.5% steps, default 6%.
+The level that counts as a major move for this exchange, and the point at which
+the [price change sound](#price-change-sound) fires. Range **2% to 10%** in 0.5%
+steps, default 6%.
 
+::: warning This slider is additive
 The value displayed next to the slider is **% Change + High threshold**, not the
 slider's own value — with % Change at 2% and the slider at 6%, the label reads
-**8.0%**. Read the label, not the slider position.
+**8.0%**, and that is where the sound fires.
 
-::: danger TODO — verify before relying on this slider
-In the current build this slider does not appear to affect anything.
-
-It writes a per-exchange value that the Knives window never reads back. The
-major-movement sound is instead triggered by an older setting that has no
-control in the interface. The actual condition is:
-
-`|price change| ≥ (legacy global high threshold) + (this exchange's % Change)`
-
-where the legacy global value is **8** unless an older version of the app
-changed it. So with % Change at 2%, the sound currently fires at **10%** no
-matter where this slider sits.
-
-I have not written this up as intended behaviour, because I can't tell whether
-the slider is meant to drive the sound and is reading the wrong field, or is
-meant to do something else. Confirm which, and this section can be rewritten.
+Read the label, not the slider position.
 :::
+
+Because it is additive, raising **% Change** also raises the major-movement
+level. Set the base trigger first, then tune this on top of it.
 
 #### Enable volume filter
 
@@ -187,9 +175,8 @@ Plays a sound when a new ticker enters the window.
 
 #### Price change sound
 
-Plays a sound when a move reaches the major-movement level — see
-[High threshold](#high-threshold) for what that level currently resolves to, and
-why it is not the value you set on that slider.
+Plays a sound when a move reaches this exchange's major-movement level — the
+figure shown beside its [High threshold](#high-threshold) slider.
 
 It fires at most once per ticker per candle, so a ticker that keeps moving
 inside the same 5m candle won't sound repeatedly.

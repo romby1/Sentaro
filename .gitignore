@@ -5,5 +5,11 @@ node_modules/
 docsrc/.vitepress/cache/
 docsrc/.vitepress/dist/
 
+# Local dev tooling — not part of the site.
+# scripts/preview.js serves docs/ the way GitHub Pages does:
+#   node scripts/preview.js            -> http://localhost:4173/
+#   node scripts/preview.js docs 8080  -> another port
+scripts/
+
 .DS_Store
 *.log

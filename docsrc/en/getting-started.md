@@ -7,9 +7,8 @@ resizable window.
 
 ## Install
 
-1. Download the installer — from the **Download** button on
-   [cryptowarden.xyz](https://cryptowarden.xyz/), or directly from the
-   [latest release](https://github.com/romby1/Warden/releases/latest).
+1. Download the installer with the **Download** button on
+   [cryptowarden.xyz](https://cryptowarden.xyz/).
 2. Run the `.exe`.
 3. Warden is Windows-only. There is no macOS or Linux build.
 

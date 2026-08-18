@@ -3,7 +3,6 @@ const translations = {
   en: {
     // Navigation
     "nav.tools": "Tools",
-    "nav.customize": "Customize",
     "nav.docs": "Docs",
     "nav.faq": "FAQ",
     "nav.download": "Download",
@@ -74,19 +73,12 @@ const translations = {
     "monitor.docs": "Full documentation →",
     "terminal.label": "Experimental",
     "terminal.headline": "Trade from the order book.",
-    "terminal.tagline": "A depth-of-market terminal for Hyperliquid, Binance and Bybit. Click the ladder to place, move and close orders without leaving Warden.",
     "terminal.note": "This one is a proof of concept and it can be buggy. It is off by default, entirely opt-in, and needs trade-only keys — never withdrawal access. Every other tool in Warden works without any keys at all.",
     "terminal.docs": "Read the docs first →",
     
     // Customize section
-    "customize.label": "Customization",
-    "customize.title": "Built to be yours",
-    "customize.sub": "Deep control over every visual detail — define how candles are drawn, how each metric is colored, and what your workspace looks like at a glance.",
     
     // Chart colors
-    "chartsColors.tagline": "Define exactly how candles would look like.<br/>This setting changes candle's color for all charts in every tool.",
-    "chartsColors.screenshots": "Color settings",
-    "chartsColors.docs": "Full documentation →",
     
     
     // FAQ
@@ -127,7 +119,6 @@ const translations = {
   uk: {
     // Navigation
     "nav.tools": "Інструменти",
-    "nav.customize": "Налаштування",
     "nav.docs": "Документація",
     "nav.faq": "FAQ",
     "nav.download": "Завантажити",
@@ -198,19 +189,12 @@ const translations = {
     "monitor.docs": "Повна документація →",
     "terminal.label": "Експериментально",
     "terminal.headline": "Торгуйте прямо зі стакана.",
-    "terminal.tagline": "Термінал глибини ринку для Hyperliquid, Binance і Bybit. Клікайте по драбині цін, щоб виставляти, рухати й закривати ордери, не виходячи з Warden.",
     "terminal.note": "Це proof of concept, і він може містити помилки. Вимкнений за замовчуванням, вмикається лише вами й потребує ключів тільки для торгівлі — ніколи для виведення коштів. Усі інші інструменти Warden працюють узагалі без ключів.",
     "terminal.docs": "Спершу прочитайте документацію →",
     
     // Customize section
-    "customize.label": "Налаштування",
-    "customize.title": "Створений бути вашим",
-    "customize.sub": "Глибокий контроль над кожною візуальною деталлю — визначайте, як малюються свічки, як забарвлюється кожна метрика, і як виглядає ваш робочий простір загалом.",
     
     // Chart colors
-    "chartsColors.tagline": "Визначте точно, як будуть виглядати свічки.<br/>Це налаштування змінює колір свічок для всіх графіків у кожному інструменті.",
-    "chartsColors.screenshots": "Налаштування кольорів",
-    "chartsColors.docs": "Повна документація →",
     
     
     // FAQ

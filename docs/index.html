@@ -224,7 +224,19 @@
     .tool-media-strip {
       display: grid; grid-auto-flow: column; grid-auto-columns: 1fr;
       gap: 10px; margin-top: 10px;
+      /* Settings shots are near-square; at full column width they tower over
+         the window shot above them. */
+      max-width: 56%;
     }
+
+    /* Portrait main shot — put the two side by side rather than stacked.
+       38/62 is tuned to the actual aspect ratios so both columns end up the
+       same height. */
+    .tool-sec-media.side {
+      display: grid; grid-template-columns: 38fr 62fr;
+      gap: 12px; align-items: start;
+    }
+    .tool-sec-media.side .tool-media-strip { max-width: none; margin-top: 0; }
     .tool-media-strip img {
       width: 100%; height: auto; display: block;
       border: 1px solid var(--border); border-radius: 4px; background: var(--bg2);
@@ -274,6 +286,16 @@
     .tool-exp-note {
       font-size: 13px; color: var(--muted); line-height: 1.8;
       border-left: 2px solid var(--amber-border); padding-left: 14px; margin-top: 18px;
+    }
+    /* Terminal shots: the window is landscape, the settings panel near-square,
+       so 64/36 lands them at roughly matching heights. */
+    .tool-exp-media {
+      display: grid; grid-template-columns: 64fr 36fr; gap: 12px;
+      align-items: start; margin: 22px 0 4px;
+    }
+    .tool-exp-media img {
+      width: 100%; height: auto; display: block;
+      border: 1px solid var(--amber-border); border-radius: 4px; background: var(--bg2);
     }
     .tool-experimental .tool-docs-link { border-color: var(--amber-border); color: var(--amber); }
     .tool-experimental .tool-docs-link:hover { border-color: var(--amber); background: rgba(237,177,89,0.08); }
@@ -440,7 +462,6 @@
     <a href="#" class="nav-logo">WARDEN</a>
     <ul class="nav-links">
       <li><a href="#tools" data-i18n="nav.tools">Tools</a></li>
-      <li><a href="#customize" data-i18n="nav.customize">Customize</a></li>
       <li><a href="/manual/en/" data-manual data-i18n="nav.docs">Docs</a></li>
       <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
       <li><a href="https://t.me/+9d_deXPfxM81MGJi" target="_blank">Telegram</a></li>
@@ -559,13 +580,15 @@
           <a href="/manual/en/tools/knives.html" data-manual class="tool-docs-link" data-i18n="knives.docs">Full documentation →</a>
         </div>
 
-        <div class="tool-sec-media">
+        <!-- `side`: both Knives shots are portrait (0.58 and 0.93), so stacking
+             them full-width made the column ~1900px tall. Beside each other the
+             column heights match instead. -->
+        <div class="tool-sec-media side">
           <div class="tool-media-main">
-            <img src="screenshots/knives-main.png" alt="KNIVES window" loading="lazy" />
+            <img src="screenshots/knives.png" alt="KNIVES window" loading="lazy" />
           </div>
           <div class="tool-media-strip">
-            <img src="screenshots/knives-settings-1.png" alt="" loading="lazy" />
-            <img src="screenshots/knives-settings-2.png" alt="" loading="lazy" />
+            <img src="screenshots/knives-settings.png" alt="" loading="lazy" />
           </div>
         </div>
 
@@ -618,10 +641,7 @@
 
         <div class="tool-sec-media">
           <div class="tool-media-main">
-            <img src="screenshots/alerts-main.png" alt="ALERTS window" loading="lazy" />
-          </div>
-          <div class="tool-media-strip">
-            <img src="screenshots/alerts-settings.png" alt="" loading="lazy" />
+            <img src="screenshots/alerts.png" alt="ALERTS window" loading="lazy" />
           </div>
         </div>
 
@@ -674,7 +694,7 @@
 
         <div class="tool-sec-media">
           <div class="tool-media-main">
-            <img src="screenshots/analyzer-main.png" alt="ANALYZER window" loading="lazy" />
+            <img src="screenshots/analyzer.png" alt="ANALYZER window" loading="lazy" />
           </div>
         </div>
 
@@ -727,28 +747,29 @@
 
         <div class="tool-sec-media">
           <div class="tool-media-main">
-            <img src="screenshots/monitor-main.png" alt="MONITOR window" loading="lazy" />
+            <img src="screenshots/monitor.png" alt="MONITOR window" loading="lazy" />
           </div>
           <div class="tool-media-strip">
-            <img src="screenshots/monitor-settings-1.png" alt="" loading="lazy" />
-            <img src="screenshots/monitor-settings-2.png" alt="" loading="lazy" />
-            <img src="screenshots/monitor-settings-3.png" alt="" loading="lazy" />
+            <img src="screenshots/monitor-settings.png" alt="" loading="lazy" />
           </div>
         </div>
 
       </section>
 
-    <!-- TERMINAL — experimental, deliberately understated. No screenshot: this
-         is a proof of concept and should not be sold as a finished tool. -->
+    <!-- TERMINAL — experimental, kept visually understated so it doesn't read
+         as a finished tool alongside the four monitors above. -->
     <div class="tool-entry tool-experimental fade-in" style="margin-bottom:0;">
       <div class="tool-title-row">
         <span class="tool-exp-tag" data-i18n="terminal.label">Experimental</span>
         <span class="tool-name" style="font-size:22px; letter-spacing:1.5px; color:var(--amber);">TERMINAL</span>
       </div>
       <p class="tool-headline" data-i18n="terminal.headline">Trade from the order book.</p>
-      <p class="tool-tagline" style="margin-bottom:0;" data-i18n="terminal.tagline">
-        A depth-of-market terminal for Hyperliquid, Binance and Bybit. Click the ladder to place, move and close orders without leaving Warden.
-      </p>
+
+      <div class="tool-exp-media">
+        <img src="screenshots/terminal.png" alt="TERMINAL window" loading="lazy" />
+        <img src="screenshots/terminal-settings.png" alt="" loading="lazy" />
+      </div>
+
       <p class="tool-exp-note" data-i18n="terminal.note">
         This one is a proof of concept and it can be buggy. It is off by default, entirely opt-in, and needs trade-only keys — never withdrawal access. Every other tool in Warden works without any keys at all.
       </p>
@@ -756,49 +777,6 @@
       <a href="/manual/en/tools/terminal.html" data-manual class="tool-docs-link" data-i18n="terminal.docs">Read the docs first →</a>
     </div>
     <!-- end terminal -->
-
-  </div>
-
-  <hr class="divider" />
-
-  <div class="tools-section" id="customize">
-
-    <div class="tools-header fade-in">
-      <p class="section-label" style="color:rgb(180,120,240);" data-i18n="customize.label">Customization</p>
-      <h2 class="section-title" data-i18n="customize.title">Built to be yours</h2>
-      <p class="section-sub" data-i18n="customize.sub">Deep control over every visual detail — define how candles are drawn, how each metric is colored, and what your workspace looks like at a glance.</p>
-    </div>
-
-    <!-- METRIC COLORS -->
-    <div class="tool-entry fade-in">
-      <div class="tool-title-row">
-        <span class="tool-name" style="font-size:22px; letter-spacing:1.5px;">CHARTS COLORS</span>
-      </div>
-      <p class="tool-tagline" data-i18n="chartsColors.tagline">
-        Define exactly how candles would look like.<br/>
-        This setting changes candle's color for all charts in every tool.
-      </p>
-
-      <div class="tool-body">
-        <div class="tool-screenshots-side">
-          <p class="screenshot-label" data-i18n="chartsColors.screenshots">Color settings</p>
-          <div>
-            <img src="screenshots/colors-main.png" alt="Colors settings"
-              style="width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:4px;"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="screenshot-wrap-ph" style="display:none;">
-              <div class="ph-icon">📷</div>
-              <span>colors-main.png</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <a href="/manual/en/customize/chart-colors.html" data-manual class="tool-docs-link" data-i18n="chartsColors.docs">Full documentation →</a>
-    </div>
-    <!-- end metric colors -->
-
 
   </div>
 

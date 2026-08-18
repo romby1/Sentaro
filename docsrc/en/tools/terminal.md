@@ -36,6 +36,8 @@ Every other tool reads public data only, never asks for credentials, and cannot
 trade.
 :::
 
+<Screenshot src="terminal" alt="The Terminal window with several order-book ladders" caption="The Terminal window — one ladder per panel" />
+
 Everything below describes the app as it currently behaves. Because this tool is
 a proof of concept, expect it to change.
 
@@ -119,6 +121,8 @@ OS credential store under their old ids, unreachable from the interface but
 recoverable by hand. Their ids are written to the app log once, at migration
 time.
 :::
+
+<Screenshot src="terminal-settings" alt="Terminal order size, trade tape and keybind settings" caption="Terminal settings — order size, tape and keybinds" />
 
 ### Order
 
@@ -274,8 +278,11 @@ threshold.
 ### Colors
 
 **Background** is a single color for the order-book background (default
-`#181818`). Everything else is grouped, and each entry has both a color and an
-opacity:
+`#181818`). It keeps its opacity inside the hex like the rest of the app.
+
+Everything else is grouped, and each entry stores its color and its opacity as
+two separate values — which is why this panel, alone in Warden, shows a
+percentage next to every entry:
 
 | Group | Entries |
 | --- | --- |

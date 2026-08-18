@@ -7,7 +7,7 @@ Alerts watches for two things at once and shows them in a single feed:
 2. **New listings** — a token that just started trading on a monitored
    exchange.
 
-<Screenshot src="alerts-main" alt="The Alerts window showing deviation cards and a new listing card" caption="The Alerts window" />
+<Screenshot src="alerts" alt="The Alerts window showing deviation cards and a new listing card" caption="The Alerts window" />
 
 ## Reading the window
 
@@ -54,8 +54,6 @@ card limit as deviation alerts.
 ## Settings
 
 Open the **Alerts** tab in the main window.
-
-<Screenshot src="alerts-settings" alt="The Alerts settings panel" caption="Alerts settings" />
 
 ### Display
 

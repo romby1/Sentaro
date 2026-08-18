@@ -4,14 +4,37 @@ These settings live in the **Home** tab of the main window, under the **Charts**
 section. They are global: every chart in every tool — Knives, Alerts, Analyzer,
 Monitor — uses them.
 
-<Screenshot src="colors-main" alt="The Charts settings section in the Home tab" caption="Home → Charts" />
+<Screenshot src="charts-colors" alt="The Charts settings section in the Home tab" caption="Home → Charts" />
+
+## The color picker
+
+Every color in Warden — here, in Monitor's metric colors, and in Terminal's
+appearance — opens the same picker:
+
+- A **saturation / value** square, with a **hue** slider under it.
+- An **opacity** slider. Every color in the app can be made translucent.
+- A **hex field** accepting 3, 4, 6 or 8 digits (`#f00`, `#f00a`, `#ff0000`,
+  `#ff0000aa`), and a percentage readout of the current opacity.
+
+The swatch that opens the picker is drawn over a checkerboard, so a translucent
+color is obvious without opening it.
+
+::: info Where the opacity is stored
+In most places — candle colors, the drawing color, and every Monitor metric
+color — **opacity is part of the hex value**. At full opacity you get a normal
+6-digit hex; drop below 100% and it becomes 8-digit `#rrggbbaa`.
+
+Terminal's grouped appearance colors are the exception: there the color and its
+opacity are stored as two separate values, which is why that panel shows a
+percentage next to each entry.
+:::
 
 ## Candle colors
 
 | Setting | What it does | Default |
 | --- | --- | --- |
-| **Bullish candle** | Color of candles that closed up | `#9D9D9D` |
-| **Bearish candle** | Color of candles that closed down | `#4A4A4A` |
+| **Bullish candle** | Color of candles that closed up | `#9D9D9D`, fully opaque |
+| **Bearish candle** | Color of candles that closed down | `#4A4A4A`, fully opaque |
 
 Both open a color picker. The change applies to every chart in the app at once,
 so a candle scheme you pick here follows you from a Knives thumbnail to a

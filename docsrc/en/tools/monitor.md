@@ -6,7 +6,7 @@ a line and then tells you, Monitor is a continuously sorted leaderboard.
 
 All readings are based on **5-minute candles**.
 
-<Screenshot src="monitor-main" alt="The Monitor window showing ranked ticker cards" caption="The Monitor window" />
+<Screenshot src="monitor" alt="The Monitor window showing ranked ticker cards" caption="The Monitor window" />
 
 ## Reading the window
 
@@ -56,7 +56,7 @@ plainly when it crosses its **alert threshold**.
 
 Open the **Monitor** tab in the main window.
 
-<Screenshot src="monitor-settings-1" alt="Monitor sorting settings" caption="Monitor settings — sorting" />
+<Screenshot src="monitor-settings" alt="Monitor sorting settings" caption="Monitor settings — sorting" />
 
 ### Sorting
 
@@ -126,8 +126,6 @@ re-ranks live as you change it.
 
 ### Metric colors
 
-<Screenshot src="monitor-settings-3" alt="Monitor metric color settings" caption="Monitor settings — metric colors" />
-
 Two metrics have configurable dynamic colors: **NATR** and **% Change**. Each
 has a master toggle, two thresholds, and colors for text, outline and
 background.
@@ -156,6 +154,16 @@ Outline and background are separate toggles with their own level-1 and level-2
 colors, so you can have colored text only, a colored border, a filled card, or
 any combination.
 
+::: tip Every one of these can be translucent
+All fourteen color slots here use the same picker as the rest of the app, and it
+has an opacity slider. Opacity is stored inside the hex, so a translucent value
+reads as 8 digits (`#rrggbbaa`) rather than 6 — see
+[the color picker](/en/customize/chart-colors#the-color-picker).
+
+Background fills are where this matters most: at full opacity a filled card hides
+the row underneath it, while something around 15–25% tints it instead.
+:::
+
 #### % Change direction
 
 Master switch for % Change's dynamic coloring. On by default.
@@ -177,8 +185,6 @@ one for negative:
 Shows or hides the exchange logos on ticker cards. On by default.
 
 ### Exchanges
-
-<Screenshot src="monitor-settings-2" alt="Monitor exchange priority and alert settings" caption="Monitor settings — exchange priority and alerts" />
 
 A single drag-to-reorder list handles both priority and enablement, split by a
 divider:
