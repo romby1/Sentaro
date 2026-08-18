@@ -68,6 +68,7 @@ editable here.
 | **Rectangle key** | A rectangle / box region | <kbd>B</kbd> |
 | **Pencil key** | Freehand drawing | <kbd>P</kbd> |
 | **Dissolving pencil key** | Freehand drawing that fades away on its own | <kbd>F</kbd> |
+| **Majors overlay key** | Shows/hides the [majors overlay](/en/customize/majors) on the chart under the pointer | <kbd>M</kbd> |
 
 To rebind one, click the key button next to it — it switches to `Press a key…` —
 then press the key you want. Press <kbd>Esc</kbd> to cancel without changing it.

@@ -120,6 +120,108 @@ count. Range **$10K to $1M** in $10K steps, default $10K.
 
 Greyed out unless the volume filter is enabled.
 
+## Liquidation tape
+
+Alerts can also carry a live tape of **forced position closes** — a separate
+feed from the deviation and listing cards, shown in its own strip alongside
+them.
+
+<Screenshot src="liquidations" alt="The liquidation tape docked to the right of the Alerts window" caption="The liquidation tape, docked right" />
+
+It is **off by default**. A client that never enables it receives no liquidation
+messages at all.
+
+### Reading the tape
+
+The header shows `LIQUIDATIONS` and, when anything has arrived recently, a
+running figure — the **total liquidated in the last 60 seconds**.
+
+Each row is one event, newest at the top:
+
+| Part | Meaning |
+| --- | --- |
+| Time | When it printed |
+| Coloured dot | Which exchange, in that exchange's colour |
+| Symbol | With the `USDT` / `USDC` suffix stripped |
+| Amount | Notional value of that single liquidation |
+
+The row's background bar scales with size, so big events are visible without
+reading the number. **Click a row to copy its symbol.**
+
+Hovering spells the event out — venue, `long liquidated → forced sell` or
+`short liquidated → forced buy`, quantity and price.
+
+::: warning Colour follows the pressure, not the word
+A liquidated **long** is a forced **sell**; a liquidated **short** is a forced
+**buy**. The tape colours by that resulting pressure, matching the liquidation
+diamonds in the [majors overlay](/en/customize/majors#liquidations-—-diamonds).
+:::
+
+Before the first event arrives the tape reads `waiting…` rather than sitting
+blank.
+
+### Moving and resizing it
+
+**Drag the `LIQUIDATIONS` header** to dock the tape to any edge — left, right,
+top or bottom. Left and right give a column of rows; top and bottom give a
+horizontal strip. Default is right.
+
+Drag the gutter between the tape and the cards to resize it.
+
+If you shrink the window far enough the tape hides itself rather than crowding
+out the alert cards.
+
+### Settings
+
+Open the **Alerts** tab in the main window.
+
+<Screenshot src="liquidations-settings" alt="The liquidation settings in the Alerts tab" caption="Alerts settings — liquidations" />
+
+#### Enable liquidation tape
+
+Shows forced position closes as they happen. **Off by default** — everything
+below is inert until this is on.
+
+#### Minimum size
+
+The size of a single liquidation, in USD. Range **$5,000 to $1,000,000** in
+$5,000 steps, default $50,000.
+
+$5,000 is the server's own floor: nothing smaller is stored, so the minimum
+setting already means "everything there is".
+
+#### Minimum 24h turnover
+
+Hides thin tickers by their 24-hour turnover. Range **$0 to $50M** in $1M steps,
+default 0 — shown as `off`, meaning no filtering.
+
+::: warning A non-zero value also hides unknown tickers
+Any symbol whose 24h turnover is not yet known is hidden too, not just the
+genuinely thin ones. On a freshly opened window that can mean noticeably fewer
+events until turnover figures are in.
+:::
+
+#### Blacklist
+
+Symbols to never show. Type one and press <kbd>Enter</kbd> to add it; **Clear
+all** empties the list.
+
+Useful for the handful of tickers that liquidate constantly and would otherwise
+dominate the tape.
+
+#### Rows kept
+
+How many events the tape holds before dropping the oldest. Range **20 to 300**
+in steps of 20, default 100.
+
+#### Liquidation sound
+
+Plays a sound when a liquidation arrives. **Off by default.**
+
+Note that this fires on *every* event that passes your filters — with a low
+minimum size on a busy market that is a lot of sound. Raise **Minimum size**
+first, then turn this on.
+
 ## Related
 
 - [Knives](/en/tools/knives) — single-exchange price moves rather than

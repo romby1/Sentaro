@@ -86,6 +86,7 @@ export default defineConfig({
             ]
           },
           { text: 'Charts', link: '/en/customize/chart-colors' },
+          { text: 'Majors', link: '/en/customize/majors' },
           { text: 'FAQ', link: `${SITE}#faq` },
           { text: 'Telegram', link: TELEGRAM }
         ],
@@ -110,7 +111,10 @@ export default defineConfig({
             },
             {
               text: 'Customization',
-              items: [{ text: 'Charts & drawing', link: '/en/customize/chart-colors' }]
+              items: [
+                { text: 'Charts & drawing', link: '/en/customize/chart-colors' },
+                { text: 'Majors overlay', link: '/en/customize/majors' }
+              ]
             }
           ]
         },
@@ -145,6 +149,7 @@ export default defineConfig({
             ]
           },
           { text: 'Графіки', link: '/uk/customize/chart-colors' },
+          { text: 'Мажори', link: '/uk/customize/majors' },
           { text: 'FAQ', link: `${SITE}#faq` },
           { text: 'Telegram', link: TELEGRAM }
         ],
@@ -169,7 +174,10 @@ export default defineConfig({
             },
             {
               text: 'Кастомізація',
-              items: [{ text: 'Графіки та рисування', link: '/uk/customize/chart-colors' }]
+              items: [
+                { text: 'Графіки та рисування', link: '/uk/customize/chart-colors' },
+                { text: 'Шар мажорів', link: '/uk/customize/majors' }
+              ]
             }
           ]
         },

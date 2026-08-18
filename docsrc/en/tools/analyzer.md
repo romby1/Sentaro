@@ -140,3 +140,4 @@ The tab reports one known limitation, quoted from the app:
   tool shortcuts, magnet
 - [Monitor](/en/tools/monitor) — ranked scanner; its cards also open fullscreen
   charts with the same drawing tools
+- [Majors overlay](/en/customize/majors) — big trades, volume clusters and liquidations, on any panel

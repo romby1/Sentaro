@@ -233,3 +233,4 @@ colored without having triggered a sound, and vice versa.
 - [Analyzer](/en/tools/analyzer) — full chart workspace
 - [Charts & drawing](/en/customize/chart-colors) — candle colors used by
   Monitor's charts
+- [Majors overlay](/en/customize/majors) — available on the fullscreen chart

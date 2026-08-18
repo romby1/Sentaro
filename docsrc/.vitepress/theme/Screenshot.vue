@@ -8,7 +8,8 @@
 // the '/manual/' base — which is exactly right, since the images are served
 // from the Pages root alongside index.html.
 defineProps({
-  // File name in docs/screenshots/, without the .png extension.
+  // File name in docs/screenshots/. Bare name => .png is appended; pass the
+  // extension explicitly for anything else (e.g. "majors.jpg").
   src: { type: String, required: true },
   alt: { type: String, default: '' },
   caption: { type: String, default: '' }
@@ -17,7 +18,7 @@ defineProps({
 
 <template>
   <figure class="warden-shot">
-    <img :src="`/screenshots/${src}.png`" :alt="alt" loading="lazy" />
+    <img :src="`/screenshots/${src.includes('.') ? src : src + '.png'}`" :alt="alt" loading="lazy" />
     <figcaption v-if="caption">{{ caption }}</figcaption>
   </figure>
 </template>

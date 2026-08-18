@@ -238,3 +238,4 @@ Gate.io, OKX, Hyperliquid`). Ці два інструменти мають ок�
 - [Analyzer](/uk/tools/analyzer) — повноцінний простір для графіків
 - [Графіки та рисування](/uk/customize/chart-colors) — кольори свічок, які
   використовують графіки Monitor
+- [Шар мажорів](/uk/customize/majors) — доступний на повноекранному графіку

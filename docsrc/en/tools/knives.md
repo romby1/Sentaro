@@ -194,3 +194,4 @@ each other, and are each rate-limited to one play every 2 seconds.
   trigger-based feed
 - [Charts & drawing](/en/customize/chart-colors) — candle colors used by the
   mini charts
+- [Majors overlay](/en/customize/majors) — available on the fullscreen chart
