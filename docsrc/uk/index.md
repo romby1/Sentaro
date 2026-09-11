@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: WARDEN
+  name: SENTARO
   text: Довідник
   tagline: Як працює кожен інструмент, що означає кожне значення та що насправді робить кожне налаштування.
   actions:
@@ -13,8 +13,8 @@ hero:
       text: Knives
       link: /uk/tools/knives
     - theme: alt
-      text: сайт warden
-      link: https://cryptowarden.xyz/
+      text: сайт sentaro
+      link: https://sentaro.trade/
 
 features:
   - title: KNIVES

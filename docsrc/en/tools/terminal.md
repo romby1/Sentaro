@@ -1,6 +1,6 @@
 # Terminal
 
-Terminal is a depth-of-market trading terminal. It is the one tool in Warden
+Terminal is a depth-of-market trading terminal. It is the one tool in Sentaro
 that is not a monitor: it connects to an exchange account with credentials you
 supply, and it places, cancels and closes real orders with real funds.
 
@@ -31,7 +31,7 @@ It also trades real money:
 If you use it, use an account you are willing to lose, and get familiar with the
 click behaviour on the smallest order size before doing anything else.
 
-If you came to Warden to monitor the market, you never need to open this tool.
+If you came to Sentaro to monitor the market, you never need to open this tool.
 Every other tool reads public data only, never asks for credentials, and cannot
 trade.
 :::
@@ -49,7 +49,7 @@ collapsible sections; open **Exchange API keys** first.
 ### Exchange API keys
 
 One credential per exchange. Each is stored in the **OS credential store**
-(Windows Credential Manager), never in Warden's settings file, and is used only
+(Windows Credential Manager), never in Sentaro's settings file, and is used only
 by the terminal window.
 
 #### Hyperliquid
@@ -92,7 +92,7 @@ Terminal only needs to trade. An API key with withdrawal rights turns any bug,
 any leaked settings file, or any compromise of your machine into a drained
 account rather than a bad trade.
 
-Warden never asks for withdrawal permission and has no feature that uses it.
+Sentaro never asks for withdrawal permission and has no feature that uses it.
 :::
 
 #### Test
@@ -281,7 +281,7 @@ threshold.
 `#181818`). It keeps its opacity inside the hex like the rest of the app.
 
 Everything else is grouped, and each entry stores its color and its opacity as
-two separate values — which is why this panel, alone in Warden, shows a
+two separate values — which is why this panel, alone in Sentaro, shows a
 percentage next to every entry:
 
 | Group | Entries |
@@ -308,5 +308,5 @@ window with the ladder keybinds above, not from the settings tab.
 
 ## Related
 
-- [Getting started](/en/getting-started) — the rest of Warden, none of which
+- [Getting started](/en/getting-started) — the rest of Sentaro, none of which
   requires credentials or can place trades

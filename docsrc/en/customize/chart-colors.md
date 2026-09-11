@@ -8,7 +8,7 @@ Monitor — uses them.
 
 ## The color picker
 
-Every color in Warden — here, in Monitor's metric colors, and in Terminal's
+Every color in Sentaro — here, in Monitor's metric colors, and in Terminal's
 appearance — opens the same picker:
 
 - A **saturation / value** square, with a **hue** slider under it.

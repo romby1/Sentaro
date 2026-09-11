@@ -1,6 +1,6 @@
 # Getting started
 
-Warden is a desktop crypto monitoring workspace for Windows. It reads publicly
+Sentaro is a desktop crypto monitoring workspace for Windows. It reads publicly
 available market data from Bybit, Binance, Gate.io, OKX and Hyperliquid, and
 presents it through a set of purpose-built tools that each open in their own
 resizable window.
@@ -8,9 +8,9 @@ resizable window.
 ## Install
 
 1. Download the installer with the **Download** button on
-   [cryptowarden.xyz](https://cryptowarden.xyz/).
+   [sentaro.trade](https://sentaro.trade/).
 2. Run the `.exe`.
-3. Warden is Windows-only. There is no macOS or Linux build.
+3. Sentaro is Windows-only. There is no macOS or Linux build.
 
 ### The SmartScreen warning
 
@@ -30,22 +30,22 @@ To get past it:
 
 ## First run
 
-On launch Warden checks for updates before anything else, then asks you to sign
+On launch Sentaro checks for updates before anything else, then asks you to sign
 in.
 
 ### Account
 
-Warden uses an email and password account. Signing up sends a 6-digit
+Sentaro uses an email and password account. Signing up sends a 6-digit
 verification code to your email; enter it to confirm the address, then sign in.
 You'll also need to accept the Terms of Service during sign-up.
 
-Access is currently free while Warden is in beta. Once signed in, the **Home**
+Access is currently free while Sentaro is in beta. Once signed in, the **Home**
 tab shows your subscription status as `Beta Test`, along with your email and the
 installed app version. Your email address is masked by default — click the eye
 icon next to it to reveal it.
 
-::: tip Warden never touches your exchange accounts
-Every monitoring tool reads public market data only. Warden does not ask for
+::: tip Sentaro never touches your exchange accounts
+Every monitoring tool reads public market data only. Sentaro does not ask for
 exchange API keys, does not connect to your exchange account, and cannot place
 trades on any of the exchanges it monitors.
 
@@ -56,9 +56,9 @@ provide. It does nothing unless you deliberately set it up.
 
 ## The workspace
 
-<Screenshot src="workspace" alt="The full Warden workspace with several tool windows open" caption="A Warden workspace — several tool windows arranged around the main window" />
+<Screenshot src="workspace" alt="The full Sentaro workspace with several tool windows open" caption="A Sentaro workspace — several tool windows arranged around the main window" />
 
-Warden is built around one small **main window** plus one window per tool.
+Sentaro is built around one small **main window** plus one window per tool.
 
 The main window's left edge is a vertical tab bar:
 
@@ -84,14 +84,14 @@ restart. Settings are written to disk automatically as you change them.
 
 ### Titlebar
 
-Tool windows use Warden's own titlebar rather than the Windows one. It shows
-`WARDEN` and the active tool name on the left, and minimize / maximize / close
+Tool windows use Sentaro's own titlebar rather than the Windows one. It shows
+`SENTARO` and the active tool name on the left, and minimize / maximize / close
 on the right. Drag anywhere on the empty part of the bar to move the window.
 
 ## Language
 
-Warden's interface is available in English and Українська. Switch it in the
-**Home** tab, at the top right next to the WARDEN heading. This setting is
+Sentaro's interface is available in English and Українська. Switch it in the
+**Home** tab, at the top right next to the SENTARO heading. This setting is
 independent of the language you're reading this manual in.
 
 ## Accent color
@@ -105,7 +105,7 @@ This is separate from candle and metric colors — see
 
 ## Updates
 
-Warden updates itself. On every launch it checks for a new version before
+Sentaro updates itself. On every launch it checks for a new version before
 showing the sign-in screen; if one exists it downloads, installs and restarts
 automatically. You'll see `Checking for updates...` and then
 `Updating to v<version>...` on the loading screen while this happens.

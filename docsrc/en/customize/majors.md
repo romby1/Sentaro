@@ -113,7 +113,7 @@ MAJORS · binance+bybit · top 25 of 29k trades
 ::: warning Markers come from Binance and Bybit only
 The feed covers Binance and Bybit linear USDT/USDC perpetuals. If you are
 charting Gate.io, OKX or Hyperliquid, the candles are that exchange's but the
-markers are not — the status line says so. Warden never blanks the overlay
+markers are not — the status line says so. Sentaro never blanks the overlay
 silently.
 :::
 

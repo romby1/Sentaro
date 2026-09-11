@@ -1,5 +1,5 @@
 /* ===========================================================================
-   Warden manual theme.
+   Sentaro manual theme.
 
    Every value below is lifted from the :root block in docs/index.html so the
    manual reads as the same site, not a bolted-on docs product:
@@ -171,7 +171,7 @@ body {
   display: none;
 }
 
-/* WARDEN wordmark: 16px / 700 / 4px tracking, same as .nav-logo. */
+/* SENTARO wordmark: 16px / 700 / 4px tracking, same as .nav-logo. */
 .VPNavBarTitle .title {
   font-size: 16px;
   font-weight: 700;
@@ -191,7 +191,7 @@ body {
 }
 
 /* Nav Download button — the landing page's .btn-download at nav scale. */
-.warden-download {
+.sentaro-download {
   display: inline-flex;
   align-items: center;
   margin-left: 16px;
@@ -205,12 +205,12 @@ body {
   white-space: nowrap;
   transition: all 0.2s;
 }
-.warden-download:hover {
+.sentaro-download:hover {
   background: #d4d3d0;
   transform: translateY(-1px);
 }
 @media (max-width: 768px) {
-  .warden-download {
+  .sentaro-download {
     display: none;
   }
 }
@@ -312,10 +312,10 @@ body {
 }
 
 /* <Screenshot> — caption mirrors .screenshot-label on the landing page. */
-.warden-shot {
+.sentaro-shot {
   margin: 24px 0;
 }
-.warden-shot figcaption {
+.sentaro-shot figcaption {
   margin-top: 8px;
   font-family: var(--vp-font-family-mono);
   font-size: 11px;

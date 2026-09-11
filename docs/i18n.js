@@ -1,4 +1,4 @@
-// Translations for Warden website
+// Translations for Sentaro website
 const translations = {
   en: {
     // Navigation
@@ -22,7 +22,7 @@ const translations = {
     "knives.headline": "Never miss a move again.",
     
     // Knives
-    "knives.tagline": "Warden watches every ticker on five exchanges and surfaces the ones that just moved — on the 5-minute candle, as it happens.",
+    "knives.tagline": "Sentaro watches every ticker on five exchanges and surfaces the ones that just moved — on the 5-minute candle, as it happens.",
     "knives.f1.title": "Catches what you'd miss by hand",
     "knives.f1.desc": "500+ tickers across Bybit, Binance, Gate.io, OKX and Hyperliquid, all watched at once. One window instead of five browser tabs.",
     "knives.f3.title": "Only the moves that matter",
@@ -73,7 +73,7 @@ const translations = {
     "monitor.docs": "Full documentation →",
     "terminal.label": "Experimental",
     "terminal.headline": "Trade from the order book.",
-    "terminal.note": "This one is a proof of concept and it can be buggy. It is off by default, entirely opt-in, and needs trade-only keys — never withdrawal access. Every other tool in Warden works without any keys at all.",
+    "terminal.note": "This one is a proof of concept and it can be buggy. It is off by default, entirely opt-in, and needs trade-only keys — never withdrawal access. Every other tool in Sentaro works without any keys at all.",
     "terminal.docs": "Read the docs first →",
     
     // Customize section
@@ -85,19 +85,19 @@ const translations = {
     "faq.label": "FAQ",
     "faq.title": "Common questions",
     "faq.warning.title": "Windows Defender / SmartScreen warning",
-    "faq.warning.text1": "When you first download and run Warden, <strong>Windows Defender SmartScreen may show a warning</strong> saying the app is unrecognized. This is completely normal and expected — here's why:",
-    "faq.warning.text2": "Windows SmartScreen flags <strong>any new application that hasn't yet built up a reputation</strong> with Microsoft. It is not a virus detection — it simply means not enough people have downloaded the file yet for Microsoft to automatically trust it. Every new indie app goes through this. As Warden gains more downloads, this warning will disappear on its own.",
+    "faq.warning.text1": "When you first download and run Sentaro, <strong>Windows Defender SmartScreen may show a warning</strong> saying the app is unrecognized. This is completely normal and expected — here's why:",
+    "faq.warning.text2": "Windows SmartScreen flags <strong>any new application that hasn't yet built up a reputation</strong> with Microsoft. It is not a virus detection — it simply means not enough people have downloaded the file yet for Microsoft to automatically trust it. Every new indie app goes through this. As Sentaro gains more downloads, this warning will disappear on its own.",
     "faq.warning.step1": "Click <strong>\"More info\"</strong> on the SmartScreen popup",
     "faq.warning.step2": "Click <strong>\"Run anyway\"</strong> to launch the application",
     "faq.warning.step3": "This only happens once — subsequent launches won't show the warning",
-    "faq.q1": "Is Warden free?",
-    "faq.a1": "Yes. Warden is completely free during the beta period. There are no hidden fees, no premium tiers, and no paywalls. All tools and features are available to everyone.",
+    "faq.q1": "Is Sentaro free?",
+    "faq.a1": "Yes. Sentaro is completely free during the beta period. There are no hidden fees, no premium tiers, and no paywalls. All tools and features are available to everyone.",
     "faq.q2": "Which exchanges are supported?",
-    "faq.a2": "Warden currently supports Bybit, Binance, Gate.io, OKX and Hyperliquid. All exchanges are monitored simultaneously across every tool. More exchanges may be added based on community feedback.",
-    "faq.q3": "Does Warden access my exchange account or API keys?",
-    "faq.a3": "The monitoring tools — Knives, Alerts, Analyzer and Monitor — read publicly available market data only. They never ask for API keys, never connect to your account, and cannot place trades.<br/><br/>The one exception is Terminal, an experimental trading tool that is off by default. It only does anything if you deliberately set it up with your own exchange keys, and it asks for trade permission only — Warden never needs withdrawal access and has no feature that uses it.",
+    "faq.a2": "Sentaro currently supports Bybit, Binance, Gate.io, OKX and Hyperliquid. All exchanges are monitored simultaneously across every tool. More exchanges may be added based on community feedback.",
+    "faq.q3": "Does Sentaro access my exchange account or API keys?",
+    "faq.a3": "The monitoring tools — Knives, Alerts, Analyzer and Monitor — read publicly available market data only. They never ask for API keys, never connect to your account, and cannot place trades.<br/><br/>The one exception is Terminal, an experimental trading tool that is off by default. It only does anything if you deliberately set it up with your own exchange keys, and it asks for trade permission only — Sentaro never needs withdrawal access and has no feature that uses it.",
     "faq.q4": "Does it work on macOS or Linux?",
-    "faq.a4": "Warden is currently Windows-only. macOS and Linux support may be considered in the future depending on demand.",
+    "faq.a4": "Sentaro is currently Windows-only. macOS and Linux support may be considered in the future depending on demand.",
     "faq.q5": "How do I report bugs or request features?",
     "faq.a5": "Join the Telegram group — it's the fastest way to report issues, suggest features, and get direct responses.",
     
@@ -113,7 +113,7 @@ const translations = {
     // Footer
     "footer.tools": "Tools",
     "footer.telegram": "Telegram",
-    "footer.copyright": "© 2026 WARDEN"
+    "footer.copyright": "© 2026 SENTARO"
   },
   
   uk: {
@@ -138,7 +138,7 @@ const translations = {
     "knives.headline": "Більше не проґавите жоден рух.",
     
     // Knives
-    "knives.tagline": "Warden стежить за кожним тікером на п'яти біржах і показує ті, що щойно зрушили — на 5-хвилинній свічці, у момент руху.",
+    "knives.tagline": "Sentaro стежить за кожним тікером на п'яти біржах і показує ті, що щойно зрушили — на 5-хвилинній свічці, у момент руху.",
     "knives.f1.title": "Ловить те, що вручну не побачити",
     "knives.f1.desc": "500+ тікерів на Bybit, Binance, Gate.io, OKX та Hyperliquid — усі одночасно. Одне вікно замість п'яти вкладок браузера.",
     "knives.f3.title": "Лише ті рухи, що мають значення",
@@ -189,7 +189,7 @@ const translations = {
     "monitor.docs": "Повна документація →",
     "terminal.label": "Експериментально",
     "terminal.headline": "Торгуйте прямо зі стакана.",
-    "terminal.note": "Це proof of concept, і він може містити помилки. Вимкнений за замовчуванням, вмикається лише вами й потребує ключів тільки для торгівлі — ніколи для виведення коштів. Усі інші інструменти Warden працюють узагалі без ключів.",
+    "terminal.note": "Це proof of concept, і він може містити помилки. Вимкнений за замовчуванням, вмикається лише вами й потребує ключів тільки для торгівлі — ніколи для виведення коштів. Усі інші інструменти Sentaro працюють узагалі без ключів.",
     "terminal.docs": "Спершу прочитайте документацію →",
     
     // Customize section
@@ -201,19 +201,19 @@ const translations = {
     "faq.label": "FAQ",
     "faq.title": "Поширені запитання",
     "faq.warning.title": "Попередження Windows Defender / SmartScreen",
-    "faq.warning.text1": "При першому завантаженні та запуску Warden, <strong>Windows Defender SmartScreen може показати попередження</strong> про те, що програма нерозпізнана. Це повністю нормально і очікувано — ось чому:",
-    "faq.warning.text2": "Windows SmartScreen позначає <strong>будь-яку нову програму, яка ще не здобула репутацію</strong> у Microsoft. Це не виявлення вірусу — це просто означає, що недостатньо людей завантажили файл, щоб Microsoft автоматично довіряла йому. Кожна нова незалежна програма проходить через це. Коли Warden набере більше завантажень, це попередження зникне саме собою.",
+    "faq.warning.text1": "При першому завантаженні та запуску Sentaro, <strong>Windows Defender SmartScreen може показати попередження</strong> про те, що програма нерозпізнана. Це повністю нормально і очікувано — ось чому:",
+    "faq.warning.text2": "Windows SmartScreen позначає <strong>будь-яку нову програму, яка ще не здобула репутацію</strong> у Microsoft. Це не виявлення вірусу — це просто означає, що недостатньо людей завантажили файл, щоб Microsoft автоматично довіряла йому. Кожна нова незалежна програма проходить через це. Коли Sentaro набере більше завантажень, це попередження зникне саме собою.",
     "faq.warning.step1": "Натисніть <strong>\"Докладніше\"</strong> на спливаючому вікні SmartScreen",
     "faq.warning.step2": "Натисніть <strong>\"Все одно запустити\"</strong> для запуску програми",
     "faq.warning.step3": "Це трапляється тільки один раз — подальші запуски не показуватимуть попередження",
-    "faq.q1": "Warden безкоштовний?",
-    "faq.a1": "Так. Warden повністю безкоштовний протягом бета-періоду. Немає прихованих платежів, немає преміум-рівнів. Всі інструменти та функції доступні всім.",
+    "faq.q1": "Sentaro безкоштовний?",
+    "faq.a1": "Так. Sentaro повністю безкоштовний протягом бета-періоду. Немає прихованих платежів, немає преміум-рівнів. Всі інструменти та функції доступні всім.",
     "faq.q2": "Які біржі підтримуються?",
-    "faq.a2": "Warden наразі підтримує Bybit, Binance, Gate.io, OKX та Hyperliquid. Всі біржі моніторяться одночасно на кожному інструменті. Більше бірж може бути додано на основі відгуків спільноти.",
-    "faq.q3": "Чи має Warden доступ до мого облікового запису біржі або API ключів?",
-    "faq.a3": "Інструменти моніторингу — Knives, Alerts, Analyzer та Monitor — читають лише загальнодоступні ринкові дані. Вони ніколи не запитують API ключі, не підключаються до вашого акаунта і не можуть торгувати.<br/><br/>Єдиний виняток — Terminal, експериментальний торговий інструмент, вимкнений за замовчуванням. Він працює, лише якщо ви свідомо налаштуєте його власними ключами, і потребує дозволу лише на торгівлю — Warden ніколи не потребує доступу до виведення коштів.",
+    "faq.a2": "Sentaro наразі підтримує Bybit, Binance, Gate.io, OKX та Hyperliquid. Всі біржі моніторяться одночасно на кожному інструменті. Більше бірж може бути додано на основі відгуків спільноти.",
+    "faq.q3": "Чи має Sentaro доступ до мого облікового запису біржі або API ключів?",
+    "faq.a3": "Інструменти моніторингу — Knives, Alerts, Analyzer та Monitor — читають лише загальнодоступні ринкові дані. Вони ніколи не запитують API ключі, не підключаються до вашого акаунта і не можуть торгувати.<br/><br/>Єдиний виняток — Terminal, експериментальний торговий інструмент, вимкнений за замовчуванням. Він працює, лише якщо ви свідомо налаштуєте його власними ключами, і потребує дозволу лише на торгівлю — Sentaro ніколи не потребує доступу до виведення коштів.",
     "faq.q4": "Чи працює він на macOS або Linux?",
-    "faq.a4": "Warden наразі тільки для Windows. Підтримка macOS та Linux може бути розглянута в майбутньому залежно від попиту.",
+    "faq.a4": "Sentaro наразі тільки для Windows. Підтримка macOS та Linux може бути розглянута в майбутньому залежно від попиту.",
     "faq.q5": "Як повідомити про помилки або запросити функції?",
     "faq.a5": "Приєднуйтесь до групи Telegram — це найшвидший спосіб повідомити про проблеми, запропонувати функції та отримати прямі відповіді.",
     
@@ -229,12 +229,12 @@ const translations = {
     // Footer
     "footer.tools": "Інструменти",
     "footer.telegram": "Telegram",
-    "footer.copyright": "© 2026 WARDEN"
+    "footer.copyright": "© 2026 SENTARO"
   }
 };
 
 // Current language
-let currentLang = localStorage.getItem('warden-lang') || 'en';
+let currentLang = localStorage.getItem('sentaro-lang') || 'en';
 
 // Apply translations to the page
 function applyTranslations(lang) {
@@ -263,7 +263,7 @@ function applyTranslations(lang) {
   document.documentElement.lang = lang;
   
   // Save to localStorage
-  localStorage.setItem('warden-lang', lang);
+  localStorage.setItem('sentaro-lang', lang);
   currentLang = lang;
 }
 

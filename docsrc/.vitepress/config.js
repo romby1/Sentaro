@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-// Warden manual — built into the Pages folder that already serves the landing page.
+// Sentaro manual — built into the Pages folder that already serves the landing page.
 //
 //   docsrc/  (source, this dir)  ->  docs/manual/  (committed build output)
 //
@@ -9,16 +9,16 @@ import { defineConfig } from 'vitepress'
 // `/screenshots/*.png`, which resolves to docs/screenshots/ on the live site.
 
 const TELEGRAM = 'https://t.me/+9d_deXPfxM81MGJi'
-const RELEASES = 'https://github.com/romby1/Warden/releases/latest'
-const SITE = 'https://cryptowarden.xyz/'
+const RELEASES = 'https://github.com/romby1/Sentaro/releases/latest'
+const SITE = 'https://sentaro.trade/'
 
 export default defineConfig({
   base: '/manual/',
   outDir: '../docs/manual',
   cacheDir: './.vitepress/cache',
 
-  title: 'Warden Manual',
-  description: 'Documentation for Warden — a crypto monitoring workspace for Windows.',
+  title: 'Sentaro Manual',
+  description: 'Documentation for Sentaro — a crypto monitoring workspace for Windows.',
 
   // The landing page is dark-only; the manual matches it and drops the toggle.
   appearance: 'force-dark',
@@ -38,7 +38,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    siteTitle: 'WARDEN',
+    siteTitle: 'SENTARO',
     // Absolute so the wordmark always returns to the landing page, not /manual/.
     logoLink: SITE,
     outline: { level: [2, 3] },
@@ -93,7 +93,7 @@ export default defineConfig({
         sidebar: {
           '/en/': [
             {
-              text: 'Warden',
+              text: 'Sentaro',
               items: [
                 { text: 'Overview', link: '/en/' },
                 { text: 'Getting started', link: '/en/getting-started' }
@@ -125,8 +125,8 @@ export default defineConfig({
         langMenuLabel: 'Change language',
         outline: { level: [2, 3], label: 'On this page' },
         footer: {
-          message: 'Warden is a monitoring tool. Nothing here is financial advice.',
-          copyright: '© 2026 WARDEN'
+          message: 'Sentaro is a monitoring tool. Nothing here is financial advice.',
+          copyright: '© 2026 SENTARO'
         }
       }
     },
@@ -156,7 +156,7 @@ export default defineConfig({
         sidebar: {
           '/uk/': [
             {
-              text: 'Warden',
+              text: 'Sentaro',
               items: [
                 { text: 'Огляд', link: '/uk/' },
                 { text: 'Початок роботи', link: '/uk/getting-started' }
@@ -188,8 +188,8 @@ export default defineConfig({
         langMenuLabel: 'Змінити мову',
         outline: { level: [2, 3], label: 'На цій сторінці' },
         footer: {
-          message: 'Warden — інструмент моніторингу. Ніщо тут не є фінансовою порадою.',
-          copyright: '© 2026 WARDEN'
+          message: 'Sentaro — інструмент моніторингу. Ніщо тут не є фінансовою порадою.',
+          copyright: '© 2026 SENTARO'
         }
       }
     }

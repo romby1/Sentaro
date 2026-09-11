@@ -1,8 +1,8 @@
 {
-  "name": "warden-docs",
+  "name": "sentaro-docs",
   "version": "1.0.0",
   "private": true,
-  "description": "Documentation site for Warden (cryptowarden.xyz/manual)",
+  "description": "Documentation site for Sentaro (sentaro.trade/manual)",
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docsrc",

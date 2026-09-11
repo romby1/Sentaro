@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: WARDEN
+  name: SENTARO
   text: Manual
   tagline: How every tool works, what each reading means, and what every setting actually does.
   actions:
@@ -13,8 +13,8 @@ hero:
       text: Knives
       link: /en/tools/knives
     - theme: alt
-      text: warden site
-      link: https://cryptowarden.xyz/
+      text: sentaro site
+      link: https://sentaro.trade/
 
 features:
   - title: KNIVES

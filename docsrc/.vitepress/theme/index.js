@@ -18,8 +18,8 @@ export default {
         h(
           'a',
           {
-            class: 'warden-download',
-            href: 'https://github.com/romby1/Warden/releases/latest',
+            class: 'sentaro-download',
+            href: 'https://github.com/romby1/Sentaro/releases/latest',
             target: '_blank',
             rel: 'noreferrer'
           },

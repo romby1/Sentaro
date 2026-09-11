@@ -17,7 +17,7 @@ defineProps({
 </script>
 
 <template>
-  <figure class="warden-shot">
+  <figure class="sentaro-shot">
     <img :src="`/screenshots/${src.includes('.') ? src : src + '.png'}`" :alt="alt" loading="lazy" />
     <figcaption v-if="caption">{{ caption }}</figcaption>
   </figure>

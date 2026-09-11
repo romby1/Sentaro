@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Warden Manual
+title: Sentaro Manual
 head:
   - - meta
     - http-equiv: refresh
       content: 0; url=/manual/en/
 ---
 
-# Warden Manual
+# Sentaro Manual
 
 [English](/en/) · [Українська](/uk/)
