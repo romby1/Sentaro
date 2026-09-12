@@ -4,8 +4,8 @@
   "pub_date": "2026-02-16T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/romby1/Warden/releases/download/v2.0.13/warden_2.0.13_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWDNvNW84TFNOZTdhUTk3UGwwY0dyUlFtR1Y1UDYxOGgvUlhhY2tLTUkrT2QwbXpScE1UazdpNk81eHltSnRTTWJxWDNCMEZLUmtKTmx4cEUvc0xKR3FQTU9ETFhpTmcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2OTkzMzcyCWZpbGU6V2FyZGVuXzIuMC4xM194NjQtc2V0dXAuZXhlClhDSUZsM3lQV2wxMUhSUVFLcktYUU5HRXJ4RlVnelcrbEN5cmdDc1B2MzlMbFFzWXF2VjlDelF2bVZneTdFRDBlTGRCNWpGU3BnYlJkdGtjUFZCS0JRPT0K"
+      "url": "https://github.com/romby1/Sentaro/releases/download/v2.0.14/sentaro_2.0.14_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWDNvNW84TFNOZXcrSVBZNVBHWnloN2RwK0lYeFAwUm0zeDM0NmxOb24xZHgwcFNUQ2FsS3pRemxocmlUa0lWZFdtQjgyQ2VoWnQvSS8wTU5YNWRnNWdmeWxvVkl3cmdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4ODg3ODAyCWZpbGU6V2FyZGVuXzIuMC4xNF94NjQtc2V0dXAuZXhlClY4Q3orQmZmV3l5dTdMWFBGOUxwc1daNWZzamp2K1pGWmVLSHhyM2YxZ2padEdMdjI1djJmMGNrdWo0V2krWEhMUTVSNDhSTDM5RFpLbENSbDlzdEJRPT0K"
     }
   }
 }
