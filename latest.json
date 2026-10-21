@@ -1,11 +1,11 @@
 {
-  "version": "2.0.15",
+  "version": "2.0.16",
   "notes": "Update",
   "pub_date": "2026-02-16T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/romby1/Sentaro/releases/download/v2.0.15/sentaro_2.0.15_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWDNvNW84TFNOZTVCYWp6d05Pck9lVFNBa3RpTWhCU2xLMVpBMWhSNTNBSmNGbSsvQVdDZncwWTMzOFRRVG5oNFRTcjFzdG8xelg5cmdLbEQwS3NaMWI3NHZvSGhNQkFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkxNjQ5NzUxCWZpbGU6U2VudGFyb18yLjAuMTVfeDY0LXNldHVwLmV4ZQpjZWlBRStMZVZPbmFxQWp2S2szdE9HN1g5Y21FRWF5dCthVmpaZjYrZEFGRU1MZ2pqdTlaUXBuNk4ybEtqNGRQZmEwZDczdFB3MkZOUWtkMGtuVUJBQT09Cg=="
+      "url": "https://github.com/romby1/Sentaro/releases/download/v2.0.16/sentaro_2.0.16_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUWDNvNW84TFNOZTVCTjlPR3JkS3ZZNjFUcXBoYzFwUFhWbG5FZ2pjZjcyUlluRHBZVDY2d1ZtOHM1dkZia0RUbjhYdlBIbTlHaktrckNVdi9LWUcvMnJ1dGk0NDVwM0FVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjA3NTQyCWZpbGU6U2VudGFyb18yLjAuMTZfeDY0LXNldHVwLmV4ZQoxRWlUQ1lQWk1RL3NiVkc2bzBpYUQvODZ0QnZmZjdPTFg2TTh0cG4wNUYwZDlBdnZFMmZkT3F0bExzSGNUaE5FYUxBNGYxSk1JUW1TMTdLejY4WGVEUT09Cg=="
     }
   }
 }
