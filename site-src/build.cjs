@@ -38,7 +38,7 @@ const LISTING_TOAST = (cls) => crop(cls, 'spreads.webp', 2246, 1440, 602, 248, '
 
 const ctas = `<div class="ctas">
         <a class="btn primary" href="${WEB}">${tx('cta.web')} ${ARROW}</a>
-        <a class="btn ghost" href="${DOWNLOAD}" target="_blank" rel="noopener">${WIN}${tx('cta.win')}</a>
+        <a class="btn ghost" href="${DOWNLOAD}" target="_blank" rel="noopener" data-download>${WIN}${tx('cta.win')}</a>
       </div>`;
 const venues = `<div class="venues" aria-label="Exchanges">
         <span class="venue"><img src="logos/binance.png" alt="" width="18" height="18">Binance</span>
@@ -174,7 +174,7 @@ ${TOOLS.map(toolSection).join('\n\n')}
         <span class="tile-icon">${icon('desktop')}</span>
         ${tx('plat.win.h', 'h3')}
         ${tx('plat.win.p', 'p')}
-        <a class="btn ghost" href="${DOWNLOAD}" target="_blank" rel="noopener">${WIN}${tx('cta.win')}</a>
+        <a class="btn ghost" href="${DOWNLOAD}" target="_blank" rel="noopener" data-download>${WIN}${tx('cta.win')}</a>
       </div>
     </div>
   </div>
@@ -204,13 +204,29 @@ ${TOOLS.map(toolSection).join('\n\n')}
     <a class="brand" href="/"><img src="img/mark.png" alt="" width="22" height="22">Sentaro</a>
     <span class="spacer"></span>
     <a href="/manual/en/" data-manual>${tx('nav.docs')}</a>
-    <a href="${DOWNLOAD}" target="_blank" rel="noopener">${tx('foot.download')}</a>
+    <a href="${DOWNLOAD}" target="_blank" rel="noopener" data-download>${tx('foot.download')}</a>
     <a class="tg" href="${TELEGRAM}" target="_blank" rel="noopener">${TG}Telegram</a>
     <span class="copy">© 2026 Sentaro</span>
   </div>
 </footer>
 
 <script src="i18n.js"></script>
+<script>
+  // "Download for Windows" starts the installer of the latest release right
+  // here: GitHub names the file per version, so ask it which one. If that
+  // fails, the link's own href (the release page) opens instead.
+  document.querySelectorAll('a[data-download]').forEach((a) => a.addEventListener('click', async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch('https://api.github.com/repos/romby1/Sentaro/releases/latest');
+      const exe = (await res.json()).assets?.find((x) => x.name.endsWith('.exe'));
+      if (!exe) throw new Error('no installer');
+      location.href = exe.browser_download_url;
+    } catch {
+      window.open(a.href, '_blank', 'noopener');
+    }
+  }));
+</script>
 </body>
 </html>
 `;
