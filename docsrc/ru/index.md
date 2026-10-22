@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: SENTARO
+  name: Sentaro
   text: Справочник
   tagline: Как работает каждый инструмент, что означает каждое значение и что на самом деле делает каждая настройка.
   actions:
@@ -10,19 +10,19 @@ hero:
       text: Начало работы
       link: /ru/getting-started
     - theme: alt
-      text: Knives
-      link: /ru/tools/knives
+      text: Открыть веб-версию
+      link: https://app.sentaro.trade/
     - theme: alt
-      text: сайт sentaro
+      text: sentaro.trade
       link: https://sentaro.trade/
 
 features:
   - title: KNIVES
     details: Сканер движения цен. Отмечает любой тикер, текущая 5м свеча которого вышла за порог, заданный вами для каждой биржи.
     link: /ru/tools/knives
-  - title: ALERTS
-    details: Сканер расхождений цен между биржами и новых листингов. Показывает, насколько различаются цены одного актива прямо сейчас.
-    link: /ru/tools/alerts
+  - title: SPREADS
+    details: Разрывы цен между биржами. Показывает, насколько различаются цены одной монеты прямо сейчас, с объёмом и фандингом за каждой ценой.
+    link: /ru/tools/spreads
   - title: ANALYZER
     details: Пространство для графиков. До восьми панелей, любой таймфрейм, пять инструментов рисования, сортировка по NATR и несколько списков наблюдения.
     link: /ru/tools/analyzer

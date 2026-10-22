@@ -18,29 +18,29 @@ export default defineConfig({
   cacheDir: './.vitepress/cache',
 
   title: 'Sentaro Manual',
-  description: 'Documentation for Sentaro — a crypto monitoring workspace for Windows.',
+  description: 'Documentation for Sentaro — a crypto monitoring workspace, in your browser or on Windows.',
 
   // The landing page is dark-only; the manual matches it and drops the toggle.
   appearance: 'force-dark',
   lastUpdated: false,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/img/mark.png' }],
     // Link previews share the landing page's card (docs/og.png, served from the site root).
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'Sentaro' }],
-    ['meta', { property: 'og:image', content: `${SITE}og.png` }],
+    ['meta', { property: 'og:image', content: `${SITE}og.png?v=2` }],
     ['meta', { property: 'og:image:width', content: '1200' }],
     ['meta', { property: 'og:image:height', content: '630' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: `${SITE}og.png` }],
+    ['meta', { name: 'twitter:image', content: `${SITE}og.png?v=2` }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     [
       'link',
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap'
       }
     ]
   ],
@@ -56,7 +56,9 @@ export default defineConfig({
   },
 
   themeConfig: {
-    siteTitle: 'SENTARO',
+    siteTitle: 'Sentaro',
+    // The app mark, as on sentaro.trade (docsrc/public/mark.png).
+    logo: '/mark.png',
     // Absolute so the wordmark always returns to the landing page, not /manual/.
     logoLink: SITE,
     outline: { level: [2, 3] },
@@ -113,7 +115,7 @@ export default defineConfig({
             text: 'Tools',
             items: [
               { text: 'Knives', link: '/en/tools/knives' },
-              { text: 'Alerts', link: '/en/tools/alerts' },
+              { text: 'Spreads', link: '/en/tools/spreads' },
               { text: 'Analyzer', link: '/en/tools/analyzer' },
               { text: 'Monitor', link: '/en/tools/monitor' },
               { text: 'Ticks', link: '/en/tools/ticks' },
@@ -138,7 +140,7 @@ export default defineConfig({
               text: 'Tools',
               items: [
                 { text: 'Knives', link: '/en/tools/knives' },
-                { text: 'Alerts', link: '/en/tools/alerts' },
+                { text: 'Spreads', link: '/en/tools/spreads' },
                 { text: 'Analyzer', link: '/en/tools/analyzer' },
                 { text: 'Monitor', link: '/en/tools/monitor' },
                 { text: 'Ticks', link: '/en/tools/ticks' },
@@ -178,7 +180,7 @@ export default defineConfig({
             text: 'Інструменти',
             items: [
               { text: 'Knives', link: '/uk/tools/knives' },
-              { text: 'Alerts', link: '/uk/tools/alerts' },
+              { text: 'Spreads', link: '/uk/tools/spreads' },
               { text: 'Analyzer', link: '/uk/tools/analyzer' },
               { text: 'Monitor', link: '/uk/tools/monitor' },
               { text: 'Ticks', link: '/uk/tools/ticks' },
@@ -203,7 +205,7 @@ export default defineConfig({
               text: 'Інструменти',
               items: [
                 { text: 'Knives', link: '/uk/tools/knives' },
-                { text: 'Alerts', link: '/uk/tools/alerts' },
+                { text: 'Spreads', link: '/uk/tools/spreads' },
                 { text: 'Analyzer', link: '/uk/tools/analyzer' },
                 { text: 'Monitor', link: '/uk/tools/monitor' },
                 { text: 'Ticks', link: '/uk/tools/ticks' },
@@ -243,7 +245,7 @@ export default defineConfig({
             text: 'Инструменты',
             items: [
               { text: 'Knives', link: '/ru/tools/knives' },
-              { text: 'Alerts', link: '/ru/tools/alerts' },
+              { text: 'Spreads', link: '/ru/tools/spreads' },
               { text: 'Analyzer', link: '/ru/tools/analyzer' },
               { text: 'Monitor', link: '/ru/tools/monitor' },
               { text: 'Ticks', link: '/ru/tools/ticks' },
@@ -268,7 +270,7 @@ export default defineConfig({
               text: 'Инструменты',
               items: [
                 { text: 'Knives', link: '/ru/tools/knives' },
-                { text: 'Alerts', link: '/ru/tools/alerts' },
+                { text: 'Spreads', link: '/ru/tools/spreads' },
                 { text: 'Analyzer', link: '/ru/tools/analyzer' },
                 { text: 'Monitor', link: '/ru/tools/monitor' },
                 { text: 'Ticks', link: '/ru/tools/ticks' },

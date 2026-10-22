@@ -1,128 +1,127 @@
 /* ===========================================================================
    Sentaro manual theme.
 
-   Every value below is lifted from the :root block in docs/index.html so the
-   manual reads as the same site, not a bolted-on docs product:
+   The same design as sentaro.trade (docs/site.css) and the web app: Graphite
+   surfaces, an amber accent, Geist and Geist Mono. The tokens below are the
+   site's own; everything after maps VitePress onto them.
 
-     --bg #131212  --bg2 #161615  --bg3 #1a1a19
-     --border rgba(241,240,240,0.35)
-     --text #bebdba  --muted #7a7a7a  --dim #5a5a59
-     --green rgb(94,175,130)  --amber rgb(237,177,89)  --red #d47c7c
-
-   The site is force-dark (see config.js), but VitePress still emits its own
+   The manual is force-dark (see config.js), but VitePress still emits its own
    `.dark` block, so the overrides are declared for both selectors.
    =========================================================================== */
 
 :root,
 .dark {
-  /* ── landing tokens, verbatim ── */
-  --w-bg: #131212;
-  --w-bg2: #161615;
-  --w-bg3: #1a1a19;
-  --w-border: rgba(241, 240, 240, 0.35);
-  --w-text: #bebdba;
-  --w-muted: #7a7a7a;
-  --w-dim: #5a5a59;
-  --w-green: rgb(94, 175, 130);
-  --w-green-dim: rgba(94, 175, 130, 0.15);
-  --w-green-border: rgba(94, 175, 130, 0.3);
-  --w-red: #d47c7c;
-  --w-amber: rgb(237, 177, 89);
-  --w-amber-dim: rgba(237, 177, 89, 0.15);
-  --w-amber-border: rgba(237, 177, 89, 0.3);
+  /* ── sentaro.trade tokens ── */
+  --s-bg: #0c0c0d;
+  --s-raised: #101011;
+  --s-surface: #141416;
+  --s-surface-2: #1a1a1d;
+  --s-line: rgba(255, 255, 255, 0.06);
+  --s-line-strong: rgba(255, 255, 255, 0.11);
+  --s-fg: #ededef;
+  --s-muted: #a1a1aa;
+  --s-subtle: #8d8d96;
+  --s-accent: rgb(237, 177, 89);
+  --s-accent-soft: rgba(237, 177, 89, 0.12);
+  --s-accent-line: rgba(237, 177, 89, 0.35);
+  --s-on-accent: #1a1204;
+  --s-up: #5fd4a2;
+  --s-up-soft: rgba(95, 212, 162, 0.1);
+  --s-down: #f07a8a;
+  --s-down-soft: rgba(240, 122, 138, 0.1);
 
   /* ── typography ── */
-  --vp-font-family-base: 'Ubuntu', -apple-system, sans-serif;
-  --vp-font-family-mono: 'Ubuntu Mono', 'Courier New', monospace;
+  --vp-font-family-base: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --vp-font-family-mono: 'Geist Mono', ui-monospace, Consolas, monospace;
 
   /* ── background layers ── */
-  --vp-c-bg: var(--w-bg);
-  --vp-c-bg-alt: var(--w-bg2);
-  --vp-c-bg-soft: var(--w-bg2);
-  --vp-c-bg-elv: var(--w-bg3);
-  --vp-c-bg-mute: var(--w-bg3);
+  --vp-c-bg: var(--s-bg);
+  --vp-c-bg-alt: var(--s-bg);
+  --vp-c-bg-soft: var(--s-surface);
+  --vp-c-bg-elv: var(--s-surface-2);
+  --vp-c-bg-mute: var(--s-surface-2);
 
   /* ── text ── */
-  --vp-c-text-1: var(--w-text);
-  --vp-c-text-2: var(--w-muted);
-  --vp-c-text-3: var(--w-dim);
+  --vp-c-text-1: var(--s-fg);
+  --vp-c-text-2: var(--s-muted);
+  --vp-c-text-3: var(--s-subtle);
 
-  /* ── borders: the landing page uses one border colour everywhere ── */
-  --vp-c-divider: var(--w-border);
-  --vp-c-border: var(--w-border);
-  --vp-c-gutter: var(--w-border);
+  /* ── borders ── */
+  --vp-c-divider: var(--s-line);
+  --vp-c-border: var(--s-line-strong);
+  --vp-c-gutter: var(--s-line);
 
-  /* ── brand / accent (green) ── */
-  --vp-c-brand-1: var(--w-green);
-  --vp-c-brand-2: rgb(118, 194, 152);
-  --vp-c-brand-3: var(--w-green);
-  --vp-c-brand-soft: var(--w-green-dim);
-  --vp-c-brand: var(--w-green);
+  /* ── brand: amber ── */
+  --vp-c-brand-1: var(--s-accent);
+  --vp-c-brand-2: rgb(243, 192, 116);
+  --vp-c-brand-3: var(--s-accent);
+  --vp-c-brand-soft: var(--s-accent-soft);
+  --vp-c-brand: var(--s-accent);
 
   /* ── semantic colours ── */
-  --vp-c-tip-1: var(--w-green);
-  --vp-c-tip-2: var(--w-green);
-  --vp-c-tip-3: var(--w-green);
-  --vp-c-tip-soft: var(--w-green-dim);
+  --vp-c-tip-1: var(--s-up);
+  --vp-c-tip-2: var(--s-up);
+  --vp-c-tip-3: var(--s-up);
+  --vp-c-tip-soft: var(--s-up-soft);
 
-  --vp-c-note-1: var(--w-text);
-  --vp-c-note-soft: rgba(190, 189, 186, 0.12);
+  --vp-c-note-1: var(--s-fg);
+  --vp-c-note-soft: var(--s-surface);
 
-  --vp-c-warning-1: var(--w-amber);
-  --vp-c-warning-2: var(--w-amber);
-  --vp-c-warning-3: var(--w-amber);
-  --vp-c-warning-soft: var(--w-amber-dim);
+  --vp-c-warning-1: var(--s-accent);
+  --vp-c-warning-2: var(--s-accent);
+  --vp-c-warning-3: var(--s-accent);
+  --vp-c-warning-soft: var(--s-accent-soft);
 
-  --vp-c-danger-1: var(--w-red);
-  --vp-c-danger-2: var(--w-red);
-  --vp-c-danger-3: var(--w-red);
-  --vp-c-danger-soft: rgba(212, 124, 124, 0.15);
+  --vp-c-danger-1: var(--s-down);
+  --vp-c-danger-2: var(--s-down);
+  --vp-c-danger-3: var(--s-down);
+  --vp-c-danger-soft: var(--s-down-soft);
 
-  /* ── custom blocks (:::tip / :::warning / :::danger) ── */
-  --vp-custom-block-tip-border: var(--w-green-border);
-  --vp-custom-block-tip-text: var(--w-text);
-  --vp-custom-block-tip-bg: var(--w-green-dim);
-  --vp-custom-block-tip-code-bg: var(--w-bg3);
+  /* ── custom blocks (:::tip / :::info / :::warning / :::danger) ── */
+  --vp-custom-block-tip-border: rgba(95, 212, 162, 0.25);
+  --vp-custom-block-tip-text: var(--s-fg);
+  --vp-custom-block-tip-bg: var(--s-up-soft);
+  --vp-custom-block-tip-code-bg: var(--s-surface-2);
 
-  --vp-custom-block-info-border: var(--w-border);
-  --vp-custom-block-info-text: var(--w-text);
-  --vp-custom-block-info-bg: var(--w-bg2);
-  --vp-custom-block-info-code-bg: var(--w-bg3);
+  --vp-custom-block-info-border: var(--s-line-strong);
+  --vp-custom-block-info-text: var(--s-fg);
+  --vp-custom-block-info-bg: var(--s-surface);
+  --vp-custom-block-info-code-bg: var(--s-surface-2);
 
-  --vp-custom-block-warning-border: var(--w-amber-border);
-  --vp-custom-block-warning-text: var(--w-text);
-  --vp-custom-block-warning-bg: var(--w-amber-dim);
-  --vp-custom-block-warning-code-bg: var(--w-bg3);
+  --vp-custom-block-warning-border: var(--s-accent-line);
+  --vp-custom-block-warning-text: var(--s-fg);
+  --vp-custom-block-warning-bg: var(--s-accent-soft);
+  --vp-custom-block-warning-code-bg: var(--s-surface-2);
 
-  --vp-custom-block-danger-border: rgba(212, 124, 124, 0.35);
-  --vp-custom-block-danger-text: var(--w-text);
-  --vp-custom-block-danger-bg: rgba(212, 124, 124, 0.12);
-  --vp-custom-block-danger-code-bg: var(--w-bg3);
+  --vp-custom-block-danger-border: rgba(240, 122, 138, 0.3);
+  --vp-custom-block-danger-text: var(--s-fg);
+  --vp-custom-block-danger-bg: var(--s-down-soft);
+  --vp-custom-block-danger-code-bg: var(--s-surface-2);
 
   /* ── code ── */
-  --vp-code-block-bg: var(--w-bg2);
-  --vp-code-block-divider-color: var(--w-border);
-  --vp-c-bg-code: var(--w-bg3);
+  --vp-code-block-bg: var(--s-surface);
+  --vp-code-block-divider-color: var(--s-line);
+  --vp-c-bg-code: var(--s-surface-2);
 
-  /* ── buttons: mirror .btn-download / .btn-docs from the landing page ── */
-  --vp-button-brand-bg: var(--w-text);
-  --vp-button-brand-text: var(--w-bg);
+  /* ── buttons: the site's primary (amber) and ghost buttons ── */
+  --vp-button-brand-bg: var(--s-accent);
+  --vp-button-brand-text: var(--s-on-accent);
   --vp-button-brand-border: transparent;
-  --vp-button-brand-hover-bg: #d4d3d0;
-  --vp-button-brand-hover-text: var(--w-bg);
+  --vp-button-brand-hover-bg: rgb(243, 192, 116);
+  --vp-button-brand-hover-text: var(--s-on-accent);
   --vp-button-brand-hover-border: transparent;
-  --vp-button-brand-active-bg: #d4d3d0;
-  --vp-button-brand-active-text: var(--w-bg);
+  --vp-button-brand-active-bg: rgb(243, 192, 116);
+  --vp-button-brand-active-text: var(--s-on-accent);
 
-  --vp-button-alt-bg: transparent;
-  --vp-button-alt-text: var(--w-text);
-  --vp-button-alt-border: var(--w-border);
-  --vp-button-alt-hover-bg: rgba(190, 189, 186, 0.05);
-  --vp-button-alt-hover-text: var(--w-text);
-  --vp-button-alt-hover-border: var(--w-text);
+  --vp-button-alt-bg: var(--s-surface-2);
+  --vp-button-alt-text: var(--s-fg);
+  --vp-button-alt-border: var(--s-line-strong);
+  --vp-button-alt-hover-bg: #222226;
+  --vp-button-alt-hover-text: var(--s-fg);
+  --vp-button-alt-hover-border: var(--s-line-strong);
 
-  /* ── layout metrics: 52px nav matches the landing page ── */
-  --vp-nav-height: 52px;
+  /* ── layout metrics: the site's 64px nav ── */
+  --vp-nav-height: 64px;
   --vp-layout-top-height: 0px;
   --vp-sidebar-width: 260px;
 }
@@ -136,32 +135,32 @@ html {
 body {
   font-weight: 400;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #3a3a39;
-  border-radius: 3px;
+  background: var(--s-surface-2);
+  border-radius: 4px;
 }
 
-/* Translucent blurred nav, exactly as on the landing page. */
 .VPNav,
 .VPNavBar {
   background: transparent;
 }
 .VPNavBar:not(.has-sidebar):not(.top) .content-body,
 .VPNavBar .wrapper {
-  background: rgba(19, 18, 18, 0.85);
+  background: rgba(12, 12, 13, 0.85);
   backdrop-filter: blur(12px);
 }
 .VPNavBar {
-  border-bottom: 1px solid var(--w-border);
+  border-bottom: 1px solid var(--s-line);
 }
 .VPNavBar.has-sidebar .content-body,
 .VPNavBar.has-sidebar .curtain {
@@ -171,182 +170,206 @@ body {
   display: none;
 }
 
-/* SENTARO wordmark: 16px / 700 / 4px tracking, same as .nav-logo. */
+/* Mark + "Sentaro", as in the site's nav. */
 .VPNavBarTitle .title {
+  gap: 10px;
   font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  color: var(--w-text);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--s-fg);
   border-bottom: none;
+}
+.VPNavBarTitle .logo {
+  width: 22px;
+  height: 22px;
 }
 
 .VPNavBarMenuLink,
 .VPNavBarMenuGroup .VPFlyout .text {
-  font-size: 13px;
-  color: var(--w-muted);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--s-muted);
 }
 .VPNavBarMenuLink:hover,
 .VPNavBarMenuLink.active {
-  color: var(--w-text);
+  color: var(--s-fg);
 }
 
-/* Nav Download button — the landing page's .btn-download at nav scale. */
-.sentaro-download {
+/* Nav buttons — the site's .btn.sm, primary and ghost. */
+.sentaro-btn {
   display: inline-flex;
   align-items: center;
-  margin-left: 16px;
-  padding: 7px 18px;
-  border-radius: 2px;
-  background: var(--w-text);
-  color: var(--w-bg);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  height: 34px;
+  margin-left: 8px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
   white-space: nowrap;
-  transition: all 0.2s;
+  transition: filter 0.15s, background 0.15s;
 }
-.sentaro-download:hover {
-  background: #d4d3d0;
-  transform: translateY(-1px);
+.sentaro-btn:first-of-type {
+  margin-left: 16px;
+}
+.sentaro-btn.primary {
+  background: var(--s-accent);
+  color: var(--s-on-accent);
+}
+.sentaro-btn.primary:hover {
+  filter: brightness(1.07);
+}
+.sentaro-btn.ghost {
+  background: var(--s-surface-2);
+  color: var(--s-fg);
+  box-shadow: inset 0 0 0 1px var(--s-line-strong);
+}
+.sentaro-btn.ghost:hover {
+  background: #222226;
 }
 @media (max-width: 768px) {
-  .sentaro-download {
+  .sentaro-btn {
     display: none;
   }
 }
 
 .VPSidebar {
-  background: var(--w-bg);
-  border-right: 1px solid var(--w-border);
+  background: var(--s-bg);
+  border-right: 1px solid var(--s-line);
 }
+/* Section labels — the site's mono eyebrows. */
 .VPSidebarItem.level-0 > .item > .text {
-  font-size: 11px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--w-green);
-  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--s-accent);
 }
 .VPSidebarItem.level-1 .link .text,
 .VPSidebarItem.level-2 .link .text {
-  font-size: 13px;
-  color: var(--w-muted);
+  font-size: 14px;
+  color: var(--s-muted);
 }
 .VPSidebarItem .link:hover .text {
-  color: var(--w-text);
+  color: var(--s-fg);
 }
 .VPSidebarItem.is-active > .item .link .text {
-  color: var(--w-green);
+  color: var(--s-fg);
+  font-weight: 500;
+}
+.VPSidebarItem.is-active > .item .indicator {
+  background: var(--s-accent);
 }
 
 /* ── document typography ─────────────────────────────────────────────────── */
 
-/* Letter-spaced uppercase headings, per .tool-name / .section-title. */
 .vp-doc h1 {
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  line-height: 1.2;
-  color: var(--w-text);
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--s-fg);
 }
 
 .vp-doc h2 {
-  margin-top: 48px;
-  padding-top: 24px;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  border-top: 1px solid var(--w-border);
-  color: var(--w-text);
+  margin-top: 56px;
+  padding-top: 28px;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  border-top: 1px solid var(--s-line);
+  color: var(--s-fg);
 }
 
 .vp-doc h3 {
-  margin-top: 32px;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  color: var(--w-text);
+  margin-top: 36px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--s-fg);
 }
 
 .vp-doc h4 {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  color: var(--w-text);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--s-fg);
 }
 
 .vp-doc p,
 .vp-doc li {
-  color: var(--w-muted);
-  line-height: 1.8;
+  color: var(--s-muted);
+  line-height: 1.75;
 }
 
 .vp-doc strong {
-  color: var(--w-text);
-  font-weight: 500;
+  color: var(--s-fg);
+  font-weight: 600;
 }
 
 .vp-doc a {
-  color: var(--w-green);
-  font-weight: 400;
-  text-decoration-color: var(--w-green-border);
+  color: var(--s-accent);
+  font-weight: 500;
+  text-decoration: none;
 }
 .vp-doc a:hover {
-  color: var(--w-green);
-  text-decoration-color: var(--w-green);
+  text-decoration: underline;
+  text-decoration-color: var(--s-accent-line);
+  text-underline-offset: 3px;
 }
 
-/* Screenshots get the .screenshot-wrap treatment from the landing page. */
+/* Screenshots sit in a frame like the app windows on the site. */
 .vp-doc img {
   width: 100%;
   height: auto;
   display: block;
-  border: 1px solid var(--w-border);
-  border-radius: 4px;
-  background: var(--w-bg2);
+  border-radius: 12px;
+  background: var(--s-raised);
+  box-shadow: 0 0 0 1px var(--s-line-strong), 0 30px 60px -30px rgba(0, 0, 0, 0.8);
 }
 
 .vp-doc hr {
-  border-top: 1px solid var(--w-border);
+  border-top: 1px solid var(--s-line);
 }
 
-/* <Screenshot> — caption mirrors .screenshot-label on the landing page. */
 .sentaro-shot {
-  margin: 24px 0;
+  margin: 28px 0;
 }
 .sentaro-shot figcaption {
-  margin-top: 8px;
-  font-family: var(--vp-font-family-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--w-dim);
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--s-subtle);
+  text-align: center;
 }
 
-/* Tables carry the settings-panel look: squared corners, one border colour. */
+/* Tables: a quiet card, header in the site's subtle grey. */
 .vp-doc table {
   display: table;
   width: 100%;
   margin: 20px 0;
-  border-collapse: collapse;
-  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px var(--s-line-strong);
 }
 .vp-doc th {
-  background: var(--w-bg3);
-  color: var(--w-text);
-  font-size: 11px;
+  background: var(--s-surface);
+  color: var(--s-subtle);
+  font-size: 12px;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
   text-align: left;
-  border: 1px solid var(--w-border);
+  border: none;
+  border-bottom: 1px solid var(--s-line-strong);
 }
 .vp-doc td {
-  background: var(--w-bg2);
-  color: var(--w-muted);
-  font-size: 13px;
-  border: 1px solid var(--w-border);
+  background: transparent;
+  color: var(--s-muted);
+  font-size: 14px;
+  border: none;
+  border-top: 1px solid var(--s-line);
+}
+.vp-doc tr:first-child td {
+  border-top: none;
 }
 .vp-doc tr {
   background: transparent;
@@ -354,7 +377,7 @@ body {
 }
 .vp-doc td code,
 .vp-doc th code {
-  font-size: 12px;
+  font-size: 12.5px;
 }
 
 /* Wide content must scroll inside itself, never the page body. */
@@ -364,31 +387,42 @@ body {
 }
 
 .vp-doc div[class*='language-'] {
-  border: 1px solid var(--w-border);
-  border-radius: 4px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px var(--s-line-strong);
 }
 
 .vp-doc :not(pre) > code {
-  background: var(--w-bg3);
-  color: var(--w-text);
-  border-radius: 2px;
+  background: var(--s-surface-2);
+  color: var(--s-fg);
+  border-radius: 6px;
   font-size: 13px;
 }
 
+.vp-doc kbd {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--s-surface-2);
+  box-shadow: inset 0 0 0 1px var(--s-line-strong);
+  color: var(--s-fg);
+  font-family: var(--vp-font-family-mono);
+  font-size: 12px;
+}
+
 .vp-doc blockquote {
-  border-left: 2px solid var(--w-border);
-  color: var(--w-dim);
+  border-left: 2px solid var(--s-line-strong);
+  color: var(--s-subtle);
 }
 
 .vp-doc .custom-block {
-  border-radius: 4px;
+  border-radius: 10px;
   border-width: 1px;
 }
 .vp-doc .custom-block-title {
+  font-family: var(--vp-font-family-mono);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.06em;
 }
 .vp-doc .custom-block p {
   color: inherit;
@@ -396,103 +430,120 @@ body {
 
 /* ── home hero ───────────────────────────────────────────────────────────── */
 
+.VPHome {
+  background:
+    radial-gradient(60% 420px at 50% 360px, rgba(237, 177, 89, 0.12), transparent 70%),
+    var(--s-bg);
+}
 .VPHero .name {
-  font-size: clamp(48px, 8vw, 84px);
-  font-weight: 700;
-  letter-spacing: 10px;
+  font-size: clamp(44px, 7vw, 72px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
   line-height: 1;
-  /* Flat wordmark — the landing hero has no gradient. */
   background: none;
   -webkit-background-clip: initial;
   background-clip: initial;
-  -webkit-text-fill-color: var(--w-text);
-  color: var(--w-text);
+  -webkit-text-fill-color: var(--s-fg);
+  color: var(--s-fg);
 }
 .VPHero .text {
-  font-size: clamp(18px, 3vw, 26px);
-  font-weight: 400;
-  letter-spacing: 1px;
-  color: var(--w-text);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--s-accent);
 }
 .VPHero .tagline {
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--w-muted);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--s-muted);
 }
-.VPHero .VPButton {
-  border-radius: 2px;
-  letter-spacing: 1px;
+/* VitePress scopes its pill radius per component; the site uses 8px corners. */
+.VPHero .VPButton,
+.VPButton.medium,
+.VPButton.big {
+  border-radius: 8px !important;
+  font-weight: 600;
 }
 
 .VPFeature {
-  background: var(--w-bg2);
-  border: 1px solid var(--w-border);
-  border-radius: 4px;
-  transition: background 0.15s;
+  background: var(--s-surface);
+  border: none;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px var(--s-line);
+  transition: background 0.15s, box-shadow 0.15s;
 }
 .VPFeature:hover {
-  background: var(--w-bg3);
-  border-color: var(--w-border);
+  background: var(--s-surface-2);
+  box-shadow: inset 0 0 0 1px var(--s-line-strong);
 }
 .VPFeature .title {
-  font-size: 14px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 1px;
-  color: var(--w-text);
+  letter-spacing: 0.06em;
+  color: var(--s-accent);
 }
 .VPFeature .details {
-  font-size: 13px;
-  color: var(--w-muted);
+  font-size: 14px;
+  color: var(--s-muted);
 }
 
 /* ── search, footer, misc ────────────────────────────────────────────────── */
 
 .DocSearch-Button,
 .VPNavBarSearchButton {
-  background: var(--w-bg2);
-  border: 1px solid var(--w-border);
-  border-radius: 4px;
+  background: var(--s-surface);
+  border: none;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px var(--s-line-strong);
 }
 .VPLocalSearchBox .shell {
-  background: var(--w-bg2);
-  border: 1px solid var(--w-border);
-  border-radius: 4px;
+  background: var(--s-surface);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--s-line-strong), 0 30px 60px -20px rgba(0, 0, 0, 0.8);
 }
 
 .VPFooter {
   background: transparent;
-  border-top: 1px solid var(--w-border);
+  border-top: 1px solid var(--s-line);
 }
 .VPFooter .message,
 .VPFooter .copyright {
-  font-size: 12px;
-  color: var(--w-dim);
+  font-size: 13px;
+  color: var(--s-subtle);
 }
 
 .VPDocFooter .pager-link {
-  background: var(--w-bg2);
-  border: 1px solid var(--w-border);
-  border-radius: 4px;
+  background: var(--s-surface);
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px var(--s-line);
 }
 .VPDocFooter .pager-link:hover {
-  background: var(--w-bg3);
-  border-color: var(--w-border);
+  background: var(--s-surface-2);
+  box-shadow: inset 0 0 0 1px var(--s-line-strong);
 }
 .VPDocFooter .pager-link .title {
-  color: var(--w-text);
+  color: var(--s-fg);
 }
 
 .VPDocOutlineItem a {
-  font-size: 12px;
-  color: var(--w-muted);
+  font-size: 13px;
+  color: var(--s-muted);
 }
 .VPDocOutlineItem a:hover,
 .VPDocOutlineItem a.active {
-  color: var(--w-green);
+  color: var(--s-fg);
+}
+.VPDocAsideOutline .outline-marker {
+  background-color: var(--s-accent);
 }
 .VPDocAsideOutline .outline-title {
-  font-size: 11px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--w-green);
+  letter-spacing: 0.06em;
+  color: var(--s-accent);
 }

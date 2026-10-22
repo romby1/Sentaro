@@ -194,7 +194,7 @@ each other, and are each rate-limited to one play every 2 seconds.
 
 ## Related
 
-- [Alerts](/en/tools/alerts) — cross-exchange price deviations rather than
+- [Spreads](/en/tools/spreads) — cross-exchange price gaps rather than
   single-exchange moves
 - [Monitor](/en/tools/monitor) — a ranked view of the whole market instead of a
   trigger-based feed

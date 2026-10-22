@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: SENTARO
+  name: Sentaro
   text: Manual
   tagline: How every tool works, what each reading means, and what every setting actually does.
   actions:
@@ -10,19 +10,19 @@ hero:
       text: Getting started
       link: /en/getting-started
     - theme: alt
-      text: Knives
-      link: /en/tools/knives
+      text: Open the web app
+      link: https://app.sentaro.trade/
     - theme: alt
-      text: sentaro site
+      text: sentaro.trade
       link: https://sentaro.trade/
 
 features:
   - title: KNIVES
     details: Price movement scanner. Flags any ticker whose current 5m candle moves past a threshold you set per exchange.
     link: /en/tools/knives
-  - title: ALERTS
-    details: Cross-exchange price deviation and new-listing scanner. Shows how far apart the same asset is priced right now.
-    link: /en/tools/alerts
+  - title: SPREADS
+    details: Cross-exchange price gaps. Shows how far apart the same coin is priced right now, with the volume and funding behind every price.
+    link: /en/tools/spreads
   - title: ANALYZER
     details: Multi-chart workspace. Up to eight panels, any timeframe, five drawing tools, NATR sorting and multiple watchlists.
     link: /en/tools/analyzer

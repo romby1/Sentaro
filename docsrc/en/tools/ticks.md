@@ -3,9 +3,10 @@
 Ticks is a tape of **big trades**. It shows the aggressive buys and sells that
 cleared a size you set, as they print, grouped into one card per symbol. On the
 same feed it can also detect **TWAP chains** — the same order size repeating on
-one venue, which is what an algorithm slicing a large order looks like.
+one venue, which is what an algorithm slicing a large order looks like — and show
+**liquidations**, the positions exchanges force-close.
 
-<Screenshot src="ticks" alt="The Ticks window with several symbol cards" caption="The Ticks window" />
+<Screenshot src="web-ticks" alt="Ticks in the web app, split into Ticks, TWAPs and Liquidations panels" caption="Ticks in the web app — split view with Ticks, TWAPs and Liquidations panels" />
 
 Where [Knives](/en/tools/knives) tells you a candle moved, Ticks shows you the
 individual trades that moved it.
@@ -40,10 +41,11 @@ Kraken is only used here — no other tool reads it.
 
 Left to right:
 
-- **Timeframe** — the candle interval used by every card's chart.
+- **Timeframe** — the candle interval used by every card's chart. In the web
+  app, click it to pick another; every chart switches at once.
 - **Vol Ind** — turns the [volume histogram](/en/customize/chart-colors#volume-histogram)
   on or off for every chart in this window.
-- **Mixed / Split** — only while TWAP chains are on; see
+- **Mixed / Split** — only while TWAP chains or liquidations are on; see
   [Mixed and split view](#mixed-and-split-view).
 - **min $… · max $…** — the global burst size band in force.
 - **ALL / ANY** — the [match mode](#match-mode).
@@ -89,7 +91,8 @@ Drag the handle at the bottom of any card to resize the tick list. The height
 applies to every card.
 
 Ticks charts are deliberately plain: no drawing tools, no fullscreen and no
-majors overlay. The tape is about what is printing now.
+majors overlay. The tape is about what is printing now. The one addition is
+[liquidation markers](#markers-on-the-chart).
 
 ### Delivery cap
 
@@ -149,18 +152,56 @@ size on the tape. Read it next to the price action, not instead of it.
 
 ### Mixed and split view
 
-While TWAP chains are on, the titlebar button switches the layout:
+While TWAP chains or liquidations are on, the titlebar switch changes the layout:
 
-- **Mixed** (default) — tick and TWAP cards share one grid, sorted by recency,
-  with a `TICK` / `TWAP` badge on each.
-- **Split** — TWAP cards get their own `TWAPS` pane. Drag its header to dock it
-  left, right, top or bottom, and drag the gutter to resize it. This works the
-  same way as the [liquidation tape](/en/tools/alerts#moving-and-resizing-it) in
-  Alerts.
+- **Mixed** (default) — tick, TWAP and liquidation cards share one grid, sorted
+  by recency, with a `TICK` / `TWAP` / `LIQ` badge on each.
+- **Split** — each kind gets its own panel: **Ticks**, **TWAPs** and
+  **Liquidations**, each with a count of its cards. Drag a panel by its header
+  to dock it to any edge of another panel or to stack it as a tab beside it,
+  and drag the gutter between panels to resize them. The layout is remembered.
+
+## Liquidations
+
+A liquidation is a position the exchange closes by force when its margin runs
+out. Ticks shows them from **Binance** and **Bybit** perpetuals — the venues that
+publish them — one card per symbol, like ticks.
+
+Liquidations are **on by default** and independent of the tick feed and TWAP
+chains. When you open Ticks, the liquidations of the last 15 minutes that pass
+your filters are filled in first (up to 50), so the panel is not empty on open.
+
+### A liquidation card
+
+The header shows the side and size of the most recent liquidation and `×N` — how
+many that symbol has on the card. Under the chart is the list, newest first:
+
+| Part | Meaning |
+| --- | --- |
+| Time | When it printed |
+| Venue icon | Binance or Bybit |
+| ▲ / ▼ | The resulting pressure: ▼ a forced sell, ▲ a forced buy |
+| Long / Short | Which side was liquidated |
+| $ | Notional size of that single liquidation |
+| Price | The price it closed at |
+
+::: warning Colour follows the pressure, not the word
+A liquidated **long** is a forced **sell**; a liquidated **short** is a forced
+**buy**. Rows and markers are coloured by that resulting pressure, matching the
+liquidation diamonds in the [majors overlay](/en/customize/majors#liquidations-—-diamonds).
+:::
+
+### Markers on the chart
+
+Every liquidation shown also lands on the chart of that symbol — on liquidation
+cards and on the symbol's tick and TWAP cards alike. A liquidated long is a red
+arrow **above** the candle, a liquidated short a green arrow **below** it, each
+labelled with its size. Several in the same candle are added together.
 
 ## Settings
 
-Open the **Ticks** tab in the main window.
+Open Ticks' settings: the icon at the right of the toolbar (web), or the
+**Ticks** tab in the main window (Windows).
 
 <Screenshot src="ticks-settings" alt="The Ticks settings in the main window" caption="Ticks settings" />
 
@@ -337,6 +378,54 @@ default off. A non-zero value also hides symbols whose turnover is not known yet
 The maximum number of ticks per second the server delivers before it starts
 dropping the smallest held ones. Range **1 to 200**, default 20.
 
+### Liquidations
+
+#### Enable liquidation tape
+
+Shows forced position closes as they happen. **On by default.** Everything
+below is inert while this is off.
+
+#### Cards kept
+
+How many liquidation cards the window keeps before cycling out the oldest.
+Range **3 to 50**, default 12.
+
+#### Minimum size
+
+The size of a single liquidation, in USD. Range **$5,000 to $1,000,000** in
+$5,000 steps, default $50,000. It applies to every venue that does not have its
+own size. $5,000 is the server's own floor.
+
+There is no adding up: a liquidation shows if it alone is at least this size.
+
+#### Per-venue settings
+
+One block each for **Binance** and **Bybit**:
+
+- A switch to mute that venue entirely.
+- **Size on this venue** — its own minimum size. Off, it follows the minimum
+  size above.
+
+$50K is routine on Binance but can be a large event elsewhere, so giving each
+venue its own size keeps one venue from drowning out the other. If both venues
+are muted, the app warns you that nothing can arrive.
+
+#### Minimum 24h turnover
+
+Hides thin symbols by their 24-hour turnover. Range **$0 to $50M** in $1M steps,
+default off. A non-zero value also hides symbols whose turnover is not known yet.
+
+#### Blacklist
+
+Symbols to never show. Type one and press <kbd>Enter</kbd> to add it; **Clear
+all** empties the list.
+
+#### Liquidation sound
+
+Plays a sound when a liquidation arrives. **Off by default.** This fires on every
+liquidation that passes your filters — raise **Minimum size** first, then turn it
+on.
+
 ### Notifications
 
 #### Tick sound
@@ -346,7 +435,6 @@ minimum size this fires a lot — set the filters first.
 
 ## Related
 
-- [Alerts](/en/tools/alerts) — the liquidation tape lives there
 - [Majors overlay](/en/customize/majors) — big trades drawn on a chart at the
   price they printed
 - [Knives](/en/tools/knives) — candle-level moves rather than individual trades
