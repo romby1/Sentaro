@@ -22,15 +22,15 @@ module.exports = {
     ru: 'Весь рынок, <em>один экран.</em>',
   },
   'hero.lede': {
-    en: 'Price moves, spread gaps, big trades and new listings from Binance, Bybit, OKX, Gate and Hyperliquid, live. In your browser or on Windows.',
-    uk: 'Різкі рухи, спреди, великі угоди й нові лістинги з Binance, Bybit, OKX, Gate і Hyperliquid наживо. У браузері або на Windows.',
-    ru: 'Резкие движения, спреды, крупные сделки и новые листинги с Binance, Bybit, OKX, Gate и Hyperliquid вживую. В браузере или на Windows.',
+    en: 'Price moves, spread gaps, big trades, TWAPs, liquidations and new listings from Binance, Bybit, OKX, Gate and Hyperliquid, live. In your browser or on Windows.',
+    uk: 'Різкі рухи, спреди, великі угоди, TWAP, ліквідації й нові лістинги з Binance, Bybit, OKX, Gate і Hyperliquid наживо. У браузері або на Windows.',
+    ru: 'Резкие движения, спреды, крупные сделки, TWAP, ликвидации и новые листинги с Binance, Bybit, OKX, Gate и Hyperliquid вживую. В браузере или на Windows.',
   },
   'cta.web': { en: 'Open the web app', uk: 'Відкрити веб-версію', ru: 'Открыть веб-версию' },
   'cta.win': { en: 'Download for Windows', uk: 'Завантажити для Windows', ru: 'Скачать для Windows' },
 
   'tools.label': { en: 'Tools', uk: 'Інструменти', ru: 'Инструменты' },
-  'tools.title': { en: 'Five tools, one account.', uk: 'П’ять інструментів, один акаунт.', ru: 'Пять инструментов, один аккаунт.' },
+  'tools.title': { en: 'Seven tools, one account.', uk: 'Сім інструментів, один акаунт.', ru: 'Семь инструментов, один аккаунт.' },
   'docs.link': { en: 'Documentation', uk: 'Документація', ru: 'Документация' },
 
   'knives.title': { en: 'Never miss a move again.', uk: 'Більше жодного пропущеного руху.', ru: 'Больше ни одного пропущенного движения.' },
@@ -91,8 +91,8 @@ module.exports = {
   'spreads.f4h': { en: 'Your floor, your filters', uk: 'Ваш поріг, ваші фільтри', ru: 'Ваш порог, ваши фильтры' },
   'spreads.f4d': {
     en: 'Minimum spread, maximum age and volume. Below that, silence.',
-    uk: 'Мінімальний спред, максимальний вік і обсяг. Нижче — тиша.',
-    ru: 'Минимальный спред, максимальный возраст и объём. Ниже — тишина.',
+    uk: 'Мінімальний спред, максимальний вік і обсяг. Нижче - тиша.',
+    ru: 'Минимальный спред, максимальный возраст и объём. Ниже - тишина.',
   },
 
   'analyzer.title': { en: 'Every timeframe at once.', uk: 'Усі таймфрейми одночасно.', ru: 'Все таймфреймы сразу.' },
@@ -155,9 +155,9 @@ module.exports = {
 
   'ticks.title': { en: 'See the trades that move the price.', uk: 'Бачте угоди, що рухають ціну.', ru: 'Видьте сделки, которые двигают цену.' },
   'ticks.lede': {
-    en: 'Every big aggressive buy and sell, the moment it prints, grouped by coin with the chart right above. Liquidations and TWAPs too.',
-    uk: 'Кожна велика агресивна покупка й продаж у момент виконання, згруповані за монетою з графіком над ними. А також ліквідації й TWAP.',
-    ru: 'Каждая крупная агрессивная покупка и продажа в момент исполнения, сгруппированные по монете с графиком над ними. А также ликвидации и TWAP.',
+    en: 'Three tools on the tape: every big aggressive trade the moment it prints, algorithms working a large order in small pieces, and forced closes. Each marked right on its coin\'s chart.',
+    uk: 'Три інструменти на стрічці угод: кожна велика агресивна угода в момент виконання, алгоритми, що виконують великий ордер дрібними частинами, і примусові закриття. Усе позначено просто на графіку монети.',
+    ru: 'Три инструмента на ленте сделок: каждая крупная агрессивная сделка в момент исполнения, алгоритмы, исполняющие крупный ордер мелкими частями, и принудительные закрытия. Всё отмечено прямо на графике монеты.',
   },
   'ticks.f1h': { en: 'Big for this coin', uk: 'Велике саме для цієї монети', ru: 'Крупное именно для этой монеты' },
   'ticks.f1d': {
@@ -165,24 +165,26 @@ module.exports = {
     uk: 'Фільтр за сумою, за тим, наскільки рушила ціна, або відносно звичайної хвилини монети.',
     ru: 'Фильтр по сумме, по тому, насколько сдвинулась цена, или относительно обычной минуты монеты.',
   },
-  'ticks.f2h': { en: 'One order, one line', uk: 'Один ордер — один рядок', ru: 'Один ордер — одна строка' },
+  'ticks.f2h': { en: 'Catch the quiet buyer', uk: 'Помітьте тихого покупця', ru: 'Заметьте тихого покупателя' },
   'ticks.f2d': {
-    en: 'The fills of a single market order merged into one tick, with the move it caused.',
-    uk: 'Виконання одного ринкового ордера зібрані в один тік разом із рухом, який він спричинив.',
-    ru: 'Исполнения одного рыночного ордера собраны в один тик вместе с движением, которое он вызвал.',
+    en: 'TWAPs finds an algorithm working a large order in small pieces, with every one of its orders on the chart.',
+    uk: 'TWAP знаходить алгоритм, що виконує великий ордер дрібними частинами, і показує кожен його ордер на графіку.',
+    ru: 'TWAP находит алгоритм, исполняющий крупный ордер мелкими частями, и показывает каждый его ордер на графике.',
   },
-  'ticks.f3h': { en: 'Catch the quiet buyer', uk: 'Помітьте тихого покупця', ru: 'Заметьте тихого покупателя' },
+  'ticks.f3h': { en: 'Liquidations from four exchanges', uk: 'Ліквідації з чотирьох бірж', ru: 'Ликвидации с четырёх бирж' },
   'ticks.f3d': {
-    en: 'TWAP detection finds an algorithm working a large order in small pieces.',
-    uk: 'Виявлення TWAP знаходить алгоритм, що виконує великий ордер дрібними частинами.',
-    ru: 'Обнаружение TWAP находит алгоритм, исполняющий крупный ордер мелкими частями.',
+    en: 'Forced closes on Binance, Bybit, OKX and Gate as markers on the chart, longs and shorts at a glance.',
+    uk: 'Примусові закриття на Binance, Bybit, OKX і Gate позначками на графіку, лонги й шорти одразу видно.',
+    ru: 'Принудительные закрытия на Binance, Bybit, OKX и Gate отметками на графике, лонги и шорты видно сразу.',
   },
-  'ticks.f4h': { en: 'Liquidations on the chart', uk: 'Ліквідації на графіку', ru: 'Ликвидации на графике' },
+  'ticks.f4h': { en: 'Tuned per exchange', uk: 'Налаштування для кожної біржі', ru: 'Настройка для каждой биржи' },
   'ticks.f4d': {
-    en: 'Forced closes as markers on the chart, longs and shorts at a glance.',
-    uk: 'Примусові закриття позначками на графіку, лонги й шорти одразу видно.',
-    ru: 'Принудительные закрытия отметками на графике, лонги и шорты видно сразу.',
+    en: 'Each exchange gets its own size, price move and 24h turnover. Majors, stablecoins or stocks go to the blacklist in one click.',
+    uk: 'Кожна біржа має власний розмір, рух ціни й обіг за 24 години. Мажори, стейблкоїни чи акції додаються до чорного списку в один клік.',
+    ru: 'У каждой биржи свой размер, движение цены и оборот за 24 часа. Мажоры, стейблкоины или акции добавляются в чёрный список в один клик.',
   },
+  'twaps.title': { en: 'Catch the quiet buyer.', uk: 'Помітьте тихого покупця.', ru: 'Заметьте тихого покупателя.' },
+  'liquidations.title': { en: 'See who got squeezed.', uk: 'Дивіться, кого виштовхнуло.', ru: 'Смотрите, кого выбило.' },
 
   'alerts.label': { en: 'Alerts', uk: 'Сповіщення', ru: 'Оповещения' },
   'alerts.title': { en: 'It calls you when something happens.', uk: 'Він покличе, коли щось станеться.', ru: 'Он позовёт, когда что-то произойдёт.' },
@@ -200,15 +202,15 @@ module.exports = {
   },
   'plat.web.h': { en: 'Web app', uk: 'Веб-версія', ru: 'Веб-версия' },
   'plat.web.p': {
-    en: 'Open it in any browser on Windows, macOS or Linux. Nothing to install, always the latest version.',
-    uk: 'Відкривайте в будь-якому браузері на Windows, macOS або Linux. Нічого встановлювати, завжди остання версія.',
-    ru: 'Открывайте в любом браузере на Windows, macOS или Linux. Ничего устанавливать, всегда последняя версия.',
+    en: 'Open it in any browser on Windows, macOS or Linux. Put tools side by side on tabs and switch with a key, in five themes. Nothing to install, always the latest version.',
+    uk: 'Відкривайте в будь-якому браузері на Windows, macOS або Linux. Інструменти поруч на вкладках, перемикання клавішами, п’ять тем оформлення. Нічого встановлювати, завжди остання версія.',
+    ru: 'Открывайте в любом браузере на Windows, macOS или Linux. Инструменты рядом на вкладках, переключение клавишами, пять тем оформления. Ничего устанавливать, всегда последняя версия.',
   },
   'plat.win.h': { en: 'Windows app', uk: 'Застосунок для Windows', ru: 'Приложение для Windows' },
   'plat.win.p': {
     en: 'Every tool in its own window, spread across your monitors. Includes Terminal, an experimental tool for trading from the order book.',
-    uk: 'Кожен інструмент у власному вікні, на всіх ваших моніторах. Включає Terminal — експериментальний інструмент для торгівлі зі стакана.',
-    ru: 'Каждый инструмент в своём окне, на всех ваших мониторах. Включает Terminal — экспериментальный инструмент для торговли из стакана.',
+    uk: 'Кожен інструмент у власному вікні, на всіх ваших моніторах. Включає Terminal - експериментальний інструмент для торгівлі зі стакана.',
+    ru: 'Каждый инструмент в своём окне, на всех ваших мониторах. Включает Terminal - экспериментальный инструмент для торговли из стакана.',
   },
 
   'faq.label': { en: 'FAQ', uk: 'FAQ', ru: 'FAQ' },
@@ -228,8 +230,8 @@ module.exports = {
   'faq.q3': { en: 'Does Sentaro touch my exchange account?', uk: 'Чи має Sentaro доступ до мого акаунта на біржі?', ru: 'Есть ли у Sentaro доступ к моему аккаунту на бирже?' },
   'faq.a3': {
     en: 'No. The tools read public market data only. They never ask for API keys and cannot place trades. The one exception is Terminal on Windows, an experimental tool that is off by default and only works with trade-only keys you add yourself.',
-    uk: 'Ні. Інструменти читають лише публічні ринкові дані. Вони ніколи не просять API-ключі й не можуть торгувати. Єдиний виняток — Terminal на Windows: експериментальний інструмент, вимкнений за замовчуванням, працює лише з ключами для торгівлі, які ви додасте самі.',
-    ru: 'Нет. Инструменты читают только публичные рыночные данные. Они никогда не просят API-ключи и не могут торговать. Единственное исключение — Terminal на Windows: экспериментальный инструмент, выключенный по умолчанию, работает только с ключами для торговли, которые вы добавите сами.',
+    uk: 'Ні. Інструменти читають лише публічні ринкові дані. Вони ніколи не просять API-ключі й не можуть торгувати. Єдиний виняток - Terminal на Windows: експериментальний інструмент, вимкнений за замовчуванням, працює лише з ключами для торгівлі, які ви додасте самі.',
+    ru: 'Нет. Инструменты читают только публичные рыночные данные. Они никогда не просят API-ключи и не могут торговать. Единственное исключение - Terminal на Windows: экспериментальный инструмент, выключенный по умолчанию, работает только с ключами для торговли, которые вы добавите сами.',
   },
   'faq.q4': { en: 'Do I need the web app or the Windows app?', uk: 'Мені потрібна веб-версія чи застосунок для Windows?', ru: 'Мне нужна веб-версия или приложение для Windows?' },
   'faq.a4': {

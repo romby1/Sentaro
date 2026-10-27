@@ -24,6 +24,8 @@ const ICON = {
   analyzer: '<path d="M9 5v4M7 9h4v6H7zM9 15v2M17 3v2M15 5h4v8h-4zM17 13v3M3 3v16a2 2 0 0 0 2 2h16"/>',
   monitor: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>',
   ticks: '<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>',
+  twaps: '<path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/>',
+  liquidations: '<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>',
   bell: '<path d="M10.27 21a2 2 0 0 0 3.46 0M3.26 15.33A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.67C19.41 13.96 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.41 5.96-2.74 7.33"/>',
   globe: '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/>',
   desktop: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>',
@@ -53,7 +55,14 @@ const TOOLS = [
   { id: 'spreads', name: 'Spreads', doc: 'spreads', img: 'spreads.webp', fit: 'short', alt: 'Sentaro Spreads: one coin priced on five exchanges' },
   { id: 'analyzer', name: 'Analyzer', doc: 'analyzer', img: 'analyzer.webp', fit: 'desk', alt: 'Sentaro Analyzer: one coin on four timeframes with drawings and big-order levels, beside the market list' },
   { id: 'monitor', name: 'Monitor', doc: 'monitor', img: 'monitor.webp', fit: '', alt: 'Sentaro Monitor: coins ranked by volatility' },
-  { id: 'ticks', name: 'Ticks', doc: 'ticks', img: 'ticks.webp', fit: 'desk', alt: 'Sentaro Ticks: big trades, TWAPs and liquidations, each grouped by coin' },
+  { id: 'ticks', name: 'Ticks · TWAPs · Liquidations', doc: 'ticks', img: 'ticks.webp', fit: 'desk', alt: 'Sentaro TWAPs, Ticks and Liquidations side by side on one tab, each marked on its coin\'s chart' },
+];
+// The overview's tiles: every tool, TWAPs and Liquidations pointing at the tape section they share.
+const TILES = [
+  ...TOOLS.filter((tool) => tool.id !== 'ticks'),
+  { id: 'ticks', name: 'Ticks', href: '#ticks' },
+  { id: 'twaps', name: 'TWAPs', href: '#ticks' },
+  { id: 'liquidations', name: 'Liquidations', href: '#ticks' },
 ];
 
 const toolSection = (tool) => `<section class="tool" id="${tool.id}">
@@ -141,7 +150,7 @@ const html = `<!DOCTYPE html>
     ${tx('tools.label', 'p', ' class="eyebrow"')}
     ${tx('tools.title', 'h2')}
     <div class="tiles">
-      ${TOOLS.map((tool) => `<a class="tile" href="#${tool.id}"><span class="tile-icon">${icon(tool.id)}</span><b>${tool.name}</b>${tx(tool.id + '.title')}</a>`).join('\n      ')}
+      ${TILES.map((tool) => `<a class="tile" href="${tool.href ?? '#' + tool.id}"><span class="tile-icon">${icon(tool.id)}</span><b>${tool.name}</b>${tx(tool.id + '.title')}</a>`).join('\n      ')}
     </div>
   </div>
 </section>
