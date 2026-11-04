@@ -2,9 +2,9 @@
 // Tool names (Knives, Spreads, …) stay English: they are the app's names.
 module.exports = {
   'meta.title': {
-    en: 'Sentaro: live crypto screener for Binance, Bybit, OKX, Gate and Hyperliquid',
-    uk: 'Sentaro: криптоскринер у реальному часі для Binance, Bybit, OKX, Gate і Hyperliquid',
-    ru: 'Sentaro: криптоскринер в реальном времени для Binance, Bybit, OKX, Gate и Hyperliquid',
+    en: 'Sentaro: live crypto screener for Binance, Bybit, OKX, Gate, Hyperliquid and Aster',
+    uk: 'Sentaro: криптоскринер у реальному часі для Binance, Bybit, OKX, Gate, Hyperliquid і Aster',
+    ru: 'Sentaro: криптоскринер в реальном времени для Binance, Bybit, OKX, Gate, Hyperliquid и Aster',
   },
   'nav.tools': { en: 'Tools', uk: 'Інструменти', ru: 'Инструменты' },
   'nav.docs': { en: 'Docs', uk: 'Документація', ru: 'Документация' },
@@ -22,9 +22,9 @@ module.exports = {
     ru: 'Весь рынок, <em>один экран.</em>',
   },
   'hero.lede': {
-    en: 'Price moves, spread gaps, big trades, TWAPs, liquidations and new listings from Binance, Bybit, OKX, Gate and Hyperliquid, live. In your browser or on Windows.',
-    uk: 'Різкі рухи, спреди, великі угоди, TWAP, ліквідації й нові лістинги з Binance, Bybit, OKX, Gate і Hyperliquid наживо. У браузері або на Windows.',
-    ru: 'Резкие движения, спреды, крупные сделки, TWAP, ликвидации и новые листинги с Binance, Bybit, OKX, Gate и Hyperliquid вживую. В браузере или на Windows.',
+    en: 'Price moves, spread gaps, big trades, TWAPs, liquidations and new listings from Binance, Bybit, OKX, Gate, Hyperliquid, Aster and Binance Alpha, live. In your browser, on your phone or on Windows.',
+    uk: 'Різкі рухи, спреди, великі угоди, TWAP, ліквідації й нові лістинги з Binance, Bybit, OKX, Gate, Hyperliquid, Aster і Binance Alpha наживо. У браузері, на телефоні або на Windows.',
+    ru: 'Резкие движения, спреды, крупные сделки, TWAP, ликвидации и новые листинги с Binance, Bybit, OKX, Gate, Hyperliquid, Aster и Binance Alpha вживую. В браузере, на телефоне или на Windows.',
   },
   'cta.web': { en: 'Open the web app', uk: 'Відкрити веб-версію', ru: 'Открыть веб-версию' },
   'cta.win': { en: 'Download for Windows', uk: 'Завантажити для Windows', ru: 'Скачать для Windows' },
@@ -35,15 +35,19 @@ module.exports = {
 
   'knives.title': { en: 'Never miss a move again.', uk: 'Більше жодного пропущеного руху.', ru: 'Больше ни одного пропущенного движения.' },
   'knives.lede': {
-    en: 'Sentaro watches every coin on five exchanges and surfaces the ones that just moved, on the 5-minute candle, as it happens.',
-    uk: 'Sentaro стежить за кожною монетою на п’яти біржах і показує ті, що щойно рушили, на 5-хвилинній свічці, просто зараз.',
-    ru: 'Sentaro следит за каждой монетой на пяти биржах и показывает те, что только что двинулись, на 5-минутной свече, прямо сейчас.',
+    en: 'Sentaro watches every coin on seven exchanges and surfaces the ones that just moved, on the 5-minute candle, as it happens.',
+    uk: 'Sentaro стежить за кожною монетою на семи біржах і показує ті, що щойно рушили, на 5-хвилинній свічці, просто зараз.',
+    ru: 'Sentaro следит за каждой монетой на семи биржах и показывает те, что только что двинулись, на 5-минутной свече, прямо сейчас.',
   },
-  'knives.f1h': { en: '500+ coins, one window', uk: '500+ монет в одному вікні', ru: '500+ монет в одном окне' },
+  'knives.f1h': {
+    en: '1000+ coins, one window',
+    uk: '1000+ монет в одному вікні',
+    ru: '1000+ монет в одном окне',
+  },
   'knives.f1d': {
-    en: 'Bybit, Binance, Gate, OKX and Hyperliquid, all watched at once. One window instead of five tabs.',
-    uk: 'Bybit, Binance, Gate, OKX і Hyperliquid одночасно. Одне вікно замість п’яти вкладок.',
-    ru: 'Bybit, Binance, Gate, OKX и Hyperliquid одновременно. Одно окно вместо пяти вкладок.',
+    en: 'Bybit, Binance, Gate, OKX, Hyperliquid, Aster and Binance Alpha, all watched at once. One window instead of seven tabs.',
+    uk: 'Bybit, Binance, Gate, OKX, Hyperliquid, Aster і Binance Alpha одночасно. Одне вікно замість семи вкладок.',
+    ru: 'Bybit, Binance, Gate, OKX, Hyperliquid, Aster и Binance Alpha одновременно. Одно окно вместо семи вкладок.',
   },
   'knives.f2h': { en: 'Only the moves that matter', uk: 'Лише важливі рухи', ru: 'Только важные движения' },
   'knives.f2d': {
@@ -107,7 +111,11 @@ module.exports = {
     uk: 'До восьми графіків поруч, будь-який таймфрейм від 1m до 1w, зберігаються як ви їх залишили.',
     ru: 'До восьми графиков рядом, любой таймфрейм от 1m до 1w, сохраняются как вы их оставили.',
   },
-  'analyzer.f2h': { en: 'Five exchanges, spot and futures', uk: 'П’ять бірж, спот і ф’ючерси', ru: 'Пять бирж, спот и фьючерсы' },
+  'analyzer.f2h': {
+    en: 'Seven exchanges, spot and futures',
+    uk: 'Сім бірж, спот і ф’ючерси',
+    ru: 'Семь бирж, спот и фьючерсы',
+  },
   'analyzer.f2d': {
     en: 'Switch exchange or market and every chart follows, with no reload.',
     uk: 'Змініть біржу чи ринок, і всі графіки перемкнуться без перезавантаження.',
@@ -128,17 +136,29 @@ module.exports = {
 
   'monitor.title': { en: 'The whole market, ranked by what\'s moving.', uk: 'Весь ринок, впорядкований за рухом.', ru: 'Весь рынок, упорядоченный по движению.' },
   'monitor.lede': {
-    en: 'A live leaderboard of volatility. Every coin ranked by NATR, volume or change, across all five exchanges.',
-    uk: 'Живий рейтинг волатильності. Кожна монета за NATR, обсягом або зміною, на всіх п’яти біржах.',
-    ru: 'Живой рейтинг волатильности. Каждая монета по NATR, объёму или изменению, на всех пяти биржах.',
+    en: 'A live leaderboard of volatility. Every coin ranked by NATR, volume, change or trades, across all your exchanges.',
+    uk: 'Живий рейтинг волатильності. Кожна монета за NATR, обсягом, зміною або кількістю угод, на всіх ваших біржах.',
+    ru: 'Живой рейтинг волатильности. Каждая монета по NATR, объёму, изменению или количеству сделок, на всех ваших биржах.',
   },
-  'monitor.f1h': { en: 'What\'s moving right now', uk: 'Що рухається зараз', ru: 'Что движется сейчас' },
-  'monitor.f1d': { en: 'The board reorders itself as the market turns.', uk: 'Дошка перебудовується разом із ринком.', ru: 'Доска перестраивается вместе с рынком.' },
-  'monitor.f2h': { en: 'No dead weight', uk: 'Без баласту', ru: 'Без балласта' },
+  'monitor.f1h': {
+    en: 'What\'s moving right now',
+    uk: 'Що рухається зараз',
+    ru: 'Что движется сейчас',
+  },
+  'monitor.f1d': {
+    en: 'Rank by NATR, volume, change or trades over the last 15 minutes. The board reorders itself as the market turns.',
+    uk: 'NATR, обсяг, зміна або угоди за останні 15 хвилин. Дошка перебудовується разом із ринком.',
+    ru: 'NATR, объём, изменение или сделки за последние 15 минут. Доска перестраивается вместе с рынком.',
+  },
+  'monitor.f2h': {
+    en: 'Pin the coins you follow',
+    uk: 'Закріпіть свої монети',
+    ru: 'Закрепите свои монеты',
+  },
   'monitor.f2d': {
-    en: 'Minimum volume filters keep the top of the board tradeable.',
-    uk: 'Фільтри мінімального обсягу тримають верх дошки придатним для торгівлі.',
-    ru: 'Фильтры минимального объёма держат верх доски пригодным для торговли.',
+    en: 'Add any coin with "+" and it stays first, with its numbers even when it leaves the top. Drag the pinned ones into your order.',
+    uk: 'Додайте будь-яку монету через «+», і вона стоїть першою, з цифрами навіть поза топом. Закріплені перетягуються у ваш порядок.',
+    ru: 'Добавьте любую монету через «+», и она стоит первой, с цифрами даже вне топа. Закреплённые перетаскиваются в ваш порядок.',
   },
   'monitor.f3h': { en: 'Your exchanges, your order', uk: 'Ваші біржі, ваш порядок', ru: 'Ваши биржи, ваш порядок' },
   'monitor.f3d': {
@@ -146,11 +166,15 @@ module.exports = {
     uk: 'Середнє по біржах, найбільше значення або ваша пріоритетна біржа.',
     ru: 'Среднее по биржам, наибольшее значение или ваша приоритетная биржа.',
   },
-  'monitor.f4h': { en: 'Know at a glance', uk: 'Видно з першого погляду', ru: 'Видно с первого взгляда' },
+  'monitor.f4h': {
+    en: 'Every number, full screen',
+    uk: 'Усі цифри на весь екран',
+    ru: 'Все цифры на весь экран',
+  },
   'monitor.f4d': {
-    en: 'An alert sound when a coin crosses the levels you set.',
-    uk: 'Звуковий сигнал, коли монета перетинає ваші рівні.',
-    ru: 'Звуковой сигнал, когда монета пересекает ваши уровни.',
+    en: 'Open a chart full screen for its NATR, 24h volume and open interest on every exchange, and switch the exchange it is drawn from.',
+    uk: 'Відкрийте графік на весь екран: NATR, обсяг за 24 години й відкритий інтерес на кожній біржі, і біржу графіка можна змінити.',
+    ru: 'Откройте график на весь экран: NATR, объём за 24 часа и открытый интерес на каждой бирже, и биржу графика можно сменить.',
   },
 
   'ticks.title': { en: 'See the trades that move the price.', uk: 'Бачте угоди, що рухають ціну.', ru: 'Видьте сделки, которые двигают цену.' },
@@ -177,11 +201,15 @@ module.exports = {
     uk: 'Примусові закриття на Binance, Bybit, OKX і Gate позначками на графіку, лонги й шорти одразу видно.',
     ru: 'Принудительные закрытия на Binance, Bybit, OKX и Gate отметками на графике, лонги и шорты видно сразу.',
   },
-  'ticks.f4h': { en: 'Tuned per exchange', uk: 'Налаштування для кожної біржі', ru: 'Настройка для каждой биржи' },
+  'ticks.f4h': {
+    en: 'Only the coins you care about',
+    uk: 'Лише ті монети, що цікаві вам',
+    ru: 'Только те монеты, что интересны вам',
+  },
   'ticks.f4d': {
-    en: 'Each exchange gets its own size, price move and 24h turnover. Majors, stablecoins or stocks go to the blacklist in one click.',
-    uk: 'Кожна біржа має власний розмір, рух ціни й обіг за 24 години. Мажори, стейблкоїни чи акції додаються до чорного списку в один клік.',
-    ru: 'У каждой биржи свой размер, движение цены и оборот за 24 часа. Мажоры, стейблкоины или акции добавляются в чёрный список в один клик.',
+    en: 'Each exchange gets its own size, price move and 24h turnover. Mute a coin for 12 or 24 hours from its card, or blacklist it, with majors, stablecoins or stocks in one click.',
+    uk: 'Кожна біржа має власний розмір, рух ціни й обіг за 24 години. Заглушіть монету на 12 чи 24 години просто з картки або додайте до чорного списку, мажори, стейблкоїни чи акції в один клік.',
+    ru: 'У каждой биржи свой размер, движение цены и оборот за 24 часа. Заглушите монету на 12 или 24 часа прямо с карточки или добавьте в чёрный список, мажоры, стейблкоины или акции в один клик.',
   },
   'twaps.title': { en: 'Catch the quiet buyer.', uk: 'Помітьте тихого покупця.', ru: 'Заметьте тихого покупателя.' },
   'liquidations.title': { en: 'See who got squeezed.', uk: 'Дивіться, кого виштовхнуло.', ru: 'Смотрите, кого выбило.' },
@@ -194,17 +222,25 @@ module.exports = {
     ru: 'Новые листинги появляются всплывающим окном, как только монета начинает торговаться, тикер копируется в один клик. У каждого оповещения свой звук, так что вы знаете, что произошло, ещё до того, как посмотрите.',
   },
 
-  'plat.label': { en: 'Web or Windows', uk: 'Веб або Windows', ru: 'Веб или Windows' },
+  'plat.label': {
+    en: 'Web, phone or Windows',
+    uk: 'Веб, телефон або Windows',
+    ru: 'Веб, телефон или Windows',
+  },
   'plat.title': {
     en: 'Same tools, same account. Use either, or both.',
     uk: 'Ті самі інструменти, той самий акаунт. Будь-що, або обидва.',
     ru: 'Те же инструменты, тот же аккаунт. Любое, или оба.',
   },
-  'plat.web.h': { en: 'Web app', uk: 'Веб-версія', ru: 'Веб-версия' },
+  'plat.web.h': {
+    en: 'Web app, on any screen',
+    uk: 'Веб-версія на будь-якому екрані',
+    ru: 'Веб-версия на любом экране',
+  },
   'plat.web.p': {
-    en: 'Open it in any browser on Windows, macOS or Linux. Put tools side by side on tabs and switch with a key, in five themes. Nothing to install, always the latest version.',
-    uk: 'Відкривайте в будь-якому браузері на Windows, macOS або Linux. Інструменти поруч на вкладках, перемикання клавішами, п’ять тем оформлення. Нічого встановлювати, завжди остання версія.',
-    ru: 'Открывайте в любом браузере на Windows, macOS или Linux. Инструменты рядом на вкладках, переключение клавишами, пять тем оформления. Ничего устанавливать, всегда последняя версия.',
+    en: 'Open it in any browser on Windows, macOS or Linux, or on your phone, where it turns into a mobile layout: one tool on the screen, the rest a tap away. Tools side by side on tabs, five themes, nothing to install.',
+    uk: 'Відкривайте в будь-якому браузері на Windows, macOS або Linux чи на телефоні, де вона стає мобільною: один інструмент на екрані, решта в один дотик. Інструменти поруч на вкладках, п’ять тем, нічого встановлювати.',
+    ru: 'Открывайте в любом браузере на Windows, macOS или Linux или на телефоне, где она становится мобильной: один инструмент на экране, остальные в одно касание. Инструменты рядом на вкладках, пять тем, ничего устанавливать.',
   },
   'plat.win.h': { en: 'Windows app', uk: 'Застосунок для Windows', ru: 'Приложение для Windows' },
   'plat.win.p': {
@@ -223,9 +259,9 @@ module.exports = {
   },
   'faq.q2': { en: 'Which exchanges are supported?', uk: 'Які біржі підтримуються?', ru: 'Какие биржи поддерживаются?' },
   'faq.a2': {
-    en: 'Bybit, Binance, Gate, OKX and Hyperliquid, all watched at once, plus Kraken spot in Ticks. More may come based on feedback.',
-    uk: 'Bybit, Binance, Gate, OKX і Hyperliquid одночасно, плюс спот Kraken у Ticks. Інші можуть з’явитися за вашими відгуками.',
-    ru: 'Bybit, Binance, Gate, OKX и Hyperliquid одновременно, плюс спот Kraken в Ticks. Другие могут появиться по вашим отзывам.',
+    en: 'Bybit, Binance, Gate, OKX, Hyperliquid and Aster DEX, all watched at once, plus Binance Alpha tokens and Kraken spot in Ticks. Aster and Binance Alpha are in the web app. More may come based on feedback.',
+    uk: 'Bybit, Binance, Gate, OKX, Hyperliquid і Aster DEX одночасно, плюс токени Binance Alpha і спот Kraken у Ticks. Aster і Binance Alpha є у веб-версії. Інші можуть з’явитися за вашими відгуками.',
+    ru: 'Bybit, Binance, Gate, OKX, Hyperliquid и Aster DEX одновременно, плюс токены Binance Alpha и спот Kraken в Ticks. Aster и Binance Alpha есть в веб-версии. Другие могут появиться по вашим отзывам.',
   },
   'faq.q3': { en: 'Does Sentaro touch my exchange account?', uk: 'Чи має Sentaro доступ до мого акаунта на біржі?', ru: 'Есть ли у Sentaro доступ к моему аккаунту на бирже?' },
   'faq.a3': {
@@ -239,11 +275,15 @@ module.exports = {
     uk: 'Будь-яка. Інструменти ті самі, вхід з тим самим акаунтом. Застосунок для Windows додає окремі вікна для інструментів і Terminal.',
     ru: 'Любая. Инструменты те же, вход с тем же аккаунтом. Приложение для Windows добавляет отдельные окна для инструментов и Terminal.',
   },
-  'faq.q5': { en: 'Does it work on macOS or Linux?', uk: 'Чи працює на macOS або Linux?', ru: 'Работает ли на macOS или Linux?' },
+  'faq.q5': {
+    en: 'Does it work on macOS, Linux or a phone?',
+    uk: 'Чи працює на macOS, Linux або телефоні?',
+    ru: 'Работает ли на macOS, Linux или телефоне?',
+  },
   'faq.a5': {
-    en: 'Yes, in the web app. The downloadable app is Windows-only for now.',
-    uk: 'Так, у веб-версії. Застосунок для завантаження поки що лише для Windows.',
-    ru: 'Да, в веб-версии. Приложение для скачивания пока только для Windows.',
+    en: 'Yes, in the web app, which has a layout made for phones. The downloadable app is Windows-only for now.',
+    uk: 'Так, у веб-версії, яка має окрему розкладку для телефона. Застосунок для завантаження поки що лише для Windows.',
+    ru: 'Да, в веб-версии, у которой есть отдельная раскладка для телефона. Приложение для скачивания пока только для Windows.',
   },
   'faq.q6': {
     en: 'Windows warns me when I run the installer. Is that safe?',

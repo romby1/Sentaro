@@ -48,6 +48,8 @@ const venues = `<div class="venues" aria-label="Exchanges">
         <span class="venue"><img class="invert" src="logos/okx.png" alt="" width="18" height="18">OKX</span>
         <span class="venue"><img src="logos/gateio.png" alt="" width="18" height="18">Gate</span>
         <span class="venue"><img src="logos/hyperliquid.png" alt="" width="18" height="18">Hyperliquid</span>
+        <span class="venue"><img src="logos/aster.png" alt="" width="18" height="18">Aster</span>
+        <span class="venue"><img src="logos/binance.png" alt="" width="18" height="18">Binance Alpha</span>
       </div>`;
 
 const TOOLS = [
@@ -173,7 +175,8 @@ ${TOOLS.map(toolSection).join('\n\n')}
     ${tx('plat.label', 'p', ' class="eyebrow"')}
     ${tx('plat.title', 'h2')}
     <div class="plats">
-      <div class="plat">
+      <div class="plat web">
+        <img class="plat-phone" src="img/phone.webp" alt="Sentaro on a phone: Monitor, with the tools along the bottom" width="390" height="844" loading="lazy" decoding="async">
         <span class="tile-icon">${icon('globe')}</span>
         ${tx('plat.web.h', 'h3')}
         ${tx('plat.web.p', 'p')}

@@ -152,6 +152,13 @@ main > section { padding-block: 96px; border-top: 1px solid var(--line); }
 .plats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; width: 100%; margin-top: 18px; text-align: left; }
 .plat { display: grid; gap: 12px; justify-items: start; align-content: start; padding: 28px; border-radius: 14px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
 .plat p { color: var(--muted); max-width: 46ch; margin-bottom: 8px; }
+/* The web card: the phone layout peeking in from the right, cut by the card's bottom edge. */
+.plat.web { position: relative; overflow: hidden; min-height: 330px; padding-right: 200px; }
+.plat-phone { position: absolute; right: 28px; top: 28px; width: 150px; height: auto; border-radius: 22px; box-shadow: 0 0 0 5px #1a1a1d, 0 0 0 6px rgba(255, 255, 255, 0.12), 0 24px 48px -12px rgba(0, 0, 0, 0.8); }
+@media (max-width: 560px) {
+  .plat.web { min-height: 0; padding-right: 28px; }
+  .plat-phone { position: static; order: 9; width: 160px; justify-self: center; margin-top: 8px; }
+}
 
 .qs { display: grid; gap: 8px; width: 100%; margin-top: 18px; text-align: left; }
 .qs details { border-radius: 10px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
