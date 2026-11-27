@@ -217,6 +217,7 @@ ${TOOLS.map(toolSection).join('\n\n')}
     <span class="spacer"></span>
     <a href="/manual/en/" data-manual>${tx('nav.docs')}</a>
     <a href="${DOWNLOAD}" target="_blank" rel="noopener" data-download>${tx('foot.download')}</a>
+    <a href="/privacy.html">${tx('foot.privacy')}</a>
     <a class="tg" href="${TELEGRAM}" target="_blank" rel="noopener">${TG}Telegram</a>
     <span class="copy">© 2026 Sentaro</span>
   </div>
@@ -378,6 +379,61 @@ const notFound = `<!DOCTYPE html>
 </html>
 `;
 fs.writeFileSync(path.join(DOCS, '404.html'), notFound);
+
+// ── privacy.html: the Privacy Policy (privacy.cjs), all three languages in
+// the page; the one picked on the site shows, and the switcher swaps them. ──
+const P = require('./privacy.cjs');
+const privacy = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${t('privacy.meta')}</title>
+  <link rel="icon" type="image/png" href="/img/mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body data-title-key="privacy.meta">
+<header class="inner narrow">
+  <nav class="nav" aria-label="Site">
+    <a class="brand" href="/"><img src="/img/mark.png" alt="" width="22" height="22">Sentaro</a>
+    <span class="spacer"></span>
+    <div class="langs" role="group" aria-label="Language">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="uk">UA</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+    </div>
+    <a class="btn sm ghost" href="${WEB}">${tx('nav.open')}</a>
+  </nav>
+</header>
+<main class="inner narrow policy">
+  <article lang="en" data-policy="en">${P.en}</article>
+  <article lang="uk" data-policy="uk" hidden>${P.uk}</article>
+  <article lang="ru" data-policy="ru" hidden>${P.ru}</article>
+</main>
+<footer class="foot">
+  <div class="inner narrow footrow">
+    <a class="brand" href="/"><img src="/img/mark.png" alt="" width="22" height="22">Sentaro</a>
+    <span class="spacer"></span>
+    <a class="tg" href="${TELEGRAM}" target="_blank" rel="noopener">${TG}Telegram</a>
+    <span class="copy">© 2026 Sentaro</span>
+  </div>
+</footer>
+<script src="/i18n.js"></script>
+<script>
+  // The policy in the site's language; ?lang=uk|ru|en (the app's link) picks it.
+  const showPolicy = (lang) => document.querySelectorAll('[data-policy]').forEach((a) => (a.hidden = a.dataset.policy !== lang));
+  const asked = new URLSearchParams(location.search).get('lang');
+  if (['en', 'uk', 'ru'].includes(asked)) applyLang(asked);
+  showPolicy(document.documentElement.lang || 'en');
+  document.querySelectorAll('.lang-btn').forEach((b) => b.addEventListener('click', () => showPolicy(b.dataset.lang)));
+</script>
+</body>
+</html>
+`;
+fs.writeFileSync(path.join(DOCS, 'privacy.html'), privacy);
 fs.writeFileSync(path.join(DOCS, 'i18n.js'), i18n);
 fs.copyFileSync(path.join(__dirname, 'site.css'), path.join(DOCS, 'site.css'));
 console.log('ok');

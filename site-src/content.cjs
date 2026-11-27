@@ -308,6 +308,8 @@ module.exports = {
     ru: 'Следите за всем рынком.<br>Бесплатно во время беты.',
   },
   'foot.download': { en: 'Download', uk: 'Завантажити', ru: 'Скачать' },
+  'foot.privacy': { en: 'Privacy', uk: 'Конфіденційність', ru: 'Конфиденциальность' },
+  'privacy.meta': { en: 'Privacy Policy · Sentaro', uk: 'Політика конфіденційності · Sentaro', ru: 'Политика конфиденциальности · Sentaro' },
 
   'nf.meta': { en: 'Page not found · Sentaro', uk: 'Сторінку не знайдено · Sentaro', ru: 'Страница не найдена · Sentaro' },
   'nf.badge': { en: 'Delisted', uk: 'Делістинг', ru: 'Делистинг' },
