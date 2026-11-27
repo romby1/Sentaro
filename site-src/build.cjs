@@ -217,7 +217,7 @@ ${TOOLS.map(toolSection).join('\n\n')}
     <span class="spacer"></span>
     <a href="/manual/en/" data-manual>${tx('nav.docs')}</a>
     <a href="${DOWNLOAD}" target="_blank" rel="noopener" data-download>${tx('foot.download')}</a>
-    <a href="/privacy.html">${tx('foot.privacy')}</a>
+    <a href="/privacy">${tx('foot.privacy')}</a>
     <a class="tg" href="${TELEGRAM}" target="_blank" rel="noopener">${TG}Telegram</a>
     <span class="copy">© 2026 Sentaro</span>
   </div>

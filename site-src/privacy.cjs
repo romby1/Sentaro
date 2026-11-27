@@ -51,14 +51,7 @@ const en = `
 <p>We do not sell your data, use it for advertising or share it with anyone except the providers below.</p>
 
 <h2>3. Who processes it for us</h2>
-<ul>
-<li><b>Supabase</b>: authentication and the account database (email, subscription, settings).</li>
-<li><b>OVHcloud</b>: the servers that run our data feeds, alerts and the analytics relay (Singapore).</li>
-<li><b>PostHog</b>: product analytics (European Union).</li>
-<li><b>NOWPayments</b>: subscription payments.</li>
-<li><b>Telegram</b>: alert messages, only if you link it.</li>
-</ul>
-<p>Some of these providers store data outside your country. Each processes the data only to provide its service to us.</p>
+<p>To run the service, the data is processed by our providers: hosting, authentication and database, analytics (in the European Union), payments, and Telegram if you link it. Some of them store data outside your country.</p>
 
 <h2>4. How long we keep it</h2>
 <ul>
@@ -69,7 +62,7 @@ const en = `
 </ul>
 
 <h2>5. Your rights</h2>
-<p>You can ask us to give you a copy of your data, correct it, delete your account and its data, or exclude you from analytics. Write to Telegram ${TG} from the account you use, or tell us the email of your Sentaro account, and we will answer within 30 days. Depending on where you live you may also have the right to complain to your data protection authority.</p>
+<p>You can ask for a copy of your data, to correct or delete it, or to be left out of analytics: write to Telegram ${TG}. You also have the right to complain to the data protection authority of your country.</p>
 
 <h2>6. Security</h2>
 <p>Connections to our servers are encrypted (HTTPS and secure WebSockets), passwords are stored hashed, and access to our servers is restricted. No system is perfectly secure, but we take reasonable measures to protect your data.</p>
@@ -124,14 +117,7 @@ const uk = `
 <p>Ми не продаємо ваші дані, не використовуємо їх для реклами і не передаємо нікому, крім провайдерів нижче.</p>
 
 <h2>3. Хто обробляє дані для нас</h2>
-<ul>
-<li><b>Supabase</b>: автентифікація і база акаунтів (email, підписка, налаштування).</li>
-<li><b>OVHcloud</b>: сервери потоків даних, алертів і ретранслятора аналітики (Сінгапур).</li>
-<li><b>PostHog</b>: аналітика продукту (Європейський Союз).</li>
-<li><b>NOWPayments</b>: оплата підписки.</li>
-<li><b>Telegram</b>: повідомлення з алертами, лише якщо ви його підключили.</li>
-</ul>
-<p>Частина цих провайдерів зберігає дані за межами вашої країни. Кожен обробляє їх лише для того, щоб надавати нам свій сервіс.</p>
+<p>Щоб сервіс працював, дані обробляють наші постачальники: хостинг, сервіс автентифікації і бази даних, сервіс аналітики (в Європейському Союзі), платіжний сервіс і Telegram, якщо ви його підключили. Частина з них зберігає дані за межами вашої країни.</p>
 
 <h2>4. Скільки ми зберігаємо дані</h2>
 <ul>
@@ -142,7 +128,7 @@ const uk = `
 </ul>
 
 <h2>5. Ваші права</h2>
-<p>Ви можете попросити нас надати копію ваших даних, виправити їх, видалити акаунт разом із даними або виключити вас з аналітики. Напишіть у Telegram ${TG} з акаунта, яким користуєтесь, або вкажіть email вашого акаунта Sentaro, і ми відповімо протягом 30 днів. Залежно від країни проживання ви також можете мати право поскаржитися до органу із захисту даних.</p>
+<p>Ви можете попросити копію своїх даних, їх виправлення чи видалення, або відмовитися від аналітики: напишіть у Telegram ${TG}. Ви також маєте право поскаржитися до органу із захисту даних своєї країни.</p>
 
 <h2>6. Безпека</h2>
 <p>З'єднання з нашими серверами шифруються (HTTPS і захищені WebSocket), паролі зберігаються у вигляді хешу, доступ до серверів обмежено. Жодна система не захищена ідеально, але ми вживаємо розумних заходів, щоб захистити ваші дані.</p>
@@ -197,14 +183,7 @@ const ru = `
 <p>Мы не продаем ваши данные, не используем их для рекламы и не передаем никому, кроме провайдеров ниже.</p>
 
 <h2>3. Кто обрабатывает данные для нас</h2>
-<ul>
-<li><b>Supabase</b>: аутентификация и база аккаунтов (email, подписка, настройки).</li>
-<li><b>OVHcloud</b>: серверы потоков данных, алертов и ретранслятора аналитики (Сингапур).</li>
-<li><b>PostHog</b>: аналитика продукта (Европейский союз).</li>
-<li><b>NOWPayments</b>: оплата подписки.</li>
-<li><b>Telegram</b>: сообщения с алертами, только если вы его подключили.</li>
-</ul>
-<p>Часть этих провайдеров хранит данные за пределами вашей страны. Каждый обрабатывает их только для того, чтобы предоставлять нам свой сервис.</p>
+<p>Чтобы сервис работал, данные обрабатывают наши поставщики: хостинг, сервис аутентификации и базы данных, сервис аналитики (в Европейском союзе), платежный сервис и Telegram, если вы его подключили. Часть из них хранит данные за пределами вашей страны.</p>
 
 <h2>4. Сколько мы храним данные</h2>
 <ul>
@@ -215,7 +194,7 @@ const ru = `
 </ul>
 
 <h2>5. Ваши права</h2>
-<p>Вы можете попросить нас предоставить копию ваших данных, исправить их, удалить аккаунт вместе с данными или исключить вас из аналитики. Напишите в Telegram ${TG} с аккаунта, которым пользуетесь, или укажите email вашего аккаунта Sentaro, и мы ответим в течение 30 дней. В зависимости от страны проживания у вас также может быть право пожаловаться в орган по защите данных.</p>
+<p>Вы можете попросить копию своих данных, их исправление или удаление, или отказаться от аналитики: напишите в Telegram ${TG}. Вы также имеете право пожаловаться в орган по защите данных своей страны.</p>
 
 <h2>6. Безопасность</h2>
 <p>Соединения с нашими серверами шифруются (HTTPS и защищенные WebSocket), пароли хранятся в виде хеша, доступ к серверам ограничен. Ни одна система не защищена идеально, но мы принимаем разумные меры, чтобы защитить ваши данные.</p>
