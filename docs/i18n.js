@@ -2,7 +2,7 @@
 // Elements carry data-i18n="key"; the page ships in English and switches here.
 const translations = {
   "en": {
-    "meta.title": "Sentaro: live crypto screener for Binance, Bybit, OKX, Gate, Hyperliquid and Aster",
+    "meta.title": "Sentaro: live crypto screener for Binance, Bybit, OKX",
     "nav.tools": "Tools",
     "nav.docs": "Docs",
     "nav.faq": "FAQ",
@@ -107,7 +107,7 @@ const translations = {
     "nf.now": "just now"
   },
   "uk": {
-    "meta.title": "Sentaro: криптоскринер у реальному часі для Binance, Bybit, OKX, Gate, Hyperliquid і Aster",
+    "meta.title": "Sentaro: криптоскринер для Binance, Bybit, OKX",
     "nav.tools": "Інструменти",
     "nav.docs": "Документація",
     "nav.faq": "FAQ",
@@ -212,7 +212,7 @@ const translations = {
     "nf.now": "щойно"
   },
   "ru": {
-    "meta.title": "Sentaro: криптоскринер в реальном времени для Binance, Bybit, OKX, Gate, Hyperliquid и Aster",
+    "meta.title": "Sentaro: криптоскринер для Binance, Bybit, OKX",
     "nav.tools": "Инструменты",
     "nav.docs": "Документация",
     "nav.faq": "FAQ",
