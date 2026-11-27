@@ -1,0 +1,35 @@
+# Sentaro
+
+> Sentaro is a live crypto screener for Binance, Bybit, OKX, Gate, Hyperliquid and Aster DEX, plus Binance Alpha tokens and Kraken spot in Ticks. It shows price moves, cross-exchange spreads, big trades, TWAPs, liquidations and new listings in real time. It runs in the browser (desktop and phone) at https://app.sentaro.trade/ and as a Windows app. It is free for everyone during the beta.
+
+Key facts:
+
+- Price: free during the beta, every tool, web and Windows, no hidden tiers.
+- Read-only: the tools use public market data only, never ask for API keys and cannot place trades. The one exception is Terminal on Windows, an experimental tool that is off by default and only works with trade-only keys the user adds.
+- Platforms: web app (with a phone layout) and a Windows app. Same tools and the same account in both. The Windows app adds separate windows per tool and Terminal. No native macOS or Linux app; those use the web app.
+- Languages: English, Ukrainian, Russian.
+- Support and feedback: Telegram group https://t.me/sentaro_trade
+
+## Tools
+
+- [Knives](https://sentaro.trade/manual/en/tools/knives.html): price movement scanner. Flags any coin whose current 5-minute candle moves past a threshold set per exchange, across seven exchanges, as it happens.
+- [Spreads](https://sentaro.trade/manual/en/tools/spreads.html): cross-exchange price gaps. Shows how far apart the same coin is priced right now, with the volume and funding rate behind every price.
+- [Analyzer](https://sentaro.trade/manual/en/tools/analyzer.html): multi-chart workspace. Up to eight charts of one coin on any timeframe, drawing tools, NATR sorting of the whole market and multiple watchlists.
+- [Monitor](https://sentaro.trade/manual/en/tools/monitor.html): live volatility leaderboard. Every coin ranked by NATR, volume, % change or trade count, aggregated across exchanges.
+- [Ticks](https://sentaro.trade/manual/en/tools/ticks.html): tape of big aggressive trades across nine venues, TWAP detection (the same order size repeating) and liquidations, each marked on the coin's chart.
+- [Terminal](https://sentaro.trade/manual/en/tools/terminal.html): experimental trading terminal for Hyperliquid, Binance and Bybit, Windows only, off by default.
+- Alerts: new listings appear the moment a coin starts trading, with one-click symbol copy; every alert type has its own sound.
+
+## Docs
+
+- [Getting started](https://sentaro.trade/manual/en/getting-started.html)
+- [Charts and drawing](https://sentaro.trade/manual/en/customize/chart-colors.html)
+- [Majors overlay](https://sentaro.trade/manual/en/customize/majors.html)
+- [FAQ](https://sentaro.trade/#faq)
+
+## Links
+
+- [Web app](https://app.sentaro.trade/)
+- [Windows download](https://github.com/romby1/Sentaro/releases/latest)
+- [Privacy Policy](https://sentaro.trade/privacy)
+- [Telegram](https://t.me/sentaro_trade)

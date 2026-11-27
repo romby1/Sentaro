@@ -28,7 +28,10 @@
         "@type": "WebSite",
         "@id": "https://sentaro.trade/#website",
         "name": "Sentaro",
-        "alternateName": ["Sentaro Trade", "sentaro.trade"],
+        "alternateName": [
+          "Sentaro Trade",
+          "sentaro.trade"
+        ],
         "url": "https://sentaro.trade/"
       },
       {
@@ -37,7 +40,100 @@
         "name": "Sentaro",
         "url": "https://sentaro.trade/",
         "logo": "https://sentaro.trade/favicon-192.png",
-        "sameAs": ["https://t.me/sentaro_trade", "https://app.sentaro.trade/"]
+        "sameAs": [
+          "https://t.me/sentaro_trade",
+          "https://app.sentaro.trade/"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://sentaro.trade/#app",
+        "name": "Sentaro",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web browser (desktop and mobile), Windows",
+        "url": "https://app.sentaro.trade/",
+        "downloadUrl": "https://github.com/romby1/Sentaro/releases/latest",
+        "description": "A live crypto screener for Binance, Bybit, OKX, Gate, Hyperliquid and Aster: price moves, cross-exchange spreads, big trades, TWAPs, liquidations and new listings.",
+        "featureList": [
+          "Knives: coins that just moved on the 5-minute candle, across seven exchanges",
+          "Spreads: live cross-exchange price gaps with volume and funding",
+          "Analyzer: up to eight charts of one coin, any timeframe, with NATR sorting and watchlists",
+          "Monitor: the whole market ranked by NATR, volume, change or trades",
+          "Ticks: big aggressive trades, TWAP detection and liquidations, marked on the chart",
+          "Alerts: new listings and sound alerts"
+        ],
+        "screenshot": "https://sentaro.trade/img/monitor.webp",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free for everyone during the beta"
+        },
+        "publisher": {
+          "@id": "https://sentaro.trade/#org"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://sentaro.trade/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Sentaro free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Everything is free for everyone during the beta: every tool, on the web and on Windows. No hidden tiers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which exchanges are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bybit, Binance, Gate, OKX, Hyperliquid and Aster DEX, all watched at once, plus Binance Alpha tokens and Kraken spot in Ticks. Aster and Binance Alpha are in the web app. More may come based on feedback."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Sentaro touch my exchange account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The tools read public market data only. They never ask for API keys and cannot place trades. The one exception is Terminal on Windows, an experimental tool that is off by default and only works with trade-only keys you add yourself."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need the web app or the Windows app?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Either. They have the same tools and you sign in with the same account. The Windows app adds separate windows per tool and Terminal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work on macOS, Linux or a phone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, in the web app, which has a layout made for phones. The downloadable app is Windows-only for now."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Windows warns me when I run the installer. Is that safe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SmartScreen flags any new app that hasn't built up downloads yet; it isn't a virus warning. Click \"More info\", then \"Run anyway\". It only happens once."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I report a bug or ask for a feature?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In the Telegram group. It's the fastest way to reach us."
+            }
+          }
+        ]
       }
     ]
   }
