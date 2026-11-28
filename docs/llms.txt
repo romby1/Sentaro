@@ -16,7 +16,7 @@ Key facts:
 - [Spreads](https://sentaro.trade/manual/en/tools/spreads.html): cross-exchange price gaps. Shows how far apart the same coin is priced right now, with the volume and funding rate behind every price.
 - [Analyzer](https://sentaro.trade/manual/en/tools/analyzer.html): multi-chart workspace. Up to eight charts of one coin on any timeframe, drawing tools, NATR sorting of the whole market and multiple watchlists.
 - [Monitor](https://sentaro.trade/manual/en/tools/monitor.html): live volatility leaderboard. Every coin ranked by NATR, volume, % change or trade count, aggregated across exchanges.
-- [Ticks](https://sentaro.trade/manual/en/tools/ticks.html): tape of big aggressive trades across nine venues, TWAP detection (the same order size repeating) and liquidations, each marked on the coin's chart.
+- [Ticks](https://sentaro.trade/manual/en/tools/ticks.html): tape of big aggressive trades across nine venues, TWAP detection (the same order size repeating, plus native Hyperliquid TWAP orders) and liquidations, each marked on the coin's chart.
 - [Terminal](https://sentaro.trade/manual/en/tools/terminal.html): experimental trading terminal for Hyperliquid, Binance and Bybit, Windows only, off by default.
 - Alerts: new listings appear the moment a coin starts trading, with one-click symbol copy; every alert type has its own sound.
 
